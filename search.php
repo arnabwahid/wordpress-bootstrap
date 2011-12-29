@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix">
+			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col700 left first clearfix" role="main">
+				<div id="main" class="span10 clearfix" role="main">
 				
-					<h1 class="archive_title"><span>Search Results for:</span> <?php echo esc_attr(get_search_query()); ?></h1>
+					<h1 class=""><span>Search Results for:</span> <?php echo esc_attr(get_search_query()); ?></h1>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -64,7 +64,7 @@
 			
 				</div> <!-- end #main -->
     			
-    			<div id="sidebar1" class="sidebar right last col220">
+    			<div id="sidebar1" class="sidebar span6">
     				
     				<?php get_search_form(); ?>
     				

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix">
+			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col620 left first clearfix" role="main">
+				<div id="main" class="span10 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
