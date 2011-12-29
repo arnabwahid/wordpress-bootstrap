@@ -1,0 +1,640 @@
+/******************************************************************
+Theme Name: Bones
+Theme URI: http://www.themble.com/bones
+Description: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href="http://themble.com/docs/" title="Bones Documentation">Bones Documentation</a> page. You can also view the conversation on Twitter by following the hashtag: <a href="http://twitter.com/#!/search/%23wpbones">#wpbones</a>.
+Author: Eddie Machado
+Author URI: http://www.themble.com/bones/
+Version: 1.09
+Tags: html5, css3, fixed, development, bones, h5bp
+
+License: GPL or whatever
+License URI: http://www.gnu.org/copyleft/gpl.html
+
+All Default Styles are in library/css/normalize.css
+I reccommend not editing those files and making all
+changes here. That way if something goes awry, you
+can easily revert back to the original, but that's
+totally up to you. Happy Developing!
+******************************************************************/
+
+/******************************************************************
+GENERAL LAYOUT STYLES
+******************************************************************/
+
+body { background: #fefefe; }
+
+/******************************************************************
+GRID STYLES
+******************************************************************/
+
+/* 960 Grid System (http://960.gs/ ) */
+
+#container, .wrap { 
+	width: 940px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+	
+	/* layout options ( all have margins right & left of 2.1276596%) */
+	.col60  { width: 6.3829787%; } /* width 60px  / grid_1  */
+	.col140 { width: 14.893617%; } /* width 140px / grid_2  */
+	.col220 { width: 23.404255%; } /* width 220px / grid_3  */
+	.col300 { width: 31.914894%; } /* width 300px / grid_4  */
+	.col380 { width: 40.425532%; } /* width 380px / grid_5  */
+	.col460 { width: 48.936170%;  } /* width 460px / grid_6  */
+	.col540 { width: 57.446809%; } /* width 540px / grid_7  */
+	.col620 { width: 65.957447%; } /* width 620px / grid_8  */
+	.col700 { width: 74.468085%; } /* width 700px / grid_9  */
+	.col780 { width: 82.978723%; } /* width 780px / grid_10 */
+	.col860 { width: 91.489362%; } /* width 860px / grid_11 */
+	.col940 { width: 100.0%;     } /* width 940px / grid_12 */
+	
+	/* layout & column defaults */
+	.col60, .col140, .col220, .col300, .col380, .col480, .col540, .col620, .col700, .col780, .col860, .col940 { 
+		display: inline; 
+		float: left; 
+		position: relative;
+		margin-left: 1.0638298%;   /* 10px */ 
+		margin-right: 1.0638298%;  /* 10px */
+	}
+	
+	/* default styles & fixes */
+	.first { margin-left: 0; } /* fixes alignment */
+	.last { margin-right: 0; } /* fixes alignment */
+	
+/* To Use Another Grid System, simply visit:
+http://themble.com/support/bones-grid/
+There, you can check out how to replace this grid with other like:
+960, Blueprint, and any other custom ones.
+*/
+
+/******************************************************************
+COMMON & REUSABLE STYLES
+******************************************************************/
+
+/* floats */
+.left { float: left; }
+.right { float: right; }
+	
+/* text alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* highlighting search term on search page */
+mark, .search-term { background: #EBE16F; }
+
+/* alerts & notices */
+.help, .info, .error, .success { margin: 10px; padding: 5px 18px; border: 1px solid #cecece; }
+.help { border-color: #E0C618; background: #EBE16F; }
+.info { border-color: #92cae4; background: #d5edf8; }
+.error { border-color: #fbc2c4; background: #fbe3e4; }
+.success { border-color: #c6d880; background: #e6efc2; } 
+
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the 
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+
+	
+/******************************************************************
+LINK STYLES
+******************************************************************/
+
+a, a:visited { color: #f01d4f; }
+a:hover, a:focus { color: #f05e81; }
+a:active {} /* on click */
+a:link { -webkit-tap-highlight-color : rgba(0,0,0,0); /* this highlights links on Iphones / iPads */ }
+
+/******************************************************************
+TEXT SELECTION STYLES
+******************************************************************/
+
+/* Highlighted Text */
+::selection { 
+	background: #6fc2f6; 
+	color:#fff; 
+	text-shadow : none; 
+}
+
+/* Firefox */
+::-moz-selection { 
+	background: #6fc2f6; 
+	color:#fff; 
+	text-shadow : none; 
+}
+
+/******************************************************************
+WORDPRESS BODY CLASSES
+want to style a page via body class? go ahead
+******************************************************************/
+
+.rtl {}
+.home {} /* home page */
+.blog {} 
+.archive {} /* archive page */
+.date {} /* date archive page */
+	.date-paged-1 {} /* replace the number to the corresponding page number */
+.search {} /* search page */
+	.search-results {} /* search result page */
+	.search-no-results {} /* no results search page */
+	.search-paged-1 {} /* individual paged search (i.e. body.search-paged-3) */
+.error404 {} /* 404 page */
+.single {} /* single post page */
+	.postid-1 {} /* individual post page by id (i.e. body.postid-73) */
+	.single-paged-1 {} /* individual paged single (i.e. body.single-paged-3) */
+.attachment {} /* attatchment page */
+	.attachmentid-1 {} /* individual attatchment page (i.e. body.attachmentid-763) */
+	.attachment-mime-type {} /* style mime type pages */
+.author {} /* author page */
+	.author-nicename {} /* user nicename (i.e. body.author-samueladams) */
+	.author-paged-1 {} /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {} /* category page */
+	.category-1 {} /* individual category page (i.e. body.category-6) */
+	.category-paged-1 {} /* replace the number to the corresponding page number */
+.tag {} /* tag page */
+	.tag-slug {} /* individual tag page (i.e. body.tag-news) */
+	.tag-paged-1 {} /* replace the number to the corresponding page number */
+.page-template {} /* custom page template page */
+	.page-template-page-php {} /* individual page template (i.e. body.page-template-contact-php */
+	.page-paged-1 {} /* replace the number to the corresponding page number */
+	.page-parent {}
+	.page-child {}
+	.parent-pageid-1 {} /* replace the number to the corresponding page number */
+.logged-in {} /* if user is logged in */
+.paged {} /* paged items like search results or archives */
+	.paged-1 {} /* individual paged (i.e. body.paged-3) */
+
+/******************************************************************
+HEADLINES & TITLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 { font-family: sans-serif; font-weight: 500; }
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a { text-decoration: none; }
+h1, .h1 { font-size: 2.5em; line-height: 1.333em; }
+h2, .h2 { font-size: 1.75em; line-height: 1.4em; margin-bottom: 0.375em; }
+h3, .h3 { font-size: 1.125em; }
+h4, .h4 { font-size: 1.1em; font-weight: 700; }
+h5, .h5 { font-size: 0.846em; line-height: 2.09em; text-transform: uppercase; letter-spacing: 2px; }
+
+
+/******************************************************************
+HEADER SYTLES
+******************************************************************/
+
+header[role=banner] {}
+	#logo { margin: 1.1em 0; }
+
+/******************************************************************
+NAVIGATION STYLES
+(Main Navigation)
+******************************************************************/
+nav[role=navigation] {}
+
+	nav[role=navigation] .menu {
+		margin: 1.1em 0;
+	}
+	nav[role=navigation] .menu ul { 
+		background: #4598bb;
+	}
+		nav[role=navigation] .menu ul li {
+			float: left;
+		}
+			nav[role=navigation] .menu ul li a { 
+				color: #fefefe;
+				font-weight: 700;
+				padding: 10px 20px;
+				display: block; 
+				text-decoration: none;
+				text-shadow: 0 -1px 1px rgba(0,0,0,0.33); 
+			}
+				nav[role=navigation] .menu ul li a:hover { 
+					background: #4eabd2; 
+					color: #fff; 
+				}
+				
+				nav[role=navigation] .menu ul li:first-child a {}
+				
+		nav[role=navigation] .menu ul li.current-menu-item a, 
+		nav[role=navigation] .menu ul li.current_page_item a,
+		nav[role=navigation] .menu ul li.current-page-ancestor a {}
+
+		/* sub menus */
+		nav[role=navigation] .menu ul li ul, nav[role=navigation] .menu ul li ul li ul { 
+			background: #4598bb;
+			position: absolute; 
+			left: -9999em; 
+			z-index: 9999; 
+			width: 200px; 
+		}
+			nav[role=navigation] .menu ul li ul li ul { 
+				margin-left: 200px; 
+				top: auto; 
+				margin-top: -30px; 
+			}
+			nav[role=navigation] .menu ul li ul li:hover ul, nav[role=navigation] .menu ul li:hover ul { 
+				left: auto; 
+			}
+			nav[role=navigation] .menu ul li ul li a { 
+				width: 160px; 
+			}
+			
+			nav[role=navigation] .menu ul li ul li a {}
+				nav[role=navigation] .menu ul li ul li a:hover {}
+			nav[role=navigation] .menu ul li ul li:last-child a {}
+
+				nav[role=navigation] .menu ul li ul li ul.sub-menu { }
+					nav[role=navigation] .menu ul li ul li:hover ul.sub-menu { }
+
+
+/******************************************************************
+POSTS & CONTENT STYLES
+******************************************************************/
+
+#content {}
+	#main {}
+	
+		.hentry { padding: 2.2em 20px 0; }
+		
+		.single-title, .page-title { margin: 0 0 0.375em;}
+		.single-title {}
+		.page-title {}
+		.archive_title { padding: 0 20px; margin: 1.1em 0 0.75em; }
+	
+		/* want to style individual post classes? Booya! */
+		.post-id {} /* post by id (i.e. post-3) */
+		.post {} /* general post style */
+		.page {} /* general article on a page style */
+		.attachment {} /* general style on an attatchment */
+		.sticky {} /* sticky post style */
+		.hentry {} /* hentry class */
+		.category-slug {} /* style by category (i.e. category-videos) */
+		.tag-slug {} /* style by tag (i.e. tag-news) */
+	
+		/* post meta */
+		.meta { font-size:0.9em; letter-spacing:0.05em; line-height:1.75em; color: #999; margin: 0.875em 0; }
+			.meta time {}
+			
+		/* post content */
+		.post_content {}
+			
+			.post_content p { margin: 0 0 1.5em 0; line-height: 1.5em; }
+			.post_content ul, .post_content ol, .post_content table, .post_content dl { margin: 1.5em 0; }
+			.post_content ul, .post_content ol { list-style-position:outside; line-height:1.5; margin-left: 2.2em; margin-right: 2.2em; }
+			.post_content li { margin-bottom: 0.75em; }
+			.post_content ul li { list-style-type: disc; }
+			.post_content ol li { list-style-type: decimal; }
+			
+			.post_content blockquote { font-style:italic; line-height:1.6em; margin: 1.5em 2.2em; }
+			.post_content blockquote:before { font-family:Georgia, serif; content: "“"; font-size:2.75em; text-indent:-.8em; margin-top:.1em; float:left; opacity:.3; } /* this adds the quote before the blockquote */
+			
+			.post_content dl { margin:1.75em 0 1.75em; }
+			.post_content dt { margin-top: 1.25em; font-weight:700; }
+			.post_content dd { font-style: italic; margin-top:0.5em; line-height:1.6em; }
+			
+			.post_content img { margin: 0 0 1.5em 0; max-width: 100%; }
+			.alignleft, img.alignleft { margin-right: 1.5em; display: inline; float: left; }
+			.alignright, img.alignright { margin-left: 1.5em; display: inline; float: right; }
+			.aligncenter, img.aligncenter { margin-right: auto; margin-left: auto; display: block; clear: both; }
+			
+			.post_content video { margin: 1.5em 0; max-width: 100%; display: block; }
+			.post_content object { display: block; margin: 1.5em 0; max-width: 100%; }
+			.post_content pre, .post_content code { font-size: 0.9em; line-height: 1.7em; padding: 1em; background: #eee; border: 2px solid #cecece; }
+			
+			.wp-caption { margin-bottom: 1.5em; text-align: center; padding-top: 5px; }
+			.wp-caption img { border: 0 none; padding: 0; margin: 0; }
+			.wp-caption .wp-caption-text { font-size:0.8em; font-style:italic; margin:.6em 0 -.2em; }
+			
+			/* image gallery styles */
+			.gallery dl {}
+			.gallery dt {}
+			.gallery dd {}
+			.gallery dl a {}
+			.gallery dl img {}
+			.gallery-caption {}
+			
+			.size-full {}
+			.size-large {}
+			.size-medium {}
+			.size-thumbnail {}
+			
+		.hentry footer { clear: both; margin: 1.5em 0 0; padding-bottom: 2.2em; }
+	
+	
+/******************************************************************
+PAGE NAVI STYLES
+(Special Feature)
+******************************************************************/
+
+/* page navigation */
+.page-navigation, .wp-prev-next { margin: 1.1em 0 2.2em; }
+	.bones_page_navi, .wp-prev-next ul { }
+		.bones_page_navi li { float: left; margin-left: 10px; } 
+			.bones_page_navi li a { padding: 3px 6px; display: block; text-decoration: none; position: relative; }
+				.bones_page_navi li a:hover { color: #f01d4f; text-decoration: underline; }
+		.bones_page_navi li.bpn-current { padding: 3px 6px; border-bottom: 2px solid #f01d4f; position: relative; } /* current page link */
+				.bones_page_navi li.bpn-current:hover {}
+		.bones_page_navi li.bpn-prev-link { } /* previous link */
+			.bones_page_navi li.bpn-prev-link a { padding: 0; }
+				.bones_page_navi li.bpn-prev-link a:hover { background: none; }
+		.bones_page_navi li.bpn-next-link { font-weight: 700; } /* next page link */
+			.bones_page_navi li.bpn-next-link a { padding: 0; }
+				.bones_page_navi li.bpn-next-link a:hover { background: none; }
+		.bones_page_navi li.bpn-last-page-link {} /* last page link */
+			.bones_page_navi li.bpn-last-page-link a {}
+				.bones_page_navi li.bpn-last-page-link a:hover { background: none; }
+		.bones_page_navi li.bpn-first-page-link {} /* first page link */
+			.bones_page_navi li.bpn-first-page-link a {}
+				.bones_page_navi li.bpn-first-page-link a:hover { background: none; }
+	
+	/* fallback previous & next links */
+	.wp-prev-next {}
+		.wp-prev-next ul {}
+			.wp-prev-next .prev-link { float: left; }
+			.wp-prev-next .next-link { float: right; }
+
+	
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+
+#comments { margin: 0 20px 0.75em; }/* h3 comment title */
+	#comments span { font-weight: 700; color: #1a90db; } /* number of comments span */
+	
+.comment-nav {}
+	.comment-nav ul {}
+		.comment-nav ul li {}
+		
+.commentlist { margin: 0 20px; }
+	.commentlist li { position: relative; clear: both; list-style-type: none; margin-bottom: 1.5em; padding: 0.7335em 10px; }
+		.commentlist li[class*=depth-] { padding-left: 20px; margin-top: 1.1em; }
+			.commentlist li.depth-1 { margin-left: 0; margin-top: 0; }
+				.commentlist li:not(.depth-1) { margin-right: -10px; margin-top: 0; padding-bottom: 0; }
+			.commentlist li.depth-2 {}
+			.commentlist li.depth-3 {}
+			.commentlist li.depth-4 {}
+			.commentlist li.depth-5 {}
+			.commentlist li:last-child { margin-bottom: 0; }
+				.commentlist li ul.children li {}
+				.commentlist li ul.children li.alt {}
+				.commentlist li ul.children li.byuser {}
+				.commentlist li ul.children li.comment {}
+				.commentlist li ul.children li.depth-1 {} /* change number for different depth */
+				.commentlist li ul.children li.bypostauthor {}
+				.commentlist li ul.children li.comment-author-admin {}
+				.commentlist li ul.children .alt {}
+				.commentlist li ul.children .odd {}
+				.commentlist li ul.children .even {}
+			.commentlist .alt {}
+			.commentlist .odd { background: #eee; }
+			.commentlist .even { background: #fefefe; }
+			.commentlist .parent {}
+			.commentlist .comment {}
+			.commentlist .children { border-left: 2px solid #6ac8d3; }
+			.commentlist .pingback {}
+			.commentlist .bypostauthor {}
+			.commentlist .comment-author {}
+			.commentlist .comment-author-admin {}
+			.commentlist .thread-alt {}
+			.commentlist .thread-odd {}
+			.commentlist .thread-even {}	
+			
+			.commentlist .vcard { margin-left: 55px; }
+				.commentlist .vcard cite.fn { font-weight: 700; font-style: normal; }
+				.commentlist .vcard time { float: right; }
+					.commentlist .vcard time a { color: #999; text-decoration: none; }
+						.commentlist .vcard time a:hover { text-decoration: underline; }
+				.commentlist .vcard img.photo {}
+				.commentlist .vcard img.avatar { position: absolute; left: 20px; padding: 2px; border: 1px solid #cecece; background: #fff; }
+					.commentlist .vcard cite.fn a.url {}
+				.commentlist .comment-meta {} 
+					.commentlist .comment-meta a {}
+				.commentlist .commentmetadata {}
+					.commentlist .commentmetadata a {}
+			.commentlist li .comment_content { margin-left: 55px; }
+				.commentlist li .comment_content p { margin: 0.7335em 0 1.5em; font-size: 1em; line-height: 1.5em; }
+				.commentlist li ul { margin: 0; }		
+				.commentlist .comment-reply-link { text-decoration: none; float: right;  background: #4598bb; padding: 3px 5px; color: #fff; opacity: 0.65; margin-bottom: 10px; font-weight: 700; font-size: 0.9em; }
+					.commentlist a.comment-reply-link:hover { opacity: 1; }
+			
+				
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+
+.respond-form { margin: 1.5em 20px; padding-bottom: 2.2em; }
+	#comment-form-title { margin: 0 0 1.1em; }
+	
+	#cancel-comment-reply {}
+			#cancel-comment-reply a {}
+			
+	.respond-form form[method=post] { margin: 0.75em 0; }
+		
+		.comments-logged-in-as {}
+		
+		.respond-form form[method=post] li { list-style-type: none; clear: both; margin-bottom: 0.7335em; }
+			.respond-form form[method=post] li label, .respond-form form[method=post] li small { display: none; }
+			.respond-form input[type=text], .respond-form input[type=email], .respond-form input[type=url], .respond-form textarea { padding: 3px 6px; background: #efefef; border: 2px solid #cecece; line-height: 1.5em; }
+			.respond-form input[type=text]:focus, .respond-form input[type=email]:focus, .respond-form input[type=url]:focus, .respond-form textarea:focus { background: #fff; }
+			.respond-form input[type=text], .respond-form input[type=email], .respond-form input[type=url] { max-width: 400px; min-width: 250px; }
+			
+			#allowed_tags { margin: 1.5em 10px 0.7335em 0; }
+			.respond-form textarea { resize: none; width: 97.3%; height: 150px; }
+			#submit {}
+		
+	/* form validation */
+	.respond-form input:invalid, .respond-form textarea:invalid { border-color: #fbc2c4; background: #fbe3e4; outline: none; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; background-color: #f6e7eb; }		
+	
+	/* no comments */
+	.nocomments { margin: 0 20px 1.1em; }			
+
+/******************************************************************
+SIDEBARS & ASIDES
+******************************************************************/
+
+#sidebar1 { margin-top: 2.2em; }
+
+	.widget { padding: 0 10px; margin: 2.2em 0; }
+		.widget li { margin-bottom: 0.75em; }
+		.widget li ul { margin-top: 0.75em; padding-left: 1em; }
+		
+		.widgettitle { border-bottom: 2px solid #444; margin-bottom: 0.75em; }
+
+	/* links widget */
+	.widget_links {}
+	.widget_links ul {}
+	.widget_links ul li {}
+	.widget_links ul li a {}
+	
+	/* meta widget */
+	.widget_meta {}
+	.widget_meta ul {}
+	.widget_meta ul li {}
+	.widget_meta ul li a {}
+	
+	/* pages widget */
+	.widget_pages {}
+	.widget_pages ul {}
+	.widget_pages ul li {}
+	.widget_pages ul li a {}
+	
+	/* recent-posts widget */
+	.widget_recent_entries {}
+	.widget_recent_entries ul {}
+	.widget_recent_entries ul li {}
+	.widget_recent_entries ul li a {}
+	
+	/* archives widget */
+	.widget_archive {}
+	.widget_archive ul {}
+	.widget_archive ul li {} 
+	.widget_archive ul li a {}
+	.widget_archive select {}
+	.widget_archive option {}
+	
+	/* tag-cloud widget */
+	.widget_links {}
+	.widget_links li:after {}
+	.widget_links li:before {}
+	.widget_tag_cloud {}
+	.widget_tag_cloud a {}
+	.widget_tag_cloud a:after {}
+	.widget_tag_cloud a:before {}
+	
+	/* calendar widget */
+	.widget_calendar {}
+	#calendar_wrap {}
+	#calendar_wrap th {}
+	#calendar_wrap td {}
+	#wp-calendar tr td {}
+	#wp-calendar caption {}
+	#wp-calendar a {}
+	#wp-calendar #today {}
+	#wp-calendar #prev {}
+	#wp-calendar #next {}
+	#wp-calendar #next a {}
+	#wp-calendar #prev a {}
+	
+	/* category widget */
+	.widget_categories {}
+	.widget_categories ul {}
+	.widget_categories ul li {} 
+	.widget_categories ul ul.children {}
+	.widget_categories a {}
+	.widget_categories select{}
+	.widget_categories select#cat {}
+	.widget_categories select.postform {}
+	.widget_categories option {}
+	.widget_categories .level-0 {}
+	.widget_categories .level-1 {}
+	.widget_categories .level-2 {}
+	.widget_categories .level-3 {}
+	
+	/* recent-comments widget */
+	.recentcomments {}
+	#recentcomments {}
+	#recentcomments li {}
+	#recentcomments li a {}
+	.widget_recent_comments {}
+	
+	/* search widget */
+	#searchform {}
+	.widget_search {}
+	.screen-reader-text {}
+	
+	/* text widget */
+	.textwidget {}
+	.widget_text {}
+	.textwidget p {}
+	
+
+/******************************************************************
+FOOTER STYLES
+******************************************************************/
+
+footer[role=contentinfo] { border-top: 1px solid #cecece; padding: 1.1em 0 3.3em; margin-top: 2.2em; }
+
+	/* footer menu */
+	footer[role=contentinfo] nav { float: left; margin: 1em 0; }
+	.footer-links {}
+		.footer-links ul { margin-top: 0; }
+			.footer-links ul li { list-style-type: none; float: left; font-size: 0.9em; }
+				.footer-links ul li a { margin-right: 10px; text-decoration: underline; }
+					.footer-links ul li:last-child a { margin-right: 0; }
+			.footer-links ul li a:hover, .nav ul li.current-menu-item a, .nav ul li.current_page_item a {}
+			.footer-links ul li ul.sub-menu { display: none; } /* you shouldn't have that many links in the footer anyway so it's set to display none ;P */
+			
+	.attribution { margin: 1em 0; float: right; color: #999; font-size: 0.9em; }
+	
+/******************************************************************
+MEDIA QUERIES & DEVICE STYLES
+To use a responsive design, it's reccomended to use the responsive version of Bones. You can find it on github: https://github.com/eddiemachado/bones-responsive
+******************************************************************/
+
+@media only screen and (min-width: 480px) {
+	/* insert styles here */
+}
+
+@media only screen and (min-width: 768px) {
+/* insert styles here */
+}
+
+@media only screen and (min-width: 992px) {
+/* insert styles here */
+}
+
+@media only screen and (min-width: 1382px) {
+/* insert styles here */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+/* insert styles here */
+}
+
+/******************************************************************
+PRINT STYLES
+(Handled by default, but if you want to edit it, feel free)
+******************************************************************/
+
+@media print { }
+
+/******************************************************************
+IE SPECIFIC FIXES
+******************************************************************/
+
+/*
+Thanks to the HTML5 Boilerplate there's an easier way
+to target IE specific bugs. Simply use the html class
+to target the specific version of IE.
+
+To target the .post_content area in IE6, use:
+html.ie6 .post_content { ... }
+
+To target the .post_content area in IE7, use:
+html.ie7 .post_content { ... }
+
+To target the .post_content area in IE8, use:
+html.ie8 .post_content { ... }
+
+To target the .post_content area in older IE use:
+html.oldie .post_content { ... }
+
+Much easier right? This way, you don't have to call
+any more stylesheets, you can leave it at the bottom
+and it will overwrite depending on the html class.
+*/
