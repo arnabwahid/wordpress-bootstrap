@@ -8,7 +8,7 @@ The comments page for Bones
     die ('Please do not load this page directly. Thanks!');
 
   if ( post_password_required() ) { ?>
-  	<div class="help">
+  	<div class="alert-message info">
     	<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
   	</div>
   <?php
@@ -47,7 +47,7 @@ The comments page for Bones
 
 	<?php else : // comments are closed ?>
 	<!-- If comments are closed. -->
-	<p class="nocomments">Comments are closed.</p>
+	<p class="alert-message info">Comments are closed.</p>
 
 	<?php endif; ?>
 
@@ -70,7 +70,7 @@ The comments page for Bones
   	</div>
 	<?php else : ?>
 
-	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" class="form-stacked" id="commentform">
 
 	<?php if ( is_user_logged_in() ) : ?>
 

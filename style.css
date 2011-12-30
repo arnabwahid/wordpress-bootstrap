@@ -12,7 +12,25 @@
 	float: right;
 }
 
+/* post styling */
+
+#main article{
+	margin-bottom: 18px;
+	border-bottom: 1px solid #eeeeee;
+	padding-bottom: 18px;
+}
+
+#main article footer{
+	border-top: none;
+	margin-top: 0;
+	padding-top: 0;
+}
+
 /* comments */
+
+#comment-form-title{
+	padding-left: 20px;
+}
 
 #comments{
 	line-height: 24px;
