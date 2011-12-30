@@ -1,3 +1,5 @@
+/* layout */
+
 #content{
 	padding-top: 60px;
 }
@@ -8,4 +10,46 @@
 
 #sidebar1{
 	float: right;
+}
+
+/* comments */
+
+#comments{
+	line-height: 24px;
+	margin-bottom: 18px;
+}
+
+ol.commentlist{
+	list-style-type: none;
+	margin-left: 0;
+}
+
+ol.commentlist div.avatar{
+	float: left;
+}
+
+ol.commentlist header{
+	position: relative;
+}
+
+ol.commentlist a.comment-edit-link{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+ol.commentlist span.edit-comment{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#comment-nav ul{
+	list-style-type: none;
+	margin: 0;
+}
+
+#comment-form-elements{
+	list-style-type: none;
+	margin: 0;
+	
 }

@@ -17,7 +17,7 @@
 						</header> <!-- end article header -->
 					
 						<section class="post_content clearfix">
-							<?php the_content(_e('<span class="read-more">Read more on "'.the_title('', '', false).'" &raquo;</span>', "bonestheme")); ?>
+							<?php the_content(_e('<span class="read-more">Read more &raquo;</span>', "bonestheme")); ?>
 					
 						</section> <!-- end article section -->
 						
