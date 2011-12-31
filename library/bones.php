@@ -99,7 +99,8 @@ function bones_main_nav() {
     		'menu' => 'main_nav', /* menu name */
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
     		'container_class' => 'menu clearfix', /* container class */
-    		'fallback_cb' => 'bones_main_nav_fallback' /* menu fallback */
+    		'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
+    		'depth' => '1' /* suppress lower levels for now */
     	)
     );
 }

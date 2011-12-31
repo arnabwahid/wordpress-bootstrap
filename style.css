@@ -22,6 +22,16 @@
 	padding-top: 0;
 }
 
+div[id*='attachment_']{
+	max-width: 100%;
+	height: 100%;
+}
+
+#main article img{
+	max-width: 100%;
+	height: 100%;
+}
+
 /* comments */
 
 #comment-form-title{
@@ -34,11 +44,7 @@
 }
 
 ol.commentlist,
-<<<<<<< HEAD
 ol.commentlist ul.children{
-=======
-ul.children{
->>>>>>> 917362665ed2d27fef0c1946a8455832a6fc3180
 	list-style-type: none;
 	margin-left: 0;
 }
@@ -86,6 +92,21 @@ a.comment-reply-link{
 	list-style-type: none;
 	margin: 0;
 }
+
+/* specific post-type styles */
+
+/* image attachment */
+
+.attachment #main .post_content img{
+	max-width: 100%;
+	height: 100%;
+}
+
+.metadata p.alert-message{
+	margin-right: 0;
+	margin-bottom: 18px;
+}
+
 
 /* widget styles */
 
