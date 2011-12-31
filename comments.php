@@ -123,10 +123,6 @@ The comments page for Bones
 	  <?php comment_id_fields(); ?>
 	</div>
 	
-	<div class="help">
-		<p id="allowed_tags" class="small"><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></p>
-	</div>
-	
 	<?php do_action('comment_form', $post->ID); ?>
 	
 	</form>

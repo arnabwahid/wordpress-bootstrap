@@ -88,29 +88,28 @@ function bones_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?>>
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-			<header class="comment-author vcard row clearfix">
+			<div class="comment-author vcard row clearfix">
 				<div class="avatar span2">
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
-				<?php printf(__('<h4 class="span8">%s</h4>'), get_comment_author_link()) ?>
-				
-				<?php edit_comment_link(__('Edit'),'<span class="edit-comment btn small info">','</span>') ?>
-			</header>
-			<?php if ($comment->comment_approved == '0') : ?>
-       			<div class="alert-message success">
-          			<p><?php _e('Your comment is awaiting moderation.') ?></p>
-          		</div>
-			<?php endif; ?>
-			<div class="row">
-				<section class="comment_content span8 offset2 clearfix">
-					<?php comment_text() ?>
-				</section>
+				<div class="span8">
+					<?php printf(__('<h4 class="span8">%s</h4>'), get_comment_author_link()) ?>
+					<?php edit_comment_link(__('Edit'),'<span class="edit-comment btn small info">','</span>') ?>
+                    
+                    <?php if ($comment->comment_approved == '0') : ?>
+       					<div class="alert-message success">
+          				<p><?php _e('Your comment is awaiting moderation.') ?></p>
+          				</div>
+					<?php endif; ?>
+                    
+                    <?php comment_text() ?>
+                    
+                    <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
+                    
+                    <!-- removing reply link on each comment since we're not nesting them -->
+					<?php //comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                </div>
 			</div>
-			
-			<footer>
-				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
-			</footer>
-			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 		</article>
     <!-- </li> is added by wordpress automatically -->
 <?php
@@ -161,5 +160,35 @@ function wp_tag_cloud_filter($return, $args)
 {
   return '<div id="tag-cloud">'.$return.'</div>';
 }
+
+/*************************** shortcodes ************************************/
+
+/* gallery shortcode */
+
+// remove the standard shortcode
+remove_shortcode('gallery', 'gallery_shortcode');
+add_shortcode('gallery', 'gallery_shortcode_tbs');
+
+function gallery_shortcode_tbs($attr) {
+	global $post, $wp_locale;
+
+	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
+	$attachments = get_posts($args);
+	if ($attachments) {
+		$output = '<ul class="media-grid">';
+		foreach ( $attachments as $attachment ) {
+			$output .= '<li>';
+			$att_title = apply_filters( 'the_title' , $attachment->post_title );
+			$output .= wp_get_attachment_link( $attachment->ID , 'thumbnail', true );
+			$output .= '</li>';
+		}
+		$output .= '</ul>';
+	}
+
+	return $output;
+}
+
+
+
 
 ?>

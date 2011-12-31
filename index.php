@@ -23,7 +23,7 @@
 						
 						<footer>
 			
-							<p class="tags"><?php the_tags('<span class="tags-title">Tags:</span> ', ', ', ''); ?></p>
+							<p class="tags"><?php the_tags('<span class="tags-title">Tags:</span> ', ' ', ''); ?></p>
 							
 						</footer> <!-- end article footer -->
 					

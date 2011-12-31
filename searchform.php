@@ -1,13 +1,10 @@
-<form action="<?php echo home_url( '/' ); ?>" method="get">
+<form action="<?php echo home_url( '/' ); ?>" method="get" class="form-stacked">
     <fieldset>
 		<div class="clearfix">
-			<label for="s">Search</label>
 			<div class="input">
-				<input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
-			</div>
-			<div class="actions">
+				<input type="text" name="s" id="search" placeholder="Search" value="<?php the_search_query(); ?>" />			
 				<button type="submit" class="btn primary">Search</button>
 			</div>
-		</div>
+        </div>
     </fieldset>
 </form>

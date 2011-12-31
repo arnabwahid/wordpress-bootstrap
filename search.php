@@ -64,13 +64,7 @@
 			
 				</div> <!-- end #main -->
     			
-    			<div id="sidebar1" class="sidebar span6">
-    				
-    				<?php get_search_form(); ?>
-    				
-    				
-    			
-    			</div>
+    			<?php get_sidebar(); // sidebar 1 ?>
     
 			</div> <!-- end #content -->
 
