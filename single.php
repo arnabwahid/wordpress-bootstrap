@@ -24,7 +24,7 @@
 						
 						<footer>
 			
-							<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
+							<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ' ', '</p>'); ?>
 							
 						</footer> <!-- end article footer -->
 					

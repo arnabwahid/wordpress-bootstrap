@@ -33,7 +33,7 @@ function addTwitterBSClass(thisObj) {
     var titles = title.split(' ');
     if (titles[0]) {
       var num = parseInt(titles[0]);
-      if (num == 1)
+      if (num > 0)
       	$(thisObj).addClass('label');
       if (num == 2)
         $(thisObj).addClass('label notice');
@@ -45,11 +45,10 @@ function addTwitterBSClass(thisObj) {
         $(thisObj).addClass('label important');
     }
   }
+  else
+  	$(thisObj).addClass('label');
   return true;
 }
-
-
-
 
 // as the page loads, cal these scripts
 $(document).ready(function() {
@@ -58,6 +57,16 @@ $(document).ready(function() {
 	$("#tag-cloud a").each(function() {
 	    addTwitterBSClass(this);
 	    return true;
+	});
+	
+	$("p.tags a").each(function() {
+		addTwitterBSClass(this);
+		return true;
+	});
+	
+	$("ol.commentlist a.comment-reply-link").each(function() {
+		$(this).addClass('btn success small');
+		return true;
 	});
  
 }); /* end of as page load scripts */
