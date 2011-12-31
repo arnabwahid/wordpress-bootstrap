@@ -69,5 +69,14 @@ ol.commentlist span.edit-comment{
 #comment-form-elements{
 	list-style-type: none;
 	margin: 0;
-	
 }
+
+/* widget styles */
+
+/* override standard link hover for the tag cloud widget */
+#tag-cloud a:hover{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+

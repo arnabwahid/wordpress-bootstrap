@@ -143,5 +143,23 @@ function custom_password_form() {
 	return $o;
 }
 
+/*********** update standard wp tag cloud widget so it looks better ************/
+
+add_filter( 'widget_tag_cloud_args', 'my_widget_tag_cloud_args' );
+
+function my_widget_tag_cloud_args( $args ) {
+	$args['number'] = 20; // show less tags
+	$args['largest'] = 9.75; // make largest and smallest the same - i don't like the varying font-size look
+	$args['smallest'] = 9.75;
+	$args['unit'] = 'px';
+	return $args;
+}
+
+add_filter('wp_tag_cloud','wp_tag_cloud_filter', 10, 2);
+
+function wp_tag_cloud_filter($return, $args)
+{
+  return '<div id="tag-cloud">'.$return.'</div>';
+}
 
 ?>
