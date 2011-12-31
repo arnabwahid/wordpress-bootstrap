@@ -34,7 +34,11 @@
 }
 
 ol.commentlist,
+<<<<<<< HEAD
 ol.commentlist ul.children{
+=======
+ul.children{
+>>>>>>> 917362665ed2d27fef0c1946a8455832a6fc3180
 	list-style-type: none;
 	margin-left: 0;
 }
