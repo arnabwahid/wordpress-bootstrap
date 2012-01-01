@@ -19,6 +19,10 @@ Tags: bones, twitter, bootstrap, 320press, clean, basic
 	width: 100%;
 }
 
+.span8{
+	width: auto;
+}
+
 .span6{
 	width: 100%;
 }
@@ -178,6 +182,10 @@ a.comment-reply-link{
 	
 	.span10{
 		width: 580px;
+	}
+	
+	.span8{
+		width: 460px;
 	}
 	
 	.span6{
