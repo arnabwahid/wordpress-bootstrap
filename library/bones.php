@@ -97,8 +97,9 @@ function bones_main_nav() {
     wp_nav_menu( 
     	array( 
     		'menu' => 'main_nav', /* menu name */
+    		'menu_class' => 'dropdown-menu',
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
-    		'container_class' => 'menu clearfix', /* container class */
+    		'container' => 'false', /* container class */
     		'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
     		'depth' => '1' /* suppress lower levels for now */
     	)

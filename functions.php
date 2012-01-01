@@ -13,6 +13,9 @@ require_once('library/bones.php');            // core functions (don't remove)
 require_once('library/plugins.php');          // plugins & extra functions (optional)
 require_once('library/custom-post-type.php'); // custom post type example
 
+// Options panel
+include_once('library/options-panel.php');
+
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 
@@ -188,6 +191,8 @@ function gallery_shortcode_tbs($attr) {
 	return $output;
 }
 
+
+// options framework
 
 
 

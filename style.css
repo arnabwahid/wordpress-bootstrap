@@ -11,12 +11,45 @@ Tags: bones, twitter, bootstrap, 320press, clean, basic
 
 /* layout */
 
-#content{
-	padding-top: 60px;
+.container{
+	width: 100%;
 }
 
-#main{
-	float: left;
+.span10{
+	width: 100%;
+}
+
+.span6{
+	width: 100%;
+}
+
+.row{
+	margin-left: 0;
+}
+
+.row > [class*="span"] {
+	margin-left: 0;
+}
+
+#inner-header{
+	width: 100%;
+}
+
+#inner-footer{
+	padding: 0 10px;
+}
+
+.topbar-inner{
+	padding: 0 10px;
+}
+
+
+#s{
+	width: 100px;
+}
+
+#content{
+	padding: 60px 10px 0;
 }
 
 /* post styling */
@@ -136,4 +169,47 @@ a.comment-reply-link{
 
 .widget_search form{
 	padding-left: 0;
+}
+
+@media only screen and (min-width: 940px) {
+	.container{
+		width: 940px;
+	}
+	
+	.span10{
+		width: 580px;
+	}
+	
+	.span6{
+		width: 340px;
+	}
+	
+	.row{
+		margin-left: -20px;
+	}
+	
+	.row > [class*="span"] {
+		margin-left: 20px;
+	}
+	
+	#inner-footer{
+		padding: 0;
+	}
+	
+	#content{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.topbar-inner{
+		padding: 0;
+	}
+	
+	.topbar form.pull-right {
+		float: right;
+	}
+	
+	#s{
+		width: 210px;
+	}
 }

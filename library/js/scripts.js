@@ -19,6 +19,62 @@ Modernizr.load([
 	}
 ]);
 
+/* ============================================================
+ * bootstrap-dropdown.js v1.4.0
+ * http://twitter.github.com/bootstrap/javascript.html#dropdown
+ * ============================================================
+ * Copyright 2011 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ============================================================ */
+
+
+!function( $ ){
+
+  "use strict"
+
+  /* DROPDOWN PLUGIN DEFINITION
+   * ========================== */
+
+  $.fn.dropdown = function ( selector ) {
+    return this.each(function () {
+      $(this).delegate(selector || d, 'click', function (e) {
+        var li = $(this).parent('li')
+          , isActive = li.hasClass('open')
+
+        clearMenus()
+        !isActive && li.toggleClass('open')
+        return false
+      })
+    })
+  }
+
+  /* APPLY TO STANDARD DROPDOWN ELEMENTS
+   * =================================== */
+
+  var d = 'a.menu, .dropdown-toggle'
+
+  function clearMenus() {
+    $(d).parent('li').removeClass('open')
+  }
+
+  $(function () {
+    $('html').bind("click", clearMenus)
+    $('body').dropdown( '[data-dropdown] a.menu, [data-dropdown] .dropdown-toggle' )
+  })
+
+}( window.jQuery || window.ender );
+
 /* imgsizer (flexible images for fluid sites) */
 var imgSizer={Config:{imgCache:[],spacer:"/path/to/your/spacer.gif"},collate:function(aScope){var isOldIE=(document.all&&!window.opera&&!window.XDomainRequest)?1:0;if(isOldIE&&document.getElementsByTagName){var c=imgSizer;var imgCache=c.Config.imgCache;var images=(aScope&&aScope.length)?aScope:document.getElementsByTagName("img");for(var i=0;i<images.length;i++){images[i].origWidth=images[i].offsetWidth;images[i].origHeight=images[i].offsetHeight;imgCache.push(images[i]);c.ieAlpha(images[i]);images[i].style.width="100%";}
 if(imgCache.length){c.resize(function(){for(var i=0;i<imgCache.length;i++){var ratio=(imgCache[i].offsetWidth/imgCache[i].origWidth);imgCache[i].style.height=(imgCache[i].origHeight*ratio)+"px";}});}}},ieAlpha:function(img){var c=imgSizer;if(img.oldSrc){img.src=img.oldSrc;}
@@ -68,5 +124,29 @@ $(document).ready(function() {
 		$(this).addClass('btn success small');
 		return true;
 	});
+	
+	var $window_w = $(window).width();
+	if ($window_w > 480){
+		$('a.dropdown-toggle').css('display', 'none')
+		$('#menu-top-nav').removeClass('dropdown-menu');
+		$('#menu-top-nav').addClass('nav');
+	}
+	
+	// adjust top nav menu based on screen width
+	$(window).resize(function() {
+		var $window_w = $(window).width();
+		if ($window_w > 480){
+			$('a.dropdown-toggle').css('display', 'none')
+			$('#menu-top-nav').removeClass('dropdown-menu');
+			$('#menu-top-nav').addClass('nav');
+		}
+		else{
+			$('a.dropdown-toggle').css('display', 'inline-block')
+			$('#menu-top-nav').removeClass('nav');
+			$('#menu-top-nav').addClass('dropdown-menu');
+		}
+	});
+	
+	$('ul.nav').dropdown();
  
 }); /* end of as page load scripts */

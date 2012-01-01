@@ -54,7 +54,12 @@
 						<div class="container">
 							<nav role="navigation">
 								<a class="brand" id="logo" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-								<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+								<ul class="nav">
+									<li class="dropdown" data-dropdown="dropdown">
+										<a href="#" class="dropdown-toggle">Menu</a>
+										<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+									</li>
+								</ul>
 							</nav>
 							
 							<form class="pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
