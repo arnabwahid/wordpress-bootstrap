@@ -62,8 +62,20 @@ function optionsframework_options() {
 		
 	$options = array();
 		
-	$options[] = array( "name" => "Basic Settings",
+	$options[] = array( "name" => "Typography",
 						"type" => "heading");
+						
+	$options[] = array( "name" => "Headings",
+						"desc" => "Used in H1, H2, H3, H4, H5 & H6 tags.",
+						"id" => "heading_typography",
+						"std" => array('face' => '"Helvetica Neue",Helvetica,Arial,sans-serif','style' => 'bold italic','color' => '#123456'),
+						"type" => "wpbs_typography");
+						
+	$options[] = array( "name" => "Main Body Text",
+						"desc" => "Used in P tags.",
+						"id" => "main_body_typography",
+						"std" => array('face' => '"Helvetica Neue",Helvetica,Arial,sans-serif','style' => 'bold italic','color' => '#123456'),
+						"type" => "wpbs_typography");
 							
 	$options[] = array( "name" => "Input Text Mini",
 						"desc" => "A mini text input field.",
@@ -128,7 +140,7 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 						
-	$options[] = array( "name" => "Advanced Settings",
+	$options[] = array( "name" => "Top Nav",
 						"type" => "heading");
 						
 	$options[] = array( "name" => "Check to Show a Hidden Text Input",

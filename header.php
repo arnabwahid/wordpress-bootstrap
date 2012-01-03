@@ -41,6 +41,35 @@
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 		
+		<!-- bring in theme options styles -->
+		<?php 
+		$heading_typography = of_get_option('heading_typography');
+		if ($heading_typography) {
+			$theme_options_styles = 'h1, h2, h3, h4, h5, h6{ 
+									font-family: ' . $heading_typography['face'] . '; 
+									font-weight: ' . $heading_typography['style'] . '; 
+									color: ' . $heading_typography['color'] . '; 
+									}';
+		}
+		
+		$main_body_typography = of_get_option('main_body_typography');
+		if ($main_body_typography) {
+			$theme_options_styles .= 'body{ 
+									font-family: ' . $main_body_typography['face'] . '; 
+									font-weight: ' . $main_body_typography['style'] . '; 
+									color: ' . $main_body_typography['color'] . '; 
+									}';
+		}
+		?>
+		
+		<?php
+		
+		if($theme_options_styles){
+			echo '<style>' . $theme_options_styles . '</style>';
+		}
+		
+		?>
+				
 	</head>
 	
 	<body <?php body_class(); ?>>

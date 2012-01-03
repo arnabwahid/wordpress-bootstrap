@@ -175,6 +175,21 @@ function of_sanitize_typography( $input ) {
 }
 add_filter( 'of_sanitize_typography', 'of_sanitize_typography' );
 
+function of_sanitize_wpbs_typography( $input ) {
+	$output = wp_parse_args( $input, array(
+		'face'  => '',
+		'style' => '',
+		'color' => ''
+	) );
+
+	$output['face']  = apply_filters( 'of_font_face', $output['face'] );
+	$output['style'] = apply_filters( 'of_font_style', $output['style'] );
+	$output['color'] = apply_filters( 'of_color', $output['color'] );
+
+	return $output;
+}
+add_filter( 'of_sanitize_wpbs_typography', 'of_sanitize_wpbs_typography' );
+
 
 function of_sanitize_font_size( $value ) {
 	$recognized = of_recognized_font_sizes();
@@ -302,6 +317,7 @@ function of_recognized_font_sizes() {
  */
 function of_recognized_font_faces() {
 	$default = array(
+		'"Helvetica Neue",Helvetica,Arial,sans-serif'   => 'Default',
 		'arial'     => 'Arial',
 		'verdana'   => 'Verdana, Geneva',
 		'trebuchet' => 'Trebuchet',

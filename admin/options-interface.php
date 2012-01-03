@@ -218,6 +218,37 @@ function optionsframework_fields() {
 
 		break;
 		
+		// WPBS Typography - removed font size from std typography set of fields
+				case 'wpbs_typography':	
+				
+					$wpbs_typography_stored = $val;
+									
+					// Font Face
+					$output .= '<select class="of-typography of-typography-face" name="' . esc_attr( $option_name . '[' . $value['id'] . '][face]' ) . '" id="' . esc_attr( $value['id'] . '_face' ) . '">';
+					
+					$faces = of_recognized_font_faces();
+					foreach ( $faces as $key => $face ) {
+						$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $wpbs_typography_stored['face'], $key, false ) . '>' . esc_html( $face ) . '</option>';
+					}			
+					
+					$output .= '</select>';	
+		
+					// Font Weight
+					$output .= '<select class="of-typography of-typography-style" name="'.$option_name.'['.$value['id'].'][style]" id="'. $value['id'].'_style">';
+		
+					/* Font Style */
+					$styles = of_recognized_font_styles();
+					foreach ( $styles as $key => $style ) {
+						$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $wpbs_typography_stored['style'], $key, false ) . '>'. $style .'</option>';
+					}
+					$output .= '</select>';
+		
+					// Font Color		
+					$output .= '<div id="' . esc_attr( $value['id'] ) . '_color_picker" class="colorSelector"><div style="' . esc_attr( 'background-color:' . $wpbs_typography_stored['color'] ) . '"></div></div>';
+					$output .= '<input class="of-color of-typography of-typography-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $wpbs_typography_stored['color'] ) . '" />';
+		
+				break;
+		
 		// Background
 		case 'background':
 			

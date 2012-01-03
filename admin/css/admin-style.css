@@ -2,6 +2,11 @@
 /* OptionsFramework Admin Styles */
 /*-------------------------------------------------------------------------------------------*/
 
+/* 320press branding */
+#options_ico{
+	background: url('../images/320press-Logo-BW.png') no-repeat left top transparent;
+}
+
 .updated {
 	max-width:764px;
 	margin-bottom:0px !important;
