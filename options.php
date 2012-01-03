@@ -28,8 +28,8 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 	
-	// Test data
-	$test_array = array("one" => "One","two" => "Two","three" => "Three","four" => "Four","five" => "Five");
+	// fixed or scroll position
+	$fixed_scroll = array("fixed" => "Fixed","scroll" => "Scroll");
 	
 	// Multicheck Array
 	$multicheck_array = array("one" => "French Toast", "two" => "Pancake", "three" => "Omelette", "four" => "Crepe", "five" => "Waffle");
@@ -68,132 +68,80 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Headings",
 						"desc" => "Used in H1, H2, H3, H4, H5 & H6 tags.",
 						"id" => "heading_typography",
-						"std" => array('face' => '"Helvetica Neue",Helvetica,Arial,sans-serif','style' => 'bold italic','color' => '#123456'),
+						"std" => array('face' => '"Helvetica Neue",Helvetica,Arial,sans-serif','style' => 'bold','color' => '#404040'),
 						"type" => "wpbs_typography");
 						
 	$options[] = array( "name" => "Main Body Text",
 						"desc" => "Used in P tags.",
 						"id" => "main_body_typography",
-						"std" => array('face' => '"Helvetica Neue",Helvetica,Arial,sans-serif','style' => 'bold italic','color' => '#123456'),
+						"std" => array('face' => '"Helvetica Neue",Helvetica,Arial,sans-serif','style' => 'normal','color' => '#404040'),
 						"type" => "wpbs_typography");
-							
-	$options[] = array( "name" => "Input Text Mini",
-						"desc" => "A mini text input field.",
-						"id" => "example_text_mini",
-						"std" => "Default",
-						"class" => "mini",
-						"type" => "text");
-								
-	$options[] = array( "name" => "Input Text",
-						"desc" => "A text input field.",
-						"id" => "example_text",
-						"std" => "Default Value",
-						"type" => "text");
-							
-	$options[] = array( "name" => "Textarea",
-						"desc" => "Textarea description.",
-						"id" => "example_textarea",
-						"std" => "Default Text",
-						"type" => "textarea"); 
 						
-	$options[] = array( "name" => "Input Select Small",
-						"desc" => "Small Select Box.",
-						"id" => "example_select",
-						"std" => "three",
-						"type" => "select",
-						"class" => "mini", //mini, tiny, small
-						"options" => $test_array);			 
+	$options[] = array( "name" => "Link Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "link_color",
+						"std" => "",
+						"type" => "color");
+					
+	$options[] = array( "name" => "Link:hover Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "link_hover_color",
+						"std" => "",
+						"type" => "color");
 						
-	$options[] = array( "name" => "Input Select Wide",
-						"desc" => "A wider select box.",
-						"id" => "example_select_wide",
-						"std" => "two",
-						"type" => "select",
-						"options" => $test_array);
-						
-	$options[] = array( "name" => "Select a Category",
-						"desc" => "Passed an array of categories with cat_ID and cat_name",
-						"id" => "example_select_categories",
-						"type" => "select",
-						"options" => $options_categories);
-						
-	$options[] = array( "name" => "Select a Page",
-						"desc" => "Passed an pages with ID and post_title",
-						"id" => "example_select_pages",
-						"type" => "select",
-						"options" => $options_pages);
-						
-	$options[] = array( "name" => "Input Radio (one)",
-						"desc" => "Radio select with default options 'one'.",
-						"id" => "example_radio",
-						"std" => "one",
-						"type" => "radio",
-						"options" => $test_array);
-							
-	$options[] = array( "name" => "Example Info",
-						"desc" => "This is just some example information you can put in the panel.",
-						"type" => "info");
-											
-	$options[] = array( "name" => "Input Checkbox",
-						"desc" => "Example checkbox, defaults to true.",
-						"id" => "example_checkbox",
-						"std" => "1",
-						"type" => "checkbox");
+	$options[] = array( "name" => "Link:active Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "link_active_color",
+						"std" => "",
+						"type" => "color");
 						
 	$options[] = array( "name" => "Top Nav",
 						"type" => "heading");
 						
-	$options[] = array( "name" => "Check to Show a Hidden Text Input",
-						"desc" => "Click here and see what happens.",
-						"id" => "example_showhidden",
-						"type" => "checkbox");
-	
-	$options[] = array( "name" => "Hidden Text Input",
-						"desc" => "This option is hidden unless activated by a checkbox click.",
-						"id" => "example_text_hidden",
-						"std" => "Hello",
-						"class" => "hidden",
-						"type" => "text");
+	$options[] = array( "name" => "Position",
+						"desc" => "Fixed to the top of the window or scroll with content.",
+						"id" => "nav_position",
+						"std" => "fixed",
+						"type" => "select",
+						"class" => "mini", //mini, tiny, small
+						"options" => $fixed_scroll);
 						
-	$options[] = array( "name" => "Uploader Test",
-						"desc" => "This creates a full size uploader that previews the image.",
-						"id" => "example_uploader",
-						"type" => "upload");
-						
-	$options[] = array( "name" => "Example Image Selector",
-						"desc" => "Images for layout.",
-						"id" => "example_images",
-						"std" => "2c-l-fixed",
-						"type" => "images",
-						"options" => array(
-							'1col-fixed' => $imagepath . '1col.png',
-							'2c-l-fixed' => $imagepath . '2cl.png',
-							'2c-r-fixed' => $imagepath . '2cr.png')
-						);
-						
-	$options[] = array( "name" =>  "Example Background",
-						"desc" => "Change the background CSS.",
-						"id" => "example_background",
-						"std" => $background_defaults, 
-						"type" => "background");
-								
-	$options[] = array( "name" => "Multicheck",
-						"desc" => "Multicheck description.",
-						"id" => "example_multicheck",
-						"std" => $multicheck_defaults, // These items get checked by default
-						"type" => "multicheck",
-						"options" => $multicheck_array);
-							
-	$options[] = array( "name" => "Colorpicker",
-						"desc" => "No color selected by default.",
-						"id" => "example_colorpicker",
-						"std" => "",
+	$options[] = array( "name" => "Top nav background color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "top_nav_bg_color",
+						"std" => "#222222",
 						"type" => "color");
 						
-	$options[] = array( "name" => "Typography",
-						"desc" => "Example typography.",
-						"id" => "example_typography",
-						"std" => array('size' => '12px','face' => 'verdana','style' => 'bold italic','color' => '#123456'),
-						"type" => "typography");			
+	$options[] = array( "name" => "Check to use a gradient for top nav background",
+						"desc" => "Use gradient",
+						"id" => "showhidden_gradient",
+						"std" => "1",
+						"type" => "checkbox");
+	
+	$options[] = array( "name" => "Bottom gradient color",
+						"desc" => "Top nav background color used as top gradient color.",
+						"id" => "top_nav_bottom_gradient_color",
+						"std" => "#333333",
+						"class" => "hidden",
+						"type" => "color");
+						
+	$options[] = array( "name" => "Top nav item color",
+						"desc" => "Link color.",
+						"id" => "top_nav_link_color",
+						"std" => "#BFBFBF",
+						"type" => "color");
+						
+	$options[] = array( "name" => "Top nav item hover color",
+						"desc" => "Link hover color.",
+						"id" => "top_nav_link_hover_color",
+						"std" => "#FFFFFF",
+						"type" => "color");
+	
+	$options[] = array( "name" => "Search bar",
+						"desc" => "Show search bar in top nav",
+						"id" => "search_bar",
+						"std" => "1",
+						"type" => "checkbox");
+									
 	return $options;
 }

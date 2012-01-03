@@ -80,6 +80,11 @@ div[id*='attachment_']{
 	height: 100%;
 }
 
+.archive #main .post h3{
+	line-height: 24px;
+	margin-bottom: 10px;
+}
+
 /* comments */
 
 #comment-form-title{

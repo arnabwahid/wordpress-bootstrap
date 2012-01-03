@@ -45,27 +45,110 @@
 		<?php 
 		$heading_typography = of_get_option('heading_typography');
 		if ($heading_typography) {
-			$theme_options_styles = 'h1, h2, h3, h4, h5, h6{ 
-									font-family: ' . $heading_typography['face'] . '; 
-									font-weight: ' . $heading_typography['style'] . '; 
-									color: ' . $heading_typography['color'] . '; 
-									}';
+			$theme_options_styles = '
+			h1, h2, h3, h4, h5, h6{ 
+				font-family: ' . $heading_typography['face'] . '; 
+				font-weight: ' . $heading_typography['style'] . '; 
+				color: ' . $heading_typography['color'] . '; 
+			}';
 		}
 		
 		$main_body_typography = of_get_option('main_body_typography');
 		if ($main_body_typography) {
-			$theme_options_styles .= 'body{ 
-									font-family: ' . $main_body_typography['face'] . '; 
-									font-weight: ' . $main_body_typography['style'] . '; 
-									color: ' . $main_body_typography['color'] . '; 
-									}';
+			$theme_options_styles .= '
+			body{ 
+				font-family: ' . $main_body_typography['face'] . '; 
+				font-weight: ' . $main_body_typography['style'] . '; 
+				color: ' . $main_body_typography['color'] . '; 
+			}';
 		}
-		?>
 		
-		<?php
+		$link_color = of_get_option('link_color');
+		if ($link_color) {
+			$theme_options_styles .= '
+			a{ 
+				color: ' . $link_color . '; 
+			}';
+		}
 		
+		$link_hover_color = of_get_option('link_hover_color');
+		if ($link_hover_color) {
+			$theme_options_styles .= '
+			a:hover{ 
+				color: ' . $link_hover_color . '; 
+			}';
+		}
+		
+		$link_active_color = of_get_option('link_active_color');
+		if ($link_active_color) {
+			$theme_options_styles .= '
+			a:active{ 
+				color: ' . $link_active_color . '; 
+			}';
+		}
+		
+		$topbar_position = of_get_option('nav_position');
+		if ($topbar_position == 'scroll') {
+			$theme_options_styles .= '
+			.topbar{ 
+				position: static; 
+			}
+			#content{
+				padding-top: 20px;
+			}
+			'	
+			;
+		}
+		
+		$topbar_bg_color = of_get_option('top_nav_bg_color');
+		if ($topbar_bg_color) {
+			$theme_options_styles .= '
+			.topbar-inner, .topbar .fill { 
+				background-color: '. $topbar_bg_color . ';
+			}';
+		}
+		
+		$use_gradient = of_get_option('showhidden_gradient');
+		if ($use_gradient) {
+			$topbar_bottom_gradient_color = of_get_option('top_nav_bottom_gradient_color');
+		
+			$theme_options_styles .= '
+			.topbar-inner, .topbar .fill {
+				background-image: -khtml-gradient(linear, left top, left bottom, from(' . $topbar_bg_color . '), to('. $topbar_bottom_gradient_color . '));
+				background-image: -moz-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
+				background-image: -ms-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
+				background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, ' . $topbar_bg_color . '), color-stop(100%, '. $topbar_bottom_gradient_color . '));
+				background-image: -webkit-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . '2);
+				background-image: -o-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
+				background-image: linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\'' . $topbar_bg_color . '\', endColorstr=\''. $topbar_bottom_gradient_color . '2\', GradientType=0);
+			}';
+		}
+		else{
+			$theme_options_styles .= '.topbar-inner, .topbar .fill { background-image: none; };';
+		}	
+		
+		$topbar_link_color = of_get_option('top_nav_link_color');
+		if ($topbar_link_color) {
+			$theme_options_styles .= '
+			.topbar a { 
+				color: '. $topbar_link_color . ';
+			}';
+		}
+		
+		$topbar_link_hover_color = of_get_option('top_nav_link_hover_color');
+		if ($topbar_link_hover_color) {
+			$theme_options_styles .= '
+			.topbar a:hover { 
+				color: '. $topbar_link_hover_color . ';
+			}';
+		}
+				
+				
 		if($theme_options_styles){
-			echo '<style>' . $theme_options_styles . '</style>';
+			echo '<style>' 
+			. $theme_options_styles . '
+			</style>';
 		}
 		
 		?>
@@ -91,9 +174,11 @@
 								</ul>
 							</nav>
 							
+							<?php if(of_get_option('search_bar', '1')) {?>
 							<form class="pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 								<input name="s" id="s" type="text" placeholder="Search">
 							</form>
+							<?php } ?>
 							
 						</div>
 					</div>

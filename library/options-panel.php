@@ -32,12 +32,12 @@ function optionsframework_custom_scripts() { ?>
 <script type="text/javascript">
 jQuery(document).ready(function() {
 
-	jQuery('#example_showhidden').click(function() {
-  		jQuery('#section-example_text_hidden').fadeToggle(400);
+	jQuery('#showhidden_gradient').click(function() {
+  		jQuery('#section-top_nav_bottom_gradient_color').fadeToggle(400);
 	});
 	
-	if (jQuery('#example_showhidden:checked').val() !== undefined) {
-		jQuery('#section-example_text_hidden').show();
+	if (jQuery('#showhidden_gradient:checked').val() !== undefined) {
+		jQuery('#section-top_nav_bottom_gradient_color').show();
 	}
 	
 });

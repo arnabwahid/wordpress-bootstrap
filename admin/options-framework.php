@@ -232,6 +232,9 @@ function optionsframework_page() {
 		</div>
 	</form>
 </div> <!-- / #container -->
+
+<p>Brought to you by <a href="http://320press.com" target="_blank">320press</a>.</p>
+
 </div>
 </div> <!-- / .wrap -->
 

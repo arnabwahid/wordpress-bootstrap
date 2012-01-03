@@ -14,7 +14,10 @@ require_once('library/plugins.php');          // plugins & extra functions (opti
 require_once('library/custom-post-type.php'); // custom post type example
 
 // Options panel
-include_once('library/options-panel.php');
+require_once('library/options-panel.php');
+
+// Shortcodes
+require_once('library/shortcodes.php');
 
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
@@ -22,7 +25,8 @@ include_once('library/options-panel.php');
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
+add_image_size( 'wpbs-featured', 580, 300, true );
+add_image_size( 'bones-thumb-600', 600, 150, false );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 
 to add more sizes, simply copy a line from above 
@@ -164,36 +168,6 @@ function wp_tag_cloud_filter($return, $args)
   return '<div id="tag-cloud">'.$return.'</div>';
 }
 
-/*************************** shortcodes ************************************/
-
-/* gallery shortcode */
-
-// remove the standard shortcode
-remove_shortcode('gallery', 'gallery_shortcode');
-add_shortcode('gallery', 'gallery_shortcode_tbs');
-
-function gallery_shortcode_tbs($attr) {
-	global $post, $wp_locale;
-
-	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
-	$attachments = get_posts($args);
-	if ($attachments) {
-		$output = '<ul class="media-grid">';
-		foreach ( $attachments as $attachment ) {
-			$output .= '<li>';
-			$att_title = apply_filters( 'the_title' , $attachment->post_title );
-			$output .= wp_get_attachment_link( $attachment->ID , 'thumbnail', true );
-			$output .= '</li>';
-		}
-		$output .= '</ul>';
-	}
-
-	return $output;
-}
-
-
-// options framework
-
-
-
+// Enable shortcodes in widgets
+add_filter('widget_text', 'do_shortcode');
 ?>
