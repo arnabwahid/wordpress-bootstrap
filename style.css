@@ -281,7 +281,7 @@ li.previous a:hover:before{
 }
 
 .widget_search input{
-	width: 255px;
+	width: 230px;
 }
 
 @media only screen and (min-width: 940px) {
@@ -328,5 +328,9 @@ li.previous a:hover:before{
 	
 	#s{
 		width: 210px;
+	}
+	
+	.widget_search input{
+		width: 255px;
 	}
 }
