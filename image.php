@@ -19,14 +19,14 @@
 						<section class="post_content clearfix" itemprop="articleBody">
 							
 							<!-- To display current image in the photo gallery -->
-							<div style="text-align: center;">
+							<div class="attachment-img">
 							      <a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a>
 							</div>
 							
 							<!-- To display thumbnail of previous and next image in the photo gallery -->
 							<ul class="media-grid">
-								<li><?php next_image_link() ?></li>
-								<li><?php previous_image_link() ?></li>
+								<li class="next"><?php next_image_link() ?></li>
+								<li class="previous"><?php previous_image_link() ?></li>
 							</ul>
 							
 						</section> <!-- end article section -->
@@ -69,7 +69,7 @@
 					<!-- Using WordPress functions to retrieve the extracted EXIF information from database -->
 					<div class="alert-message block-message info metadata">
 					
-						<p class="alert-message">Image metadata</p>
+						<h3>Image metadata</h3>
 					
 					   <?php
 					      $imgmeta = wp_get_attachment_metadata( $id );

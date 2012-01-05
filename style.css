@@ -8,6 +8,22 @@ Author URI: http://320press.com
 Tags: bones, twitter, bootstrap, 320press, clean, basic
 */
 
+/* micro clearfix: http://nicolasgallagher.com/micro-clearfix-hack/ */
+/* For modern browsers */
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+
+.clearfix:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+    zoom:1;
+}
 
 /* layout */
 
@@ -56,7 +72,31 @@ Tags: bones, twitter, bootstrap, 320press, clean, basic
 	padding: 60px 10px 0;
 }
 
+.more-link{
+	white-space: nowrap;
+}
+
+.footer-links{
+	float: right;
+	margin-bottom: 18px;
+}
+
+#menu-footer-nav{
+	list-style-type: none;
+	margin-left: 0;
+}
+
+#menu-footer-nav li{
+	float: left;
+	margin-left: 10px;
+}
+
 /* post styling */
+
+#main p.meta{
+	font-style: italic;
+	color: #808080;
+}
 
 #main article{
 	margin-bottom: 18px;
@@ -168,13 +208,60 @@ a.comment-reply-link{
 	height: 100%;
 }
 
+.ie8 #main .media-grid img{
+	max-height: none !important;
+	max-width: none !important;
+}
+
+.attachment-img{
+	margin-bottom: 18px;
+}
+
 .metadata p.alert-message{
 	margin-right: 0;
 	margin-bottom: 18px;
 }
 
+li.next a, li.previous a{
+	position: relative;
+}
+
+li.next a:hover:before{
+	content: "\2190";
+	position: absolute;
+	display: block;
+	top: 42%;
+	left: 0;
+	background-color: #BFBFBF;
+	color: #444;
+	width: 20px;
+	height: 20px;
+	padding-left: 5px;
+	text-decoration: none;
+	box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+
+li.previous a:hover:before{
+	content: "\2192";
+	position: absolute;
+	display: block;
+	top: 42%;
+	right: 0;
+	background-color: #BFBFBF;
+	color: #444;
+	width: 20px;
+	height: 20px;
+	padding-left: 5px;
+	text-decoration: none;
+	box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+
 
 /* widget styles */
+
+.widget{
+	margin-bottom: 18px;
+}
 
 #tag-cloud{
 	margin-bottom: 18px;
@@ -191,6 +278,10 @@ a.comment-reply-link{
 
 .widget_search form{
 	padding-left: 0;
+}
+
+.widget_search input{
+	width: 255px;
 }
 
 @media only screen and (min-width: 940px) {
