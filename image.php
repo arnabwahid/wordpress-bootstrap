@@ -20,13 +20,22 @@
 							
 							<!-- To display current image in the photo gallery -->
 							<div class="attachment-img">
-							      <a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a>
+							      <a href="<?php echo wp_get_attachment_url($post->ID); ?>">
+							      							      
+							      <?php 
+							      	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' ); 
+							       
+								      if ($image) : ?>
+								          <img src="<?php echo $image[0]; ?>" alt="" />
+								      <?php endif; ?>
+							      
+							      </a>
 							</div>
 							
 							<!-- To display thumbnail of previous and next image in the photo gallery -->
 							<ul class="media-grid">
-								<li class="next"><?php next_image_link() ?></li>
-								<li class="previous"><?php previous_image_link() ?></li>
+								<li class="next pull-left"><?php next_image_link() ?></li>
+								<li class="previous pull-right"><?php previous_image_link() ?></li>
 							</ul>
 							
 						</section> <!-- end article section -->
