@@ -196,6 +196,13 @@ ol.commentlist span.edit-comment{
 	top: 0;
 }
 
+li.bypostauthor{
+	background-color: #F0F0F0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
 a.comment-reply-link{
 	position: absolute;
 	right: 0;

@@ -26,9 +26,15 @@ Template Name: Homepage
 						
 						</header>
 						
-						<section class="post_content">
+						<section class="row post_content">
+						
+							<div class="span10">
 						
 								<?php the_content(); ?>
+								
+							</div>
+							
+							<?php get_sidebar('sidebar2'); // sidebar 2 ?>
 													
 						</section> <!-- end article header -->
 						

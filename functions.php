@@ -54,8 +54,18 @@ you like. Enjoy!
 function bones_register_sidebars() {
     register_sidebar(array(
     	'id' => 'sidebar1',
-    	'name' => 'Sidebar 1',
-    	'description' => 'The first (primary) sidebar.',
+    	'name' => 'Main Sidebar',
+    	'description' => 'Used on every page BUT the homepage page template.',
+    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    	'after_widget' => '</div>',
+    	'before_title' => '<h4 class="widgettitle">',
+    	'after_title' => '</h4>',
+    ));
+    
+    register_sidebar(array(
+    	'id' => 'sidebar2',
+    	'name' => 'Homepage Sidebar',
+    	'description' => 'Used only on the homepage page template.',
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -70,15 +80,7 @@ function bones_register_sidebars() {
     Just change the name to whatever your new
     sidebar's id is, for example:
     
-    register_sidebar(array(
-    	'id' => 'sidebar2',
-    	'name' => 'Sidebar 2',
-    	'description' => 'The second (secondary) sidebar.',
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h4 class="widgettitle">',
-    	'after_title' => '</h4>',
-    ));
+    
     
     To call the sidebar in your template, you can just copy
     the sidebar.php file and rename it to your sidebar's name.
@@ -240,7 +242,7 @@ echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce
                     
                     // textarea  
                     case 'textarea':  
-                        echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="120" rows="4">'.$meta.'</textarea> 
+                        echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="80" rows="4">'.$meta.'</textarea> 
                             <br /><span class="description">'.$field['desc'].'</span>';  
                     break;  
                 } //end switch  

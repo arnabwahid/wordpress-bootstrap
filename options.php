@@ -142,6 +142,21 @@ function optionsframework_options() {
 						"id" => "search_bar",
 						"std" => "1",
 						"type" => "checkbox");
+						
+	$options[] = array( "name" => "Other Settings",
+						"type" => "heading");
+						
+	$options[] = array( "name" => "Homepage page template hero-unit background color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "hero_unit_bg_color",
+						"std" => "#F5F5F5",
+						"type" => "color");
+						
+	$options[] = array( "name" => "'Comments are closed' message on pages",
+						"desc" => "Suppress 'Comments are closed' message",
+						"id" => "suppress_comments_message",
+						"std" => "1",
+						"type" => "checkbox");
 									
 	return $options;
 }

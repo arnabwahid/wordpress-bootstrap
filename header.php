@@ -153,6 +153,22 @@
 				color: '. $topbar_link_hover_color . ';
 			}';
 		}
+		
+		$hero_unit_bg_color = of_get_option('hero_unit_bg_color');
+		if ($hero_unit_bg_color) {
+			$theme_options_styles .= '
+			.page-template-page-homepage-php .hero-unit { 
+				background-color: '. $hero_unit_bg_color . ';
+			}';
+		}
+		
+		$suppress_comments_message = of_get_option('suppress_comments_message');
+		if ($suppress_comments_message){
+			$theme_options_styles .= '
+			#main article {
+				border-bottom: none;
+			}';
+		}
 				
 				
 		if($theme_options_styles){
