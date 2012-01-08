@@ -22,6 +22,14 @@ require_once('library/shortcodes.php');
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 
+// Custom Backend Footer
+function bones_custom_admin_footer() {
+	echo '<span id="footer-thankyou">Developed by <a href="http://320press.com" target="_blank">320press</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.';
+}
+
+// adding it to the admin area
+add_filter('admin_footer_text', 'bones_custom_admin_footer');
+
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
