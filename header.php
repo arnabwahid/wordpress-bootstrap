@@ -49,7 +49,7 @@
 		<!-- end of wordpress head -->
 		
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.min.css">
 		
 		<!-- bring in theme options styles -->
 		<?php 
