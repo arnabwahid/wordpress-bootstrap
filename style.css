@@ -126,10 +126,17 @@ div[id*='attachment_']{
 
 img.alignleft{
 	margin-right: 10px;
+	float: left;
 }
 
-img.alighright{
+img.alignright{
 	margin-left: 10px;
+	float: right;
+}
+
+img.aligncenter{
+	display: block;
+	margin: 0 auto;
 }
 
 .archive #main .post h3{
