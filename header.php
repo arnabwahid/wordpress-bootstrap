@@ -191,7 +191,7 @@
 					<div class="topbar-inner">
 						<div class="container">
 							<nav role="navigation">
-								<a class="brand" id="logo" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
 								<ul class="nav">
 									<li class="dropdown" data-dropdown="dropdown">
 										<a href="#" class="dropdown-toggle">Menu</a>

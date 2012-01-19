@@ -30,6 +30,9 @@ function bones_custom_admin_footer() {
 // adding it to the admin area
 add_filter('admin_footer_text', 'bones_custom_admin_footer');
 
+// Set content width
+if ( ! isset( $content_width ) ) $content_width = 580;
+
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes

@@ -135,7 +135,11 @@ The comments page for Bones
 	  <?php comment_id_fields(); ?>
 	</div>
 	
-	<?php do_action('comment_form', $post->ID); ?>
+	<?php 
+		//comment_form();
+		do_action('comment_form()', $post->ID); 
+	
+	?>
 	
 	</form>
 	
