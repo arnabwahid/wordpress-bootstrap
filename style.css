@@ -120,7 +120,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 #main article{
 	margin-bottom: 18px;
 	border-bottom: 1px solid #eeeeee;
-	padding-bottom: 18px;
+	padding: 9px 0px;
 }
 
 #main article footer{
@@ -229,6 +229,7 @@ ol.commentlist ul.children{
 
 ol.commentlist div.avatar{
 	float: left;
+	text-align:center;
 }
 
 ol.commentlist time{
@@ -247,7 +248,7 @@ ol.commentlist a.comment-edit-link{
 
 ol.commentlist span.edit-comment{
 	position: absolute;
-	right: 0;
+	right: 10px;
 	top: 0;
 }
 
