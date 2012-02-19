@@ -48,9 +48,9 @@
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
 		
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-responsive.css">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-responsive.min.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.min.css">
 		
 		<!-- bring in theme options styles -->
 		<?php 
