@@ -188,9 +188,6 @@
 				border-bottom: none;
 			}';
 		}
-		
-		
-				
 				
 		if($theme_options_styles){
 			echo '<style>' 

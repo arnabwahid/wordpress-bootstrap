@@ -11,7 +11,6 @@ sidebars, comments, ect.
 // Get Bones Core Up & Running!
 require_once('library/bones.php');            // core functions (don't remove)
 require_once('library/plugins.php');          // plugins & extra functions (optional)
-require_once('library/custom-post-type.php'); // custom post type example
 
 // Options panel
 require_once('library/options-panel.php');
@@ -113,12 +112,12 @@ function bones_comments($comment, $args, $depth) {
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
 				<div class="span10">
-					<?php printf(__('<h4>%s</h4>'), get_comment_author_link()) ?>
-					<?php edit_comment_link(__('Edit'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
+					<?php printf(__('<h4>%s</h4>','wpbs'), get_comment_author_link()) ?>
+					<?php edit_comment_link(__('Edit','wpbs'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
                     
                     <?php if ($comment->comment_approved == '0') : ?>
        					<div class="alert-message success">
-          				<p><?php _e('Your comment is awaiting moderation.') ?></p>
+          				<p><?php _e('Your comment is awaiting moderation.','wpbs') ?></p>
           				</div>
 					<?php endif; ?>
                     
@@ -142,7 +141,7 @@ function bones_wpsearch($form) {
     $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
     <label class="screen-reader-text" for="s">' . __('Search for:', 'bonestheme') . '</label>
     <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search the Site..." />
-    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
+    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search','wpbs') .'" />
     </form>';
     return $form;
 } // don't remove this bracket!
@@ -155,8 +154,8 @@ function custom_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
-	' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ) . '
-	<label for="' . $label . '">' . __( "Password:" ) . ' </label><div class="input"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn primary" value="' . esc_attr__( "Submit" ) . '" /></div>
+	' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ,'wpbs') . '
+	<label for="' . $label . '">' . __( "Password:" ,'wpbs') . ' </label><div class="input"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'wpbs' ) . '" /></div>
 	</form></div>
 	';
 	return $o;
@@ -366,7 +365,7 @@ class description_walker extends Walker_Nav_Menu
 }
 
 
-
+add_editor_style('editor-style.css');
 
 
 

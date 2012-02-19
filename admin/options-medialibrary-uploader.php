@@ -23,7 +23,7 @@ if ( ! function_exists( 'optionsframework_mlu_init' ) ) {
 	function optionsframework_mlu_init () {
 		register_post_type( 'optionsframework', array(
 			'labels' => array(
-				'name' => __( 'Options Framework Internal Container' ),
+				'name' => __( 'Options Framework Internal Container','optionsframework' ),
 			),
 			'public' => true,
 			'show_ui' => false,
@@ -125,7 +125,7 @@ if ( ! function_exists( 'optionsframework_medialibrary_uploader' ) ) {
 		
 		if ( $value ) { $class = ' has-file'; }
 		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
-		$output .= '<input id="upload_' . $id . '" class="upload_button button" type="button" value="' . __( 'Upload' ) . '" rel="' . $int . '" />' . "\n";
+		$output .= '<input id="upload_' . $id . '" class="upload_button button" type="button" value="' . __( 'Upload','optionsframework' ) . '" rel="' . $int . '" />' . "\n";
 		
 		if ( $_desc != '' ) {
 			$output .= '<span class="of_metabox_desc">' . $_desc . '</span>' . "\n";
