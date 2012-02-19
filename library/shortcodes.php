@@ -14,14 +14,14 @@ function gallery_shortcode_tbs($attr) {
 	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
 	$attachments = get_posts($args);
 	if ($attachments) {
-		$output = '<ul class="media-grid">';
+		$output = '<div class="row-fluid"><ul class="thumbnails">';
 		foreach ( $attachments as $attachment ) {
-			$output .= '<li>';
+			$output .= '<li class="span2">';
 			$att_title = apply_filters( 'the_title' , $attachment->post_title );
 			$output .= wp_get_attachment_link( $attachment->ID , 'thumbnail', true );
 			$output .= '</li>';
 		}
-		$output .= '</ul>';
+		$output .= '</ul></div>';
 	}
 
 	return $output;
@@ -32,11 +32,25 @@ function gallery_shortcode_tbs($attr) {
 // Buttons
 function buttons( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-	'type' => 'default', /* primary, default, info, success, danger */
+	'type' => 'default', /* primary, default, info, success, danger, warning, inverse */
 	'size' => 'medium', /* small, medium, large */
 	'url'  => '',
 	'text' => '', 
 	), $atts ) );
+	
+	if($type == "default"){
+		$type = "";
+	}
+	else{ 
+		$type = "btn-" . $type;
+	}
+	
+	if($size == "medium"){
+		$size = "";
+	}
+	else{
+		$size = "btn-" . $size;
+	}
 	
 	$output = '<a href="' . $url . '" class="btn '. $type . ' ' . $size . '">';
 	$output .= $text;
@@ -50,14 +64,14 @@ add_shortcode('button', 'buttons');
 // Alerts
 function alerts( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-	'type' => 'warning', /* warning, info, success, error */
+	'type' => 'alert-info', /* alert-info, alert-success, alert-error */
 	'close' => 'false', /* display close link */
 	'text' => '', 
 	), $atts ) );
 	
-	$output = '<div class="fade in alert-message '. $type . '">';
+	$output = '<div class="fade in alert '. $type . '">';
 	if($close == 'true') {
-		$output .= '<a class="close" href="#">×</a>';
+		$output .= '<a class="close" data-dismiss="alert">×</a>';
 	}
 	$output .= '<p>' . $text . '</p></div>';
 	
@@ -69,14 +83,14 @@ add_shortcode('alert', 'alerts');
 // Block Messages
 function block_messages( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-	'type' => 'warning', /* warning, info, success, error */
+	'type' => 'alert-info', /* alert-info, alert-success, alert-error */
 	'close' => 'false', /* display close link */
 	'text' => '', 
 	), $atts ) );
 	
-	$output = '<div class="fade in alert-message block-message '. $type . '">';
+	$output = '<div class="fade in alert alert-block '. $type . '">';
 	if($close == 'true') {
-		$output .= '<a class="close" href="#">×</a>';
+		$output .= '<a class="close" data-dismiss="alert">×</a>';
 	}
 	$output .= '<p>' . $text . '</p></div>';
 	

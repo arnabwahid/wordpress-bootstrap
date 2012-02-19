@@ -6,11 +6,11 @@ Template Name: Left Sidebar Page
 
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row">
+			<div id="content" class="clearfix row-fluid">
             
             	<?php get_sidebar(); // sidebar 1 ?>
 			
-				<div id="main" class="span10 clearfix" role="main">
+				<div id="main" class="span8 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -18,7 +18,7 @@ Template Name: Left Sidebar Page
 						
 						<header>
 							
-							<h1><?php the_title(); ?></h1>
+							<div class="page-header"><h1><?php the_title(); ?></h1></div>
 						
 						</header> <!-- end article header -->
 					

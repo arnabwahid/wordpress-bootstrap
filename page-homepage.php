@@ -6,9 +6,9 @@ Template Name: Homepage
 
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row">
+			<div id="content" class="clearfix row-fluid">
 			
-				<div id="main" class="span16 clearfix" role="main">
+				<div id="main" class="span12 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -26,9 +26,9 @@ Template Name: Homepage
 						
 						</header>
 						
-						<section class="row post_content">
+						<section class="row-fluid post_content">
 						
-							<div class="span10">
+							<div class="span8">
 						
 								<?php the_content(); ?>
 								

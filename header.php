@@ -27,8 +27,8 @@
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		
 		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write(unescape('%3Cscript src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery-1.6.1.min.js"%3E%3C/script%3E'))</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write(unescape('%3Cscript src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 		
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/modernizr.full.min.js"></script>
 		
@@ -48,8 +48,9 @@
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
 		
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.min.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 		
 		<!-- bring in theme options styles -->
 		<?php 
@@ -100,11 +101,11 @@
 		$topbar_position = of_get_option('nav_position');
 		if ($topbar_position == 'scroll') {
 			$theme_options_styles .= '
-			.topbar{ 
+			.navbar{ 
 				position: static; 
 			}
-			#content{
-				padding-top: 20px;
+			body{
+				padding-top: 0;
 			}
 			'	
 			;
@@ -113,7 +114,7 @@
 		$topbar_bg_color = of_get_option('top_nav_bg_color');
 		if ($topbar_bg_color) {
 			$theme_options_styles .= '
-			.topbar-inner, .topbar .fill { 
+			.navbar-inner, .navbar .fill { 
 				background-color: '. $topbar_bg_color . ';
 			}';
 		}
@@ -123,7 +124,7 @@
 			$topbar_bottom_gradient_color = of_get_option('top_nav_bottom_gradient_color');
 		
 			$theme_options_styles .= '
-			.topbar-inner, .topbar .fill {
+			.navbar-inner, .navbar .fill {
 				background-image: -khtml-gradient(linear, left top, left bottom, from(' . $topbar_bg_color . '), to('. $topbar_bottom_gradient_color . '));
 				background-image: -moz-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
 				background-image: -ms-linear-gradient(top, ' . $topbar_bg_color . ', '. $topbar_bottom_gradient_color . ');
@@ -141,7 +142,7 @@
 		$topbar_link_color = of_get_option('top_nav_link_color');
 		if ($topbar_link_color) {
 			$theme_options_styles .= '
-			.topbar a { 
+			.navbar .nav li a { 
 				color: '. $topbar_link_color . ';
 			}';
 		}
@@ -149,9 +150,27 @@
 		$topbar_link_hover_color = of_get_option('top_nav_link_hover_color');
 		if ($topbar_link_hover_color) {
 			$theme_options_styles .= '
-			.topbar a:hover { 
+			.navbar .nav li a:hover { 
 				color: '. $topbar_link_hover_color . ';
 			}';
+		}
+		
+		$topbar_dropdown_hover_bg_color = of_get_option('top_nav_dropdown_hover_bg');
+		if ($topbar_dropdown_hover_bg_color) {
+			$theme_options_styles .= '
+				.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+					background-color: ' . $topbar_dropdown_hover_bg_color . ';
+				}
+			';
+		}
+		
+		$topbar_dropdown_item_color = of_get_option('top_nav_dropdown_item');
+		if ($topbar_dropdown_item_color){
+			$theme_options_styles .= '
+				.dropdown-menu a{
+					color: ' . $topbar_dropdown_item_color . ' !important;
+				}
+			';
 		}
 		
 		$hero_unit_bg_color = of_get_option('hero_unit_bg_color');
@@ -169,6 +188,8 @@
 				border-bottom: none;
 			}';
 		}
+		
+		
 				
 				
 		if($theme_options_styles){
@@ -187,22 +208,27 @@
 		
 			<div id="inner-header" class="clearfix">
 				
-				<div class="topbar">
-					<div class="topbar-inner">
-						<div class="container">
+				<div class="navbar navbar-fixed-top">
+					<div class="navbar-inner">
+						<div class="container-fluid nav-container">
 							<nav role="navigation">
 								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-								<ul class="nav">
-									<li class="dropdown" data-dropdown="dropdown">
-										<a href="#" class="dropdown-toggle">Menu</a>
-										<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-									</li>
-								</ul>
+								
+								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+								</a>
+								
+								<div class="nav-collapse">
+									<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+								</div>
+								
 							</nav>
 							
 							<?php if(of_get_option('search_bar', '1')) {?>
-							<form class="pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-								<input name="s" id="s" type="text" placeholder="Search">
+							<form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+								<input name="s" id="s" type="text" class="search-query" placeholder="Search">
 							</form>
 							<?php } ?>
 							
@@ -214,4 +240,4 @@
 		
 		</header> <!-- end header -->
 		
-		<div class="container">
+		<div class="container-fluid">

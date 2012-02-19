@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row">
+			<div id="content" class="clearfix row-fluid">
 			
-				<div id="main" class="span10 clearfix" role="main">
+				<div id="main" class="span8 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -12,7 +12,7 @@
 						
 							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
 							
-							<h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1>
+							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
 							
 							<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
 						

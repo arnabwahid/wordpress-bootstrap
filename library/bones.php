@@ -97,11 +97,12 @@ function bones_main_nav() {
     wp_nav_menu( 
     	array( 
     		'menu' => 'main_nav', /* menu name */
-    		'menu_class' => 'dropdown-menu',
+    		'menu_class' => 'nav',
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
     		'container' => 'false', /* container class */
     		'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
-    		'depth' => '1' /* suppress lower levels for now */
+    		'depth' => '2', /* suppress lower levels for now */
+    		'walker' => new description_walker()
     	)
     );
 }
@@ -195,9 +196,10 @@ function page_navi($before = '', $after = '') {
 		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="First">'.$first_page_text.'</a></li>';
 	}
 		
-	echo '<li class="">';
-	previous_posts_link('&larr; Previous');
-	echo '</li>';
+	$prevposts = get_previous_posts_link('&larr; Previous');
+	if($prevposts) { echo '<li>' . $prevposts  . '</li>'; }
+	else { echo '<li class="disabled"><a href="#">&larr; Previous</a></li>'; }
+	
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
 			echo '<li class="active"><a href="#">'.$i.'</a></li>';

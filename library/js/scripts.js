@@ -1,8 +1,8 @@
 /* ==========================================================
- * bootstrap-alerts.js v1.4.0
+ * bootstrap-alert.js v2.0.0
  * http://twitter.github.com/bootstrap/javascript.html#alerts
  * ==========================================================
- * Copyright 2011 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,57 +22,44 @@
 
   "use strict"
 
-  /* CSS TRANSITION SUPPORT (https://gist.github.com/373874)
-   * ======================================================= */
-
-   var transitionEnd
-
-   $(document).ready(function () {
-
-     $.support.transition = (function () {
-       var thisBody = document.body || document.documentElement
-         , thisStyle = thisBody.style
-         , support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined
-       return support
-     })()
-
-     // set CSS transition event type
-     if ( $.support.transition ) {
-       transitionEnd = "TransitionEnd"
-       if ( $.browser.webkit ) {
-        transitionEnd = "webkitTransitionEnd"
-       } else if ( $.browser.mozilla ) {
-        transitionEnd = "transitionend"
-       } else if ( $.browser.opera ) {
-        transitionEnd = "oTransitionEnd"
-       }
-     }
-
-   })
-
  /* ALERT CLASS DEFINITION
   * ====================== */
 
-  var Alert = function ( content, options ) {
-    this.settings = $.extend({}, $.fn.alert.defaults, options)
-    this.$element = $(content)
-      .delegate(this.settings.selector, 'click', this.close)
-  }
+  var dismiss = '[data-dismiss="alert"]'
+    , Alert = function ( el ) {
+        $(el).on('click', dismiss, this.close)
+      }
 
   Alert.prototype = {
 
-    close: function (e) {
-      var $element = $(this).parent('.alert-message')
+    constructor: Alert
 
-      e && e.preventDefault()
-      $element.removeClass('in')
+  , close: function ( e ) {
+      var $this = $(this)
+        , selector = $this.attr('data-target')
+        , $parent
 
-      function removeElement () {
-        $element.remove()
+      if (!selector) {
+        selector = $this.attr('href')
+        selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
       }
 
-      $.support.transition && $element.hasClass('fade') ?
-        $element.bind(transitionEnd, removeElement) :
+      $parent = $(selector)
+      $parent.trigger('close')
+
+      e && e.preventDefault()
+
+      $parent.length || ($parent = $this.hasClass('alert') ? $this : $this.parent())
+
+      $parent.removeClass('in')
+
+      function removeElement() {
+        $parent.remove()
+        $parent.trigger('closed')
+      }
+
+      $.support.transition && $parent.hasClass('fade') ?
+        $parent.on($.support.transition.end, removeElement) :
         removeElement()
     }
 
@@ -82,36 +69,26 @@
  /* ALERT PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.alert = function ( options ) {
-
-    if ( options === true ) {
-      return this.data('alert')
-    }
-
+  $.fn.alert = function ( option ) {
     return this.each(function () {
       var $this = $(this)
-
-      if ( typeof options == 'string' ) {
-        return $this.data('alert')[options]()
-      }
-
-      $(this).data('alert', new Alert( this, options ))
-
+        , data = $this.data('alert')
+      if (!data) $this.data('alert', (data = new Alert(this)))
+      if (typeof option == 'string') data[option].call($this)
     })
   }
 
-  $.fn.alert.defaults = {
-    selector: '.close'
-  }
+  $.fn.alert.Constructor = Alert
 
-  $(document).ready(function () {
-    new Alert($('body'), {
-      selector: '.alert-message[data-alert] .close'
-    })
+
+ /* ALERT DATA-API
+  * ============== */
+
+  $(function () {
+    $('body').on('click.alert.data-api', dismiss, Alert.prototype.close)
   })
 
-}( window.jQuery || window.ender );
-
+}( window.jQuery )
 /*
 Bones Scripts File
 Author: Eddie Machado
@@ -133,11 +110,149 @@ Modernizr.load([
 	}
 ]);
 
+/* =============================================================
+ * bootstrap-collapse.js v2.0.0
+ * http://twitter.github.com/bootstrap/javascript.html#collapse
+ * =============================================================
+ * Copyright 2012 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ============================================================ */
+
+!function( $ ){
+
+  "use strict"
+
+  var Collapse = function ( element, options ) {
+  	this.$element = $(element)
+    this.options = $.extend({}, $.fn.collapse.defaults, options)
+
+    if (this.options["parent"]) {
+      this.$parent = $(this.options["parent"])
+    }
+
+    this.options.toggle && this.toggle()
+  }
+
+  Collapse.prototype = {
+
+    constructor: Collapse
+
+  , dimension: function () {
+      var hasWidth = this.$element.hasClass('width')
+      return hasWidth ? 'width' : 'height'
+    }
+
+  , show: function () {
+      var dimension = this.dimension()
+        , scroll = $.camelCase(['scroll', dimension].join('-'))
+        , actives = this.$parent && this.$parent.find('.in')
+        , hasData
+
+      if (actives && actives.length) {
+        hasData = actives.data('collapse')
+        actives.collapse('hide')
+        hasData || actives.data('collapse', null)
+      }
+
+      this.$element[dimension](0)
+      this.transition('addClass', 'show', 'shown')
+      this.$element[dimension](this.$element[0][scroll])
+
+    }
+
+  , hide: function () {
+      var dimension = this.dimension()
+      this.reset(this.$element[dimension]())
+      this.transition('removeClass', 'hide', 'hidden')
+      this.$element[dimension](0)
+    }
+
+  , reset: function ( size ) {
+      var dimension = this.dimension()
+
+      this.$element
+        .removeClass('collapse')
+        [dimension](size || 'auto')
+        [0].offsetWidth
+
+      this.$element.addClass('collapse')
+    }
+
+  , transition: function ( method, startEvent, completeEvent ) {
+      var that = this
+        , complete = function () {
+            if (startEvent == 'show') that.reset()
+            that.$element.trigger(completeEvent)
+          }
+
+      this.$element
+        .trigger(startEvent)
+        [method]('in')
+
+      $.support.transition && this.$element.hasClass('collapse') ?
+        this.$element.one($.support.transition.end, complete) :
+        complete()
+  	}
+
+  , toggle: function () {
+      this[this.$element.hasClass('in') ? 'hide' : 'show']()
+  	}
+
+  }
+
+  /* COLLAPSIBLE PLUGIN DEFINITION
+  * ============================== */
+
+  $.fn.collapse = function ( option ) {
+    return this.each(function () {
+      var $this = $(this)
+        , data = $this.data('collapse')
+        , options = typeof option == 'object' && option
+      if (!data) $this.data('collapse', (data = new Collapse(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  $.fn.collapse.defaults = {
+    toggle: true
+  }
+
+  $.fn.collapse.Constructor = Collapse
+
+
+ /* COLLAPSIBLE DATA-API
+  * ==================== */
+
+  $(function () {
+    $('body').on('click.collapse.data-api', '[data-toggle=collapse]', function ( e ) {
+      var $this = $(this), href
+        , target = $this.attr('data-target')
+          || e.preventDefault()
+          || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
+        , option = $(target).data('collapse') ? 'toggle' : $this.data()
+      $(target).collapse(option)
+    })
+  })
+
+}( window.jQuery )
+
+
 /* ============================================================
- * bootstrap-dropdown.js v1.4.0
- * http://twitter.github.com/bootstrap/javascript.html#dropdown
+ * bootstrap-dropdown.js v2.0.1
+ * http://twitter.github.com/bootstrap/javascript.html#dropdowns
  * ============================================================
- * Copyright 2011 Twitter, Inc.
+ * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -157,37 +272,74 @@ Modernizr.load([
 
   "use strict"
 
+ /* DROPDOWN CLASS DEFINITION
+  * ========================= */
+
+  var toggle = '[data-toggle="dropdown"]'
+    , Dropdown = function ( element ) {
+        var $el = $(element).on('click.dropdown.data-api', this.toggle)
+        $('html').on('click.dropdown.data-api', function () {
+          $el.parent().removeClass('open')
+        })
+      }
+
+  Dropdown.prototype = {
+
+    constructor: Dropdown
+
+  , toggle: function ( e ) {
+      var $this = $(this)
+        , selector = $this.attr('data-target')
+        , $parent
+        , isActive
+
+      if (!selector) {
+        selector = $this.attr('href')
+        selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
+      }
+
+      $parent = $(selector)
+      $parent.length || ($parent = $this.parent())
+
+      isActive = $parent.hasClass('open')
+
+      clearMenus()
+      !isActive && $parent.toggleClass('open')
+
+      return false
+    }
+
+  }
+
+  function clearMenus() {
+    $(toggle).parent().removeClass('open')
+  }
+
+
   /* DROPDOWN PLUGIN DEFINITION
    * ========================== */
 
-  $.fn.dropdown = function ( selector ) {
+  $.fn.dropdown = function ( option ) {
     return this.each(function () {
-      $(this).delegate(selector || d, 'click', function (e) {
-        var li = $(this).parent('li')
-          , isActive = li.hasClass('open')
-
-        clearMenus()
-        !isActive && li.toggleClass('open')
-        return false
-      })
+      var $this = $(this)
+        , data = $this.data('dropdown')
+      if (!data) $this.data('dropdown', (data = new Dropdown(this)))
+      if (typeof option == 'string') data[option].call($this)
     })
   }
+
+  $.fn.dropdown.Constructor = Dropdown
+
 
   /* APPLY TO STANDARD DROPDOWN ELEMENTS
    * =================================== */
 
-  var d = 'a.menu, .dropdown-toggle'
-
-  function clearMenus() {
-    $(d).parent('li').removeClass('open')
-  }
-
   $(function () {
-    $('html').bind("click", clearMenus)
-    $('body').dropdown( '[data-dropdown] a.menu, [data-dropdown] .dropdown-toggle' )
+    $('html').on('click.dropdown.data-api', clearMenus)
+    $('body').on('click.dropdown.data-api', toggle, Dropdown.prototype.toggle)
   })
 
-}( window.jQuery || window.ender );
+}( window.jQuery );
 
 /* imgsizer (flexible images for fluid sites) */
 var imgSizer={Config:{imgCache:[],spacer:"/path/to/your/spacer.gif"},collate:function(aScope){var isOldIE=(document.all&&!window.opera&&!window.XDomainRequest)?1:0;if(isOldIE&&document.getElementsByTagName){var c=imgSizer;var imgCache=c.Config.imgCache;var images=(aScope&&aScope.length)?aScope:document.getElementsByTagName("img");for(var i=0;i<images.length;i++){images[i].origWidth=images[i].offsetWidth;images[i].origHeight=images[i].offsetHeight;imgCache.push(images[i]);c.ieAlpha(images[i]);images[i].style.width="100%";}
@@ -206,13 +358,13 @@ function addTwitterBSClass(thisObj) {
       if (num > 0)
       	$(thisObj).addClass('label');
       if (num == 2)
-        $(thisObj).addClass('label notice');
+        $(thisObj).addClass('label label-info');
       if (num > 2 && num < 4)
-        $(thisObj).addClass('label success');
+        $(thisObj).addClass('label label-success');
       if (num >= 5 && num < 10)
-        $(thisObj).addClass('label warning');
+        $(thisObj).addClass('label label-warning');
       if (num >=10)
-        $(thisObj).addClass('label important');
+        $(thisObj).addClass('label label-important');
     }
   }
   else
@@ -235,30 +387,8 @@ $(document).ready(function() {
 	});
 	
 	$("ol.commentlist a.comment-reply-link").each(function() {
-		$(this).addClass('btn success small');
+		$(this).addClass('btn btn-success btn-small');
 		return true;
-	});
-	
-	var $window_w = $(window).width();
-	if ($window_w > 480){
-		$('a.dropdown-toggle').css('display', 'none')
-		$('#menu-top-nav').removeClass('dropdown-menu');
-		$('#menu-top-nav').addClass('nav');
-	}
-	
-	// adjust top nav menu based on screen width
-	$(window).resize(function() {
-		var $window_w = $(window).width();
-		if ($window_w > 480){
-			$('a.dropdown-toggle').css('display', 'none')
-			$('#menu-top-nav').removeClass('dropdown-menu');
-			$('#menu-top-nav').addClass('nav');
-		}
-		else{
-			$('a.dropdown-toggle').css('display', 'inline-block')
-			$('#menu-top-nav').removeClass('nav');
-			$('#menu-top-nav').addClass('dropdown-menu');
-		}
 	});
 	
 	// Input placeholder text fix for IE
@@ -286,8 +416,20 @@ $(document).ready(function() {
 	  })
 	});
 	
-	$('ul.nav').dropdown();
+	$('#s').focus(function(){
+		if( $(window).width() < 940 ){
+			$(this).animate({ width: '200px' });
+		}
+	});
 	
+	$('#s').blur(function(){
+		if( $(window).width() < 940 ){
+			$(this).animate({ width: '100px' });
+		}
+	});
+			
 	$('.alert-message').alert();
+	
+	$('.dropdown-toggle').dropdown();
  
 }); /* end of as page load scripts */

@@ -2,7 +2,7 @@
 Theme Name: wp-bootstrap
 Theme URI: http://320press.com/wpbs
 Description: A simple responsive theme based on twitter's bootstrap framework. Includes multiple page templates, two different sidebars and a theme options panel.
-Version: 1.0
+Version: 2.0
 Author: 320press
 Author URI: http://320press.com
 Tags: black, white, one-column, two-columns, flexible-width, custom-background, custom-colors, custom-menu, full-width-template, theme-options
@@ -44,51 +44,47 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 	
 }
 
+/* for fun */
+* {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -ms-transition:     all 0.2s ease;
+  -o-transition:      all 0.2s ease;
+}
+
 /* layout */
 
-.container{
-	width: 100%;
+body{
+	padding-top: 0;
 }
 
-.span10{
-	width: 100%;
-}
-
-.span8{
-	width: auto;
-}
-
-.span6{
-	width: 100%;
-}
-
-.row{
-	margin-left: 0;
-}
-
-.row > [class*="span"] {
-	margin-left: 0;
+.nav-container{
+	padding-left: 0;
+	padding-right: 0;
 }
 
 #inner-header{
 	width: 100%;
 }
 
-#inner-footer{
-	padding: 0 10px;
+input, textarea, select, .uneditable-input {
+	margin-bottom: 0;
 }
 
-.topbar-inner{
-	padding: 0 10px;
+.navbar-form, .navbar-search {
+	margin: 0 0 9px;
 }
 
+.navbar-search{
+	padding-left: 0;
+}
 
 #s{
 	width: 100px;
 }
 
 #content{
-	padding: 60px 10px 0;
+	padding: 10px 0 0;
 }
 
 .more-link{
@@ -120,7 +116,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 #main article{
 	margin-bottom: 18px;
 	border-bottom: 1px solid #eeeeee;
-	padding: 9px 0px;
+	padding: 0 0 9px;
+}
+
+.sidebar{
+	margin-top: 18px !important;
 }
 
 #main article footer{
@@ -156,6 +156,10 @@ img.alignright{
 img.aligncenter{
 	display: block;
 	margin: 0 auto;
+}
+
+.post header img{
+	margin-bottom: 18px;
 }
 
 .archive #main .post h3{
@@ -198,12 +202,8 @@ video {
 	border-bottom: none;
 }
 
-.row > [class*="span"] {
-	float: none;
-}
-
 .page-template-page-homepage-php .hero-unit{
-	padding: 3em 0;
+	padding: 1em 0;
 }
 
 .hero-unit h1 {
@@ -212,9 +212,7 @@ video {
 
 /* comments */
 
-#comment-form-title{
-	padding-left: 20px;
-}
+
 
 #comments{
 	line-height: 24px;
@@ -227,9 +225,8 @@ ol.commentlist ul.children{
 	margin-left: 0;
 }
 
-ol.commentlist div.avatar{
-	float: left;
-	text-align:center;
+.comment .vcard div{
+	margin-top: 8px;
 }
 
 ol.commentlist time{
@@ -244,16 +241,17 @@ ol.commentlist div.comment-author{
 ol.commentlist a.comment-edit-link{
 	color: #ffffff;
 	text-decoration: none;
+	padding-left: 5px;
 }
 
 ol.commentlist span.edit-comment{
 	position: absolute;
 	right: 10px;
-	top: 0;
+	top: 8px;
 }
 
-li.bypostauthor{
-	background-color: #F0F0F0;
+ol.commentlist li.bypostauthor{
+	background-color: #dddddd;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -279,6 +277,19 @@ a.comment-reply-link{
 	margin: 0;
 }
 
+img.avatar{
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #dedede;
+	border-right: 1px solid #ddd;
+	
+}
+
+ol.commentlist li{
+	padding-right: 10px;
+	background-color: #F0F0F0;
+}
+
+
 /* specific post-type styles */
 
 /* image attachment */
@@ -299,6 +310,11 @@ a.comment-reply-link{
 .metadata p.alert-message{
 	margin-right: 0;
 	margin-bottom: 18px;
+}
+
+#gallery-nav{
+	list-style-type: none;
+	margin-left: 0;
 }
 
 li.next a, li.previous a{
@@ -342,8 +358,17 @@ li.previous a:hover:before{
 	margin-bottom: 18px;
 }
 
+.widgettitle{
+	margin-bottom: 9px;
+}
+
 #tag-cloud{
 	margin-bottom: 18px;
+}
+
+/* for some reason the bs version currently available for download doesn't have this style */
+.label{
+	text-transform: uppercase;
 }
 
 /* override standard link hover for the tag cloud widget */
@@ -353,6 +378,11 @@ li.previous a:hover:before{
 	text-decoration: none;
 }
 
+#tag-cloud a{
+	white-space: pre;
+	text-transform: uppercase;
+}
+
 /* change default form padding for search */
 
 .widget_search form{
@@ -360,32 +390,53 @@ li.previous a:hover:before{
 }
 
 .widget_search input{
-	width: 230px;
+	width: 121px;
+}
+
+/* calendar widget */
+
+#calendar_wrap{
+	border: 1px solid #ddd;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+#wp-calendar{
+	width: 100%;
+	
+}
+
+#wp-calendar caption{
+	font-weight: bold;
+	padding: 8px;
+}
+
+#wp-calendar tr{
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+#wp-calendar tr:last-child{
+	border-bottom: none;
+}
+
+#wp-calendar td{
+	text-align: center;
+	padding: 8px 0;
 }
 
 @media only screen and (min-width: 940px) {
-	.container{
-		width: 940px;
+	body{
+		padding-top: 60px;
 	}
 	
-	.span10{
-		width: 580px;
-	}
-	
-	.span8{
-		width: 460px;
-	}
-	
-	.span6{
-		width: 340px;
-	}
-	
-	.row{
-		margin-left: -20px;
-	}
-	
-	.row > [class*="span"] {
-		margin-left: 20px;
+	.container-fluid{
+		max-width: 970px;
+		margin: 0 auto;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	
 	#inner-footer{
@@ -405,8 +456,21 @@ li.previous a:hover:before{
 		float: right;
 	}
 	
-	.row > [class*="span"] {
-		float: left;
+	.navbar-form, .navbar-search {
+		margin-top: 6px;
+		margin-bottom: 0;
+	}
+	
+	.navbar-search{
+		padding-left: 0;
+	}
+	
+	.sidebar{
+		margin-top: 0 !important;
+	}
+	
+	.widget_search input{
+		width: 230px;
 	}
 	
 	.page-template-page-homepage-php .hero-unit{
@@ -417,11 +481,20 @@ li.previous a:hover:before{
 		font-size: 60px;
 	}
 	
+	/* hide edit comment button and show on hover on desktop version */
+	.edit-comment{
+		display: none;
+	}
+	
+	.vcard:hover .edit-comment{
+		display: inline-block;
+	}
+	
 	#s{
 		width: 210px;
 	}
 	
 	.widget_search input{
-		width: 255px;
+		width: 203px;
 	}
 }

@@ -136,6 +136,18 @@ function optionsframework_options() {
 						"id" => "top_nav_link_hover_color",
 						"std" => "#FFFFFF",
 						"type" => "color");
+						
+	$options[] = array( "name" => "Top nav dropdown item color",
+						"desc" => "Dropdown item color.",
+						"id" => "top_nav_dropdown_item",
+						"std" => "#555555",
+						"type" => "color");
+						
+	$options[] = array( "name" => "Top nav dropdown item hover bg color",
+						"desc" => "Background of dropdown item hover color.",
+						"id" => "top_nav_dropdown_hover_bg",
+						"std" => "#0088CC",
+						"type" => "color");
 	
 	$options[] = array( "name" => "Search bar",
 						"desc" => "Show search bar in top nav",

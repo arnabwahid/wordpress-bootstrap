@@ -82,7 +82,7 @@ The comments page for Bones
   	</div>
 	<?php else : ?>
 
-	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" class="form-stacked" id="commentform">
+	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" class="form-vertical" id="commentform">
 
 	<?php if ( is_user_logged_in() ) : ?>
 
@@ -93,28 +93,31 @@ The comments page for Bones
 	<ul id="comment-form-elements" class="clearfix">
 		
 		<li>
-			<div class="clearfix">
+			<div class="control-group">
 			  <label for="author">Name <?php if ($req) echo "(required)"; ?></label>
-			  <div class="input">
+			  <div class="input-prepend">
+			  	<span class="add-on"><i class="icon-user"></i></span>
 			  	<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="Your Name" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 			  </div>
 		  	</div>
 		</li>
 		
 		<li>
-			<div class="clearfix">
+			<div class="control-group">
 			  <label for="email">Mail <?php if ($req) echo "(required)"; ?></label>
-			  <div class="input">
+			  <div class="input-prepend">
+			  	<span class="add-on"><i class="icon-envelope"></i></span>
 			  	<input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="Your Email" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-			  	<span class="help-block">(will not be published)</span>
+			  	<span class="help-inline">(will not be published)</span>
 			  </div>
 		  	</div>
 		</li>
 		
 		<li>
-			<div class="clearfix">
+			<div class="control-group">
 			  <label for="url">Website</label>
-			  <div class="input">
+			  <div class="input-prepend">
+			  <span class="add-on"><i class="icon-home"></i></span>
 			  	<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="Your Website" tabindex="3" />
 			  </div>
 		  	</div>
@@ -130,8 +133,8 @@ The comments page for Bones
 		</div>
 	</div>
 	
-	<div class="actions">
-	  <input class="btn primary" name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+	<div class="form-actions">
+	  <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 	  <?php comment_id_fields(); ?>
 	</div>
 	

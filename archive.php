@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row">
+			<div id="content" class="clearfix row-fluid">
 			
-				<div id="main" class="span10 clearfix" role="main">
+				<div id="main" class="span8 clearfix" role="main">
 				
+					<div class="page-header">
 					<?php if (is_category()) { ?>
 						<h1 class="archive_title h2">
 							<span><?php _e("Posts Categorized:", "bonestheme"); ?></span> <?php single_cat_title(); ?>
@@ -29,6 +30,7 @@
 					    	<span><?php _e("Yearly Archives:", "bonestheme"); ?>:</span> <?php the_time('Y'); ?>
 					    </h1>
 					<?php } ?>
+					</div>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

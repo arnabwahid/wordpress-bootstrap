@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row">
+			<div id="content" class="clearfix row-fluid">
 			
-				<div id="main" class="span10 clearfix" role="main">
+				<div id="main" class="span8 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -10,7 +10,7 @@
 						
 						<header>
 							
-							<h1 class="single-title" itemprop="headline"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <?php the_title(); ?></h1>
+							<div class="page-header"><h1 class="single-title" itemprop="headline"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <?php the_title(); ?></h1></div>
 							
 							<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?>.</p>
 						
@@ -33,7 +33,7 @@
 							</div>
 							
 							<!-- To display thumbnail of previous and next image in the photo gallery -->
-							<ul class="media-grid">
+							<ul id="gallery-nav" class="clearfix">
 								<li class="next pull-left"><?php next_image_link() ?></li>
 								<li class="previous pull-right"><?php previous_image_link() ?></li>
 							</ul>
@@ -69,14 +69,14 @@
 			
 				</div> <!-- end #main -->
 				
-				<div id="sidebar1" class="span6 clearfix" role="complementary">
+				<div id="sidebar1" class="span4 fluid-sidebar sidebar" role="complementary">
 				
 					<?php if ( !empty($post->post_excerpt) ) { ?> 
-					<p class="alert-message block-message success"><?php echo get_the_excerpt(); ?></p>
+					<p class="alert alert-block success"><?php echo get_the_excerpt(); ?></p>
 					<?php } ?>
 								
 					<!-- Using WordPress functions to retrieve the extracted EXIF information from database -->
-					<div class="alert-message block-message info metadata">
+					<div class="well">
 					
 						<h3>Image metadata</h3>
 					

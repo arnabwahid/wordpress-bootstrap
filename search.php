@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row">
+			<div id="content" class="clearfix row-fluid">
 			
-				<div id="main" class="span10 clearfix" role="main">
+				<div id="main" class="span8 clearfix" role="main">
 				
-					<h1 class=""><span>Search Results for:</span> <?php echo esc_attr(get_search_query()); ?></h1>
+					<div class="page-header"><h1 class=""><span>Search Results for:</span> <?php echo esc_attr(get_search_query()); ?></h1></div>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

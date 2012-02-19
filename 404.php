@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix">
+			<div id="content" class="clearfix row-fluid">
 			
-				<div id="main" class="span16 clearfix" role="main">
+				<div id="main" class="span12 clearfix" role="main">
 
 					<article id="post-not-found" class="clearfix">
 						
 						<header>
 							
-							<h1>Epic 404 - Article Not Found</h1>
+							<div class="page-header"><h1>Epic 404 - Article Not Found</h1></div>
 						
 						</header> <!-- end article header -->
 					
