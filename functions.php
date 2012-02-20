@@ -111,7 +111,7 @@ function bones_comments($comment, $args, $depth) {
 				<div class="avatar span2">
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
-				<div class="span10">
+				<div class="span10 comment-text">
 					<?php printf(__('<h4>%s</h4>','wpbs'), get_comment_author_link()) ?>
 					<?php edit_comment_link(__('Edit','wpbs'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
                     

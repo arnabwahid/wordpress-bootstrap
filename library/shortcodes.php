@@ -73,7 +73,7 @@ function alerts( $atts, $content = null ) {
 	if($close == 'true') {
 		$output .= '<a class="close" data-dismiss="alert">×</a>';
 	}
-	$output .= '<p>' . $text . '</p></div>';
+	$output .= $text . '</div>';
 	
 	return $output;
 }

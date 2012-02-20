@@ -231,6 +231,7 @@ ol.commentlist ul.children{
 
 .comment .vcard div{
 	margin-top: 8px;
+	padding: 0 10px;
 }
 
 ol.commentlist time{
@@ -281,10 +282,19 @@ a.comment-reply-link{
 	margin: 0;
 }
 
+.comment .vcard .avatar{
+	padding-right: 0;
+}
+
+.comment .vcard .comment-text{
+	margin-left: 0;
+}
+
 img.avatar{
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #dedede;
-	border-right: 1px solid #ddd;
+	border-right: 1px solid #dedede;
+	border-left: 1px solid #ddd;
 	
 }
 
@@ -500,5 +510,10 @@ li.previous a:hover:before{
 	
 	.widget_search input{
 		width: 203px;
+	}
+	
+	.comment .vcard .comment-text{
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
