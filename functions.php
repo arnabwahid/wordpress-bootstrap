@@ -207,13 +207,20 @@ function remove_thumbnail_dimensions( $html ) {
 
 // Add the Meta Box to the homepage template
 function add_homepage_meta_box() {  
-    add_meta_box(  
-        'homepage_meta_box', // $id  
-        'Custom Fields', // $title  
-        'show_homepage_meta_box', // $callback  
-        'page', // $page  
-        'normal', // $context  
-        'high'); // $priority  
+	
+	// Only add homepage meta box if template being used is the homepage template
+	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+	$template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
+	if ($template_file == 'page-homepage.php')
+	{
+	    add_meta_box(  
+	        'homepage_meta_box', // $id  
+	        'Optional Homepage Tagline', // $title  
+	        'show_homepage_meta_box', // $callback  
+	        'page', // $page  
+	        'normal', // $context  
+	        'high'); // $priority  
+    }
 }  
 add_action('add_meta_boxes', 'add_homepage_meta_box');
 
@@ -232,8 +239,8 @@ $custom_meta_fields = array(
 function show_homepage_meta_box() {  
 global $custom_meta_fields, $post;  
 // Use nonce for verification  
-echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce(basename(__FILE__)).'" />';  
-  
+  wp_nonce_field( basename( __FILE__ ), 'wpbs_nonce' );
+    
     // Begin the field table and loop  
     echo '<table class="form-table">';  
     foreach ($custom_meta_fields as $field) {  
@@ -266,7 +273,7 @@ function save_homepage_meta($post_id) {
     global $custom_meta_fields;  
   
     // verify nonce  
-    if (!wp_verify_nonce($_POST['custom_meta_box_nonce'], basename(__FILE__)))  
+    if (!isset( $_POST['wpbs_nonce'] ) || !wp_verify_nonce($_POST['wpbs_nonce'], basename(__FILE__)))  
         return $post_id;  
     // check autosave  
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)  
