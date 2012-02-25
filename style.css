@@ -378,6 +378,7 @@ li.previous a:hover:before{
 
 #tag-cloud{
 	margin-bottom: 18px;
+	line-height: 160%;
 }
 
 /* for some reason the bs version currently available for download doesn't have this style */
