@@ -29,6 +29,8 @@
 			
 							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","bonestheme") . ':</span> ', ' ', '</p>'); ?>
 							
+							<a href="<?php echo get_edit_post_link(); ?>" class="btn btn-success edit-post"><i class="icon-pencil icon-white"></i> <?php _e("Edit post","bonestheme"); ?></a>
+							
 						</footer> <!-- end article footer -->
 					
 					</article> <!-- end article -->

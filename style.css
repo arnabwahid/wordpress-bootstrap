@@ -127,6 +127,19 @@ input, textarea, select, .uneditable-input {
 	border-top: none;
 	margin-top: 0;
 	padding-top: 0;
+	position: relative;
+	min-height: 20px;
+}
+
+#main article footer a.edit-post{
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: none;
+}
+
+.post:hover a.edit-post{
+	display: inline;
 }
 
 p.tags{
@@ -303,6 +316,9 @@ ol.commentlist li{
 	background-color: #F0F0F0;
 }
 
+#comment{
+	width: 270px;
+}
 
 /* specific post-type styles */
 
