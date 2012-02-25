@@ -98,6 +98,33 @@ function block_messages( $atts, $content = null ) {
 }
 
 add_shortcode('block-message', 'block_messages'); 
+
+// Block Messages
+function blockquotes( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'float' => '', /* left, right */
+	'cite' => '', /* text for cite */
+	), $atts ) );
+	
+	$output = '<blockquote';
+	if($float == 'left') {
+		$output .= ' class="pull-left"';
+	}
+	elseif($float == 'right'){
+		$output .= ' class="pull-right"';
+	}
+	$output .= '><p>' . $content . '</p>';
+	
+	if($cite){
+		$output .= '<small>' . $cite . '</small>';
+	}
+	
+	$output .= '</blockquote>';
+	
+	return $output;
+}
+
+add_shortcode('blockquote', 'blockquotes'); 
  
 
 

@@ -441,6 +441,12 @@ li.previous a:hover:before{
 	padding: 8px 0;
 }
 
+blockquote.pull-left{
+	padding-right: 15px;
+}
+
+
+
 @media only screen and (min-width: 940px) {
 	body{
 		padding-top: 60px;
