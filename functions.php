@@ -35,7 +35,7 @@ if ( ! isset( $content_width ) ) $content_width = 580;
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'wpbs-featured', 580, 300, true );
+add_image_size( 'wpbs-featured', 638, 300, true );
 add_image_size( 'bones-thumb-600', 600, 150, false );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 
@@ -112,12 +112,12 @@ function bones_comments($comment, $args, $depth) {
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
 				<div class="span10 comment-text">
-					<?php printf(__('<h4>%s</h4>','wpbs'), get_comment_author_link()) ?>
-					<?php edit_comment_link(__('Edit','wpbs'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
+					<?php printf(__('<h4>%s</h4>','bonestheme'), get_comment_author_link()) ?>
+					<?php edit_comment_link(__('Edit','bonestheme'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
                     
                     <?php if ($comment->comment_approved == '0') : ?>
        					<div class="alert-message success">
-          				<p><?php _e('Your comment is awaiting moderation.','wpbs') ?></p>
+          				<p><?php _e('Your comment is awaiting moderation.','bonestheme') ?></p>
           				</div>
 					<?php endif; ?>
                     
@@ -141,7 +141,7 @@ function bones_wpsearch($form) {
     $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
     <label class="screen-reader-text" for="s">' . __('Search for:', 'bonestheme') . '</label>
     <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search the Site..." />
-    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search','wpbs') .'" />
+    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search','bonestheme') .'" />
     </form>';
     return $form;
 } // don't remove this bracket!
@@ -154,8 +154,8 @@ function custom_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
-	' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ,'wpbs') . '
-	<label for="' . $label . '">' . __( "Password:" ,'wpbs') . ' </label><div class="input"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'wpbs' ) . '" /></div>
+	' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ,'bonestheme') . '
+	<label for="' . $label . '">' . __( "Password:" ,'bonestheme') . ' </label><div class="input"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'bonestheme' ) . '" /></div>
 	</form></div>
 	';
 	return $o;

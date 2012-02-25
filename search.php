@@ -4,7 +4,7 @@
 			
 				<div id="main" class="span8 clearfix" role="main">
 				
-					<div class="page-header"><h1 class=""><span>Search Results for:</span> <?php echo esc_attr(get_search_query()); ?></h1></div>
+					<div class="page-header"><h1><span><?php _e("Search Results for","bonestheme"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1></div>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -19,7 +19,7 @@
 						</header> <!-- end article header -->
 					
 						<section class="post_content">
-							<?php the_excerpt('<span class="read-more">Read more on "'.the_title('', '', false).'" &raquo;</span>'); ?>
+							<?php the_excerpt('<span class="read-more">' . __("Read more on","bonestheme") . ' "'.the_title('', '', false).'" &raquo;</span>'); ?>
 					
 						</section> <!-- end article section -->
 						
@@ -51,10 +51,10 @@
 					
 					<article id="post-not-found">
 					    <header>
-					    	<h1>No Results Found</h1>
+					    	<h1><?php _e("Not Found", "bonestheme"); ?></h1>
 					    </header>
 					    <section class="post_content">
-					    	<p>Sorry, but the requested resource was not found on this site.</p>
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "bonestheme"); ?></p>
 					    </section>
 					    <footer>
 					    </footer>

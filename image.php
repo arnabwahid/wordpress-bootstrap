@@ -42,7 +42,7 @@
 						
 						<footer>
 			
-							<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ' ', '</p>'); ?>
+							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","bonestheme") . ':</span> ', ' ', '</p>'); ?>
 							
 						</footer> <!-- end article footer -->
 					
@@ -56,10 +56,10 @@
 					
 					<article id="post-not-found">
 					    <header>
-					    	<h1>Not Found</h1>
+					    	<h1><?php _e("Not Found", "bonestheme"); ?></h1>
 					    </header>
 					    <section class="post_content">
-					    	<p>Sorry, but the requested resource was not found on this site.</p>
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "bonestheme"); ?></p>
 					    </section>
 					    <footer>
 					    </footer>
@@ -78,7 +78,7 @@
 					<!-- Using WordPress functions to retrieve the extracted EXIF information from database -->
 					<div class="well">
 					
-						<h3>Image metadata</h3>
+						<h3><?php _e("Image metadata","bonestheme"); ?></h3>
 					
 					   <?php
 					      $imgmeta = wp_get_attachment_metadata( $id );
@@ -101,16 +101,16 @@
 					       }
 					
 					// Start to display EXIF and IPTC data of digital photograph
-					       echo "Date Taken: " . date("d-M-Y H:i:s", $imgmeta['image_meta']['created_timestamp'])."<br />";
-					       echo "Copyright: " . $imgmeta['image_meta']['copyright']."<br />";
-					       echo "Credit: " . $imgmeta['image_meta']['credit']."<br />";
-					       echo "Title: " . $imgmeta['image_meta']['title']."<br />";
-					       echo "Caption: " . $imgmeta['image_meta']['caption']."<br />";
-					       echo "Camera: " . $imgmeta['image_meta']['camera']."<br />";
-					       echo "Focal Length: " . $imgmeta['image_meta']['focal_length']."mm<br />";
-					       echo "Aperture: f/" . $imgmeta['image_meta']['aperture']."<br />";
-					       echo "ISO: " . $imgmeta['image_meta']['iso']."<br />";
-					       echo "Shutter Speed: " . $pshutter . "<br />"
+					       echo __("Date Taken","bonestheme") . ": " . date("d-M-Y H:i:s", $imgmeta['image_meta']['created_timestamp'])."<br />";
+					       echo __("Copyright","bonestheme") . ": " . $imgmeta['image_meta']['copyright']."<br />";
+					       echo __("Credit","bonestheme") . ": " . $imgmeta['image_meta']['credit']."<br />";
+					       echo __("Title","bonestheme") . ": " . $imgmeta['image_meta']['title']."<br />";
+					       echo __("Caption","bonestheme") . ": " . $imgmeta['image_meta']['caption']."<br />";
+					       echo __("Camera","bonestheme") . ": " . $imgmeta['image_meta']['camera']."<br />";
+					       echo __("Focal Length","bonestheme") . ": " . $imgmeta['image_meta']['focal_length']."mm<br />";
+					       echo __("Aperture","bonestheme") . ": f/" . $imgmeta['image_meta']['aperture']."<br />";
+					       echo __("ISO","bonestheme") . ": " . $imgmeta['image_meta']['iso']."<br />";
+					       echo __("Shutter Speed","bonestheme") . ": " . $pshutter . "<br />"
 					   ?>
 					</div>
 					
