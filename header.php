@@ -197,6 +197,11 @@
 			</style>';
 		}
 		
+		// check wp user level
+		get_currentuserinfo(); 
+		// store to use later
+		global $user_level; 
+		
 		?>
 				
 	</head>

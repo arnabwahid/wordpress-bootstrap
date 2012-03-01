@@ -392,7 +392,9 @@ $(document).ready(function() {
 	});
 	
 	$('article.post').hover(function(){
-		$('a.edit-post').toggle();
+		$('a.edit-post').show();
+	},function(){
+		$('a.edit-post').hide();
 	});
 	
 	// Input placeholder text fix for IE
