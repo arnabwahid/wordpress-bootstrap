@@ -54,6 +54,8 @@
 		
 		<!-- bring in theme options styles -->
 		<?php 
+		$theme_options_styles = '';
+				
 		$heading_typography = of_get_option('heading_typography');
 		if ($heading_typography) {
 			$theme_options_styles = '
