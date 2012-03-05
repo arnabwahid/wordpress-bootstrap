@@ -40,6 +40,14 @@ jQuery(document).ready(function() {
 		jQuery('#section-top_nav_bottom_gradient_color').show();
 	}
 	
+	jQuery('#showhidden_themes').click(function() {
+			jQuery('#section-wpbs_theme').fadeToggle(400);
+	});
+	
+	if (jQuery('#showhidden_themes:checked').val() !== undefined) {
+		jQuery('#section-wpbs_theme').show();
+	}
+	
 });
 </script>
 

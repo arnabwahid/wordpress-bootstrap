@@ -173,9 +173,16 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Theme",
 						"type" => "heading");
 						
+	$options[] = array( "name" => "Bootswatch.com Themes",
+						"desc" => "Use theme from bootswatch.com. Note: This may override other styles set in the theme options panel.",
+						"id" => "showhidden_themes",
+						"std" => "0",
+						"type" => "checkbox");
+						
 	$options[] = array( "name" => "Select a theme",
 						"id" => "wpbs_theme",
 						"std" => "default",
+						"class" => "hidden",
 						"type" => "images",
 						"options" => $theList
 						);
