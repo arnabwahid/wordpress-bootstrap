@@ -39,7 +39,9 @@ function optionsframework_fields() {
 		if ( ($value['type'] != "heading") && ($value['type'] != "info") ) {
 
 			// Keep all ids lowercase with no spaces
-			$value['id'] = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($value['id']) );
+			//if ( isset( $value['id'] ) ){
+				$value['id'] = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($value['id']) );
+			//}
 
 			$id = 'section-' . $value['id'];
 
@@ -331,6 +333,22 @@ function optionsframework_fields() {
 			$output .= '<div class="group" id="' . esc_attr( $jquery_click_hook ) . '">';
 			$output .= '<h3>' . esc_html( $value['name'] ) . '</h3>' . "\n";
 			break;
+			
+		case "themecheck":
+			$class = 'section';
+			if ( isset( $value['type'] ) ) {
+				$class .= ' section-' . $value['type'];
+			}
+			if ( isset( $value['class'] ) ) {
+				$class .= ' ' . $value['class'];
+			}
+
+			$output .= '<div class="' . esc_attr( $class ) . '">' . "\n";
+			$output .= '<a id="check-bootswatch" class="button-secondary">Refresh themes</a>';
+			$output .= '<div id="check-status"></div>';
+			$output .= '</div>';
+			break;
+					
 		}
 
 		if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
@@ -343,6 +361,9 @@ function optionsframework_fields() {
 			}
 			$output .= '<div class="clear"></div></div></div>'."\n";
 		}
+		
+		
+			
 	}
     $output .= '</div>';
     return array($output,$menu);

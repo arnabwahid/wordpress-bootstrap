@@ -214,6 +214,15 @@
 	cursor:pointer;
 }
 
+#optionsframework #section-wpbs_theme .controls{
+	float: none;
+	width: 100%;
+}
+
+#optionsframework #section-wpbs_theme .controls img:hover{
+	outline: 1px solid #ddd;
+}
+
 /* Bottom Section */
 
 #optionsframework-submit {

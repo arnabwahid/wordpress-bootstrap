@@ -48,17 +48,38 @@
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
 		
+		<?php
+		
+			$theme_options_styles = '';
+			$bootstrap_theme = of_get_option('wpbs_theme');
+			if( $bootstrap_theme ){
+				if( $bootstrap_theme == 'default' ){
+		?>
+			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
+		<?php
+				}
+				else {
+		?>
+			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/themes/<?php echo $bootstrap_theme; ?>.css">
+		<?php
+				}
+			}
+			else{
+		?>
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
+		<?php
+			}
+		?>
+		
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-responsive.min.css">
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 		
 		<!-- bring in theme options styles -->
 		<?php 
-		$theme_options_styles = '';
 				
 		$heading_typography = of_get_option('heading_typography');
 		if ($heading_typography) {
-			$theme_options_styles = '
+			$theme_options_styles .= '
 			h1, h2, h3, h4, h5, h6{ 
 				font-family: ' . $heading_typography['face'] . '; 
 				font-weight: ' . $heading_typography['style'] . '; 
@@ -178,7 +199,7 @@
 		$hero_unit_bg_color = of_get_option('hero_unit_bg_color');
 		if ($hero_unit_bg_color) {
 			$theme_options_styles .= '
-			.page-template-page-homepage-php .hero-unit { 
+			.hero-unit { 
 				background-color: '. $hero_unit_bg_color . ';
 			}';
 		}
@@ -189,6 +210,11 @@
 			#main article {
 				border-bottom: none;
 			}';
+		}
+		
+		$additional_css = of_get_option('wpbs_css');
+		if( $additional_css ){
+			$theme_options_styles .= $additional_css;
 		}
 				
 		if($theme_options_styles){

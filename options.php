@@ -27,20 +27,35 @@ function optionsframework_option_name() {
  */
 
 function optionsframework_options() {
+
+	$themesPath = dirname(__FILE__) . '/admin/themes';
+	
+	// Insert default option
+	$theList['default'] = OPTIONS_FRAMEWORK_DIRECTORY . '/themes/default-thumbnail-100x60.png';
+	
+	if ($handle = opendir( $themesPath )) {
+	    while (false !== ($file = readdir($handle)))
+	    {
+	        if ($file != "." && $file != ".." && strtolower(substr($file, strrpos($file, '.') + 1)) == 'css')
+	        {
+	        	$name = substr($file, 0, strlen($file) - 4);
+				$thumb = OPTIONS_FRAMEWORK_DIRECTORY . '/themes/' . $name . '-thumbnail-100x60.png';
+				$theList[$name] = $thumb;
+	        }
+	    }
+	    closedir($handle);
+	}
+	
+	//print_r($theList);
 	
 	// fixed or scroll position
 	$fixed_scroll = array("fixed" => "Fixed","scroll" => "Scroll");
-	
-	// Multicheck Array
-	$multicheck_array = array("one" => "French Toast", "two" => "Pancake", "three" => "Omelette", "four" => "Crepe", "five" => "Waffle");
 	
 	// Multicheck Defaults
 	$multicheck_defaults = array("one" => "1","five" => "1");
 	
 	// Background Defaults
-	
 	$background_defaults = array('color' => '', 'image' => '', 'repeat' => 'repeat','position' => 'top center','attachment'=>'scroll');
-	
 	
 	// Pull all the categories into an array
 	$options_categories = array();  
@@ -155,6 +170,21 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 						
+	$options[] = array( "name" => "Theme",
+						"type" => "heading");
+						
+	$options[] = array( "name" => "Select a theme",
+						"id" => "wpbs_theme",
+						"std" => "default",
+						"type" => "images",
+						"options" => $theList
+						);
+						
+	$options[] = array( "name" => "Refresh themes from Bootswatch",
+						"type" => "themecheck",
+						"id" => "themecheck"
+						);
+						
 	$options[] = array( "name" => "Other Settings",
 						"type" => "heading");
 						
@@ -169,6 +199,106 @@ function optionsframework_options() {
 						"id" => "suppress_comments_message",
 						"std" => "1",
 						"type" => "checkbox");
+						
+	$options[] = array( "name" => "Blog page 'hero' unit",
+						"desc" => "Display blog page hero unit",
+						"id" => "blog_hero",
+						"std" => "1",
+						"type" => "checkbox");
+	
+	$options[] = array( "name" => "CSS",
+						"desc" => "Additional CSS",
+						"id" => "wpbs_css",
+						"std" => "",
+						"type" => "textarea");
 									
 	return $options;
 }
+
+add_action('admin_head', 'wpbs_javascript');
+
+function wpbs_javascript() {
+?>
+<script type="text/javascript" >
+jQuery(document).ready(function($) {
+
+	var data = {
+		action: 'wpbs_theme_check',
+	};
+
+	// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+	jQuery('#check-bootswatch').click( function(){ 
+		jQuery.post(ajaxurl, data, function(response) {
+			alert(response);
+		});
+	});
+});
+</script>
+<?php
+}
+
+add_action('wp_ajax_wpbs_theme_check', 'wpbs_refresh_themes');
+
+function wpbs_refresh_themes() {
+	// this gets the xml feed from thomas park
+	$xml_feed_url = 'http://feeds.pinboard.in/rss/u:thomaspark/t:bootswatch/';
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $xml_feed_url);
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$xml = curl_exec($ch);
+	curl_close($ch);
+	
+	$feed = new SimpleXmlElement($xml, LIBXML_NOCDATA);	
+	
+    $cnt = count($feed->item);
+    
+    // go through each item found
+    for($i=0; $i<$cnt; $i++)
+    {
+		$url 	= $feed->item[$i]->link;
+		$title 	= strtolower($feed->item[$i]->title);
+		$desc = $feed->item[$i]->description;
+		
+		// retrieve the contents of the css file
+		$css_url = $url;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $css_url);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$css_contents = curl_exec($ch);
+		curl_close($ch);
+		
+		$thumb_url_prefix = 'http://bootswatch.com/';
+		$thumb_url = $thumb_url_prefix . $title . '/thumbnail.png';
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $thumb_url);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$thumb_contents = curl_exec($ch);
+		curl_close($ch);
+		
+		// create the file using the title of the item and then close it
+		$template_path = get_template_directory();
+		$filenameCSS = $template_path . '/admin/themes/' . $title . '.css';
+		$filehandle = fopen($filenameCSS, 'w') or die("can't open file - " . $filenameCSS);
+		fwrite($filehandle, $css_contents);
+		fclose($filehandle);
+		
+		$filenameThumb = $template_path . '/admin/themes/' .$title . '-thumbnail.png';
+		$filehandle = fopen($filenameThumb, 'w') or die("can't open file - " . $filenameThumb);
+		fwrite($filehandle, $thumb_contents);
+		fclose($filehandle);
+		// resize thumb
+		$destDirectory = substr( $filenameThumb, 0, strlen( $filenameThumb-14 ) );
+		image_resize( $filenameThumb, 100, 60, true, '', $destDirectory, 100 );
+		
+    }
+    
+	echo "Themes refreshed.";
+
+	die(); // this is required to return a proper result
+}
+
+
+?>

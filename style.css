@@ -219,7 +219,8 @@ video {
 	border-bottom: none;
 }
 
-.page-template-page-homepage-php .hero-unit{
+.page-template-page-homepage-php .hero-unit,
+.blog .hero-unit{
 	padding: 1em;
 }
 
@@ -510,7 +511,12 @@ blockquote.pull-left{
 		width: 230px;
 	}
 	
-	.page-template-page-homepage-php .hero-unit{
+	.blog .hero-unit{
+		margin-top: 10px;
+	}
+	
+	.page-template-page-homepage-php .hero-unit,
+	.blog .hero-unit{
 		padding: 60px;
 	}
 	
