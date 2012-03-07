@@ -317,6 +317,15 @@ ol.commentlist li{
 	background-color: #F0F0F0;
 }
 
+#pings{
+	margin-bottom: 9px;
+}
+
+ol.pinglist{
+	list-style-type: none;
+	margin: 0 0 9px 0;
+}
+
 #comment{
 	width: 270px;
 }

@@ -162,6 +162,27 @@ function bones_comments($comment, $args, $depth) {
 <?php
 } // don't remove this bracket!
 
+// Display trackbacks/pings callback function
+function list_pings($comment, $args, $depth) {
+       $GLOBALS['comment'] = $comment;
+?>
+        <li id="comment-<?php comment_ID(); ?>"><i class="icon icon-share-alt"></i>&nbsp;<?php comment_author_link(); ?>
+<?php 
+
+}
+
+// Only display comments in comment count (which isn't currently displayed in wp-bootstrap, but i'm putting this in now so i don't forget to later)
+add_filter('get_comments_number', 'comment_count', 0);
+function comment_count( $count ) {
+	if ( ! is_admin() ) {
+		global $id;
+	    $comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	    return count($comments_by_type['comment']);
+	} else {
+	    return $count;
+	}
+}
+
 /************* SEARCH FORM LAYOUT *****************/
 
 // Search Form

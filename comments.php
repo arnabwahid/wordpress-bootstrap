@@ -17,7 +17,7 @@ The comments page for Bones
 <!-- You can start editing here. -->
 
 <?php if ( have_comments() ) : ?>
-	
+	<?php if ( ! empty($comments_by_type['comment']) ) : ?>
 	<h3 id="comments"><?php comments_number('<span>' . __("No","bonestheme") . '</span> ' . __("Responses","bonestheme") . '', '<span>' . __("One","bonestheme") . '</span> ' . __("Response","bonestheme") . '', '<span>%</span> ' . __("Responses","bonestheme") );?> <?php _e("to","bonestheme"); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<nav id="comment-nav">
@@ -30,6 +30,16 @@ The comments page for Bones
 	<ol class="commentlist">
 		<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
 	</ol>
+	
+	<?php endif; ?>
+	
+	<?php if ( ! empty($comments_by_type['pings']) ) : ?>
+		<h3 id="pings">Trackbacks/Pingbacks</h3>
+		
+		<ol class="pinglist">
+			<?php wp_list_comments('type=pings&callback=list_pings'); ?>
+		</ol>
+	<?php endif; ?>
 	
 	<nav id="comment-nav">
 		<ul class="clearfix">
