@@ -58,6 +58,12 @@ body{
 	padding-top: 0;
 }
 
+/* Admin Top Navigation fixes */
+
+body.admin-bar .navbar-fixed-top{ 
+	top: 28px; 
+}
+
 .nav-container{
 	padding-left: 0;
 	padding-right: 0;
