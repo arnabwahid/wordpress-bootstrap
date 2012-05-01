@@ -398,7 +398,7 @@ class description_walker extends Walker_Nav_Menu
            	$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
            	// if the item has children add these two attributes to the anchor tag
            	if ( $args->has_children ) {
-				$attributes .= 'class="dropdown-toggle" data-toggle="dropdown"';
+				$attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
 			}
 
             $item_output = $args->before;
