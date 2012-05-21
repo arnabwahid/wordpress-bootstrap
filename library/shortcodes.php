@@ -69,7 +69,7 @@ function alerts( $atts, $content = null ) {
 	'text' => '', 
 	), $atts ) );
 	
-	$output = '<div class="fade in alert '. $type . '">';
+	$output = '<div class="fade in alert alert-'. $type . '">';
 	if($close == 'true') {
 		$output .= '<a class="close" data-dismiss="alert">×</a>';
 	}
@@ -88,7 +88,7 @@ function block_messages( $atts, $content = null ) {
 	'text' => '', 
 	), $atts ) );
 	
-	$output = '<div class="fade in alert alert-block '. $type . '">';
+	$output = '<div class="fade in alert alert-block alert-'. $type . '">';
 	if($close == 'true') {
 		$output .= '<a class="close" data-dismiss="alert">×</a>';
 	}
