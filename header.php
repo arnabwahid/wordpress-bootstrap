@@ -25,28 +25,7 @@
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon.png">
 		<!-- For everything else -->
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-		
-		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write(unescape('%3Cscript src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-		
-		<script src="<?php echo get_template_directory_uri(); ?>/library/js/modernizr.full.min.js"></script>
-		
-		<!-- media-queries.js (fallback) -->
-		<!--[if lt IE 9]>
-			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>			
-		<![endif]-->
 
-		<!-- html5.js -->
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		
-  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		
-		<!-- wordpress head functions -->
-		<?php wp_head(); ?>
-		<!-- end of wordpress head -->
 		
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
 		
@@ -219,6 +198,28 @@
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-responsive.min.css">
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 		
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write(unescape('%3Cscript src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+		
+		<script src="<?php echo get_template_directory_uri(); ?>/library/js/modernizr.full.min.js"></script>
+		
+		<!-- media-queries.js (fallback) -->
+		<!--[if lt IE 9]>
+			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>			
+		<![endif]-->
+
+		<!-- html5.js -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		
+		<!-- wordpress head functions -->
+		<?php wp_head(); ?>
+		<!-- end of wordpress head -->
+
 		<?php 
 
 			// check wp user level
