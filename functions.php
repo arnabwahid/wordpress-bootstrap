@@ -8,6 +8,10 @@ just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
 */
 
+// Theme Admin Settings
+require('admin/custom-post.php');
+require('admin/admin-settings.php');
+
 // Get Bones Core Up & Running!
 require_once('library/bones.php');            // core functions (don't remove)
 require_once('library/plugins.php');          // plugins & extra functions (optional)
@@ -19,7 +23,7 @@ require_once('library/options-panel.php');
 require_once('library/shortcodes.php');
 
 // Admin Functions (commented out by default)
-// require_once('library/admin.php');         // custom admin functions
+//require_once('library/admin.php');         // custom admin functions
 
 // Custom Backend Footer
 function bones_custom_admin_footer() {
