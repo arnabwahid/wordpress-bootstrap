@@ -7,14 +7,25 @@
 					<article id="post-not-found" class="clearfix">
 						
 						<header>
+
+							<div class="hero-unit">
 							
-							<div class="page-header"><h1>Epic 404 - Article Not Found</h1></div>
-						
+								<h1>Epic 404 - Article Not Found</h1>
+								<p>This is embarassing. We can't find what you were looking for.</p>
+															
+							</div>
+													
 						</header> <!-- end article header -->
 					
 						<section class="post_content">
 							
-							<p>The article you were looking for was not found, but maybe try looking again!</p>
+							<p>Whatever you were looking for was not found, but maybe try looking again or search using the form below.</p>
+
+							<div class="row-fluid">
+								<div class="span12">
+									<?php get_search_form(); ?>
+								</div>
+							</div>
 					
 						</section> <!-- end article section -->
 						

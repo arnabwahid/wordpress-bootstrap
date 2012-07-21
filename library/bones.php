@@ -57,7 +57,7 @@ add_filter('excerpt_more', 'bones_excerpt_more');
 function bones_theme_support() {
 	add_theme_support('post-thumbnails');      // wp thumbnails (sizes handled in functions.php)
 	set_post_thumbnail_size(125, 125, true);   // default thumb size
-	add_custom_background();                   // wp custom background
+	add_theme_support( 'custom-background' );  // wp custom background
 	add_theme_support('automatic-feed-links'); // rss thingy
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
 	// adding post format support
@@ -121,8 +121,8 @@ function bones_footer_links() {
  
 // this is the fallback for header menu
 function bones_main_nav_fallback() { 
-	// not calling this in case of multiple level pages - hope to add dropdown menu as an enhancement
-	//wp_page_menu( 'show_home=Home&menu_class=menu' ); 
+	// Figure out how to make this output bootstrap-friendly html
+	//wp_page_menu( 'show_home=Home&menu_class=nav' ); 
 }
 
 // this is the fallback for footer menu

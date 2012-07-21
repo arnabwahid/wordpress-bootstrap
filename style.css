@@ -277,9 +277,6 @@ ol.commentlist span.edit-comment{
 
 ol.commentlist li.bypostauthor{
 	background-color: #dddddd;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
 }
 
 ol.commentlist ul.children li{
