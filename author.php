@@ -34,7 +34,7 @@
 					
 						<section class="post_content">
 						
-							<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
 						
 							<?php the_excerpt(); ?>
 					

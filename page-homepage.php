@@ -17,13 +17,15 @@ Template Name: Homepage
 						<header>
 						
 							<div class="hero-unit">
-							
+
+								<?php the_post_thumbnail( 'wpbs-featured-home' ); ?>
+
 								<h1><?php the_title(); ?></h1>
 								
 								<?php echo get_post_meta($post->ID, 'custom_tagline' , true);?>
 							
 							</div>
-						
+
 						</header>
 						
 						<section class="row-fluid post_content">

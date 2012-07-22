@@ -102,12 +102,12 @@ input, textarea, select, .uneditable-input {
 	margin-bottom: 18px;
 }
 
-#menu-footer-nav{
+.footer-links .menu{
 	list-style-type: none;
 	margin-left: 0;
 }
 
-#menu-footer-nav li{
+.footer-links .menu li{
 	float: left;
 	margin-left: 10px;
 }
@@ -160,6 +160,10 @@ div[id*='attachment_']{
 #credit320{
 	background: url('images/320press_mini.png') no-repeat left top transparent;
 	padding-left: 20px;
+}
+
+#main .hero-unit img{
+	margin-bottom: 1em;
 }
 
 #main article img{
