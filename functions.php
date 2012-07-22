@@ -37,6 +37,7 @@ if ( ! isset( $content_width ) ) $content_width = 580;
 // Thumbnail sizes
 add_image_size( 'wpbs-featured', 638, 300, true );
 add_image_size( 'wpbs-featured-home', 970, 311, true);
+add_image_size( 'wpbs-featured-carousel', 970, 400, true);
 add_image_size( 'bones-thumb-600', 600, 150, false );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 

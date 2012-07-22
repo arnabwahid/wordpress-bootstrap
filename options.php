@@ -194,6 +194,19 @@ function optionsframework_options() {
 						
 	$options[] = array( "name" => "Other Settings",
 						"type" => "heading");
+
+	$options[] = array( "name" => "Slider carousel on homepage",
+						"desc" => "Display the bootstrap slider carousel on homepage page template. This uses the wordpress featured images.",
+						"id" => "showhidden_slideroptions",
+						"std" => "0",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Slider options",
+						"desc" => "Number of posts to show.",
+						"id" => "slider_options",
+						"class" => "mini hidden",
+						"std" => "5",
+						"type" => "text");
 						
 	$options[] = array( "name" => "Homepage page template hero-unit background color",
 						"desc" => "Default used if no color is selected.",

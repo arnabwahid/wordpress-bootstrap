@@ -10,13 +10,77 @@ Template Name: Homepage
 			
 				<div id="main" class="span12 clearfix" role="main">
 
+					<?php
+
+					$use_carousel = of_get_option('showhidden_slideroptions');
+      				if ($use_carousel) {
+
+					?>
+
+					<div id="myCarousel" class="carousel">
+
+					    <!-- Carousel items -->
+					    <div class="carousel-inner">
+
+					    	<?php
+							global $post;
+							$tmp_post = $post;
+							$show_posts = of_get_option('slider_options');
+							$args = array( 'numberposts' => $show_posts ); // set this to how many posts you want in the carousel
+							$myposts = get_posts( $args );
+							$post_num = 0;
+							foreach( $myposts as $post ) :	setup_postdata($post);
+								$post_num++;
+								$post_thumbnail_id = get_post_thumbnail_id();
+								$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'wpbs-featured-carousel' );
+							?>
+
+						    <div class="<?php if($post_num == 1){ echo 'active'; } ?> item">
+						    	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'wpbs-featured-carousel' ); ?></a>
+
+							   	<div class="carousel-caption">
+
+					                <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+					                <p>
+					                	<?php
+					                		$excerpt_length = 100; // length of excerpt to show (in characters)
+					                		$the_excerpt = get_the_excerpt(); 
+					                		if($the_excerpt != ""){
+					                			$the_excerpt = substr( $the_excerpt, 0, $excerpt_length );
+					                			echo $the_excerpt . '... ';
+					                	?>
+					                	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="btn btn-primary">Read more &rsaquo;</a>
+					                	<?php } ?>
+					                </p>
+
+				                </div>
+						    </div>
+
+						    <?php endforeach; ?>
+							<?php $post = $tmp_post; ?>
+
+					    </div>
+
+					    <!-- Carousel nav -->
+					    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+					    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				    </div>
+
+				    <?php } // ends the if use carousel statement ?>
+
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 					
 						<header>
+
+							<?php 
+								$post_thumbnail_id = get_post_thumbnail_id();
+								$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'wpbs-featured-home' ); 
+								// not sure why this isn't working yet
+							?>
 						
-							<div class="hero-unit">
+							<div class="hero-unit" style="background-image: url('<?php echo $featured_src; ?>'); background-repeat: no-repeat; background-position: 0 0;">
 
 								<?php the_post_thumbnail( 'wpbs-featured-home' ); ?>
 

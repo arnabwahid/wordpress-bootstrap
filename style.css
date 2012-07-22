@@ -225,6 +225,15 @@ video {
 
 /* page styling */
 
+#featured-carousel .item{
+	width: 970px;
+	height: 600px;
+}
+
+.carousel-caption p{
+	display: none;
+}
+
 .page-template-page-homepage-php #main article{
 	border-bottom: none;
 }
@@ -495,7 +504,11 @@ blockquote.pull-left{
 	padding-right: 15px;
 }
 
-
+@media only screen and (min-width: 768px) {
+	.carousel-caption p{
+		display: block;
+	}
+}
 
 @media only screen and (min-width: 980px) {
 	body{
