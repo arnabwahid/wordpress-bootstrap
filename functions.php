@@ -453,12 +453,12 @@ function add_active_class($classes, $item) {
 function theme_styles()  
 { 
     // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-    wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '1.0', 'all' );
-    wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/css/responsive.css', array(), '1.0', 'all' );
+    //wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '1.0', 'all' );
+    //wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/css/responsive.css', array(), '1.0', 'all' );
     wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
     
-    wp_enqueue_style( 'bootstrap' );
-    wp_enqueue_style( 'bootstrap-responsive' );
+    //wp_enqueue_style( 'bootstrap' );
+    //wp_enqueue_style( 'bootstrap-responsive' );
     wp_enqueue_style( 'wp-bootstrap');
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
@@ -466,14 +466,41 @@ add_action('wp_enqueue_scripts', 'theme_styles');
 // enqueue javascript
 
 function theme_js(){
+  wp_register_script('less', get_template_directory_uri().'/library/js/less-1.3.0.min.js');
+
   wp_deregister_script('jquery'); // initiate the function  
   wp_register_script('jquery', get_template_directory_uri().'/library/js/libs/jquery-1.7.1.min.js', false, '1.7.1');
-  wp_register_script('bootstrap-js', get_template_directory_uri().'/library/js/bootstrap.min.js');
+
+  wp_register_script('bootstrap-alert', get_template_directory_uri().'/library/js/bootstrap-alert.js');
+  wp_register_script('bootstrap-button', get_template_directory_uri().'/library/js/bootstrap-button.js');
+  wp_register_script('bootstrap-carousel', get_template_directory_uri().'/library/js/bootstrap-carousel.js');
+  wp_register_script('bootstrap-collapse', get_template_directory_uri().'/library/js/bootstrap-collapse.js');
+  wp_register_script('bootstrap-dropdown', get_template_directory_uri().'/library/js/bootstrap-dropdown.js');
+  wp_register_script('bootstrap-modal', get_template_directory_uri().'/library/js/bootstrap-modal.js');
+  wp_register_script('bootstrap-popover', get_template_directory_uri().'/library/js/bootstrap-popover.js');
+  wp_register_script('bootstrap-scrollspy', get_template_directory_uri().'/library/js/bootstrap-scrollspy.js');
+  wp_register_script('bootstrap-tab', get_template_directory_uri().'/library/js/bootstrap-tab.js');
+  wp_register_script('bootstrap-tooltip', get_template_directory_uri().'/library/js/bootstrap-tooltip.js');
+  wp_register_script('bootstrap-transition', get_template_directory_uri().'/library/js/bootstrap-transition.js');
+  wp_register_script('bootstrap-typeahead', get_template_directory_uri().'/library/js/bootstrap-typeahead.js');
+
   wp_register_script('wpbs-scripts', get_template_directory_uri().'/library/js/scripts.js');
   wp_register_script('modernizr', get_template_directory_uri().'/library/js/modernizr.full.min.js');
 
+  wp_enqueue_script('less', array(''), '1.3.0', true);
   wp_enqueue_script('jquery');
-  wp_enqueue_script('bootstrap-js', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-alert', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-button', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-carousel', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-collapse', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-dropdown', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-modal', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-tooltip', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-popover', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-scrollspy', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-tab', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-transition', array('jQuery'), '1.1', true);
+  wp_enqueue_script('bootstrap-typeahead', array('jQuery'), '1.1', true);
   wp_enqueue_script('wpbs-scripts', array('jQuery'), '1.1', true);
   wp_enqueue_script('modernizr', array('jQuery'), '1.1', true);
 }

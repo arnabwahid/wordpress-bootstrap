@@ -37,7 +37,10 @@
 		<![endif]-->
 		
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		
+
+  		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/bootstrap.less">
+  		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/responsive.less">
+
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
@@ -51,7 +54,32 @@
 			get_currentuserinfo(); 
 			// store to use later
 			global $user_level; 
-		
+
+			// get list of post names to use in 'typeahead' plugin for search bar
+			if(of_get_option('search_bar', '1')) { // only do this if we're showing the search bar in the nav
+
+				global $post;
+				$tmp_post = $post;
+				$get_num_posts = 40; // go back and get this many post titles
+				$args = array( 'numberposts' => $get_num_posts );
+				$myposts = get_posts( $args );
+				$post_num = 0;
+
+				global $typeahead_data;
+				$typeahead_data = "[";
+
+				foreach( $myposts as $post ) :	setup_postdata($post);
+					$typeahead_data .= '"' . get_the_title() . '",';
+				endforeach;
+
+				$typeahead_data = substr($typeahead_data, 0, strlen($typeahead_data) - 1);
+
+				$typeahead_data .= "]";
+
+				$post = $tmp_post;
+
+			} // end if search bar is used
+
 		?>
 				
 	</head>
@@ -82,7 +110,7 @@
 							
 							<?php if(of_get_option('search_bar', '1')) {?>
 							<form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-								<input name="s" id="s" type="text" class="search-query" placeholder="<?php _e('Search','bonestheme'); ?>">
+								<input name="s" id="s" type="text" class="search-query" autocomplete="off" placeholder="<?php _e('Search','bonestheme'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
 							</form>
 							<?php } ?>
 							
