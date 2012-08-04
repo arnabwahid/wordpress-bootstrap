@@ -203,9 +203,9 @@ add_filter( 'the_password_form', 'custom_password_form' );
 function custom_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-	$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
+	$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
 	' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ,'bonestheme') . '
-	<label for="' . $label . '">' . __( "Password:" ,'bonestheme') . ' </label><div class="input"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'bonestheme' ) . '" /></div>
+	<label for="' . $label . '">' . __( "Password:" ,'bonestheme') . ' </label><div class="input-append"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'bonestheme' ) . '" /></div>
 	</form></div>
 	';
 	return $o;
