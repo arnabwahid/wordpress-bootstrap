@@ -272,9 +272,10 @@ function remove_thumbnail_dimensions( $html ) {
 
 // Add the Meta Box to the homepage template
 function add_homepage_meta_box() {  
-	
+	global $post;
 	// Only add homepage meta box if template being used is the homepage template
-	$post_id = isset($_GET['post']) ? $_GET['post'] : isset($_POST['post_ID']) ? $_POST['post_ID'] : "";
+	// $post_id = isset($_GET['post']) ? $_GET['post'] : isset($_POST['post_ID']) ? $_POST['post_ID'] : "";
+	$post_id = $post->ID;
 	$template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
 	if ($template_file == 'page-homepage.php')
 	{
