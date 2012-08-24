@@ -2,7 +2,7 @@
 Theme Name: wp-bootstrap
 Theme URI: http://320press.com/wpbs
 Description: A simple responsive theme based on twitter's bootstrap framework. Includes multiple page templates, two different sidebars and a theme options panel.
-Version: 2.0
+Version: 2.1
 Author: 320press
 Author URI: http://320press.com
 Tags: black, white, one-column, two-columns, flexible-width, custom-background, custom-colors, custom-menu, full-width-template, theme-options
@@ -29,19 +29,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 
 /* wp-specific classes */
 .wp-caption{
-	
+
 }
 
 .wp-caption-text{
-	
+
 }
 
 .sticky{
-	
+
 }
 
 .gallery-caption{
-	
+
 }
 
 /* for fun */
@@ -60,8 +60,8 @@ body{
 
 /* Admin Top Navigation fixes */
 
-body.admin-bar .navbar-fixed-top{ 
-	top: 28px; 
+body.admin-bar .navbar-fixed-top{
+	top: 28px;
 }
 
 .navbar .brand{
@@ -213,8 +213,8 @@ video {
 	overflow: hidden;
 }
 
-.video-container iframe,  
-.video-container object,  
+.video-container iframe,
+.video-container object,
 .video-container embed {
 	position: absolute;
 	top: 0;
@@ -343,7 +343,7 @@ img.avatar{
 	border-bottom: 1px solid #dedede;
 	border-right: 1px solid #dedede;
 	border-left: 1px solid #ddd;
-	
+
 }
 
 ol.commentlist li{
@@ -484,7 +484,7 @@ li.previous a:hover:before{
 
 #wp-calendar{
 	width: 100%;
-	
+
 }
 
 #wp-calendar caption{
@@ -520,79 +520,79 @@ blockquote.pull-left{
 	body{
 		padding-top: 60px;
 	}
-	
+
 	.container-fluid{
 		max-width: 970px;
 		margin: 0 auto;
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	
+
 	#inner-footer{
 		padding: 0;
 	}
-	
+
 	#content{
 		padding-left: 0;
 		padding-right: 0;
 	}
-	
+
 	.topbar-inner{
 		padding: 0;
 	}
-	
+
 	.topbar form.pull-right {
 		float: right;
 	}
-	
+
 	.navbar-form, .navbar-search {
 		margin-top: 6px;
 		margin-bottom: 0;
 	}
-	
+
 	.navbar-search{
 		padding-left: 0;
 	}
-	
+
 	.sidebar{
 		margin-top: 0 !important;
 	}
-	
+
 	.widget_search input{
 		width: 230px;
 	}
-	
+
 	.blog .hero-unit{
 		margin-top: 10px;
 	}
-	
+
 	.page-template-page-homepage-php .hero-unit,
 	.blog .hero-unit{
 		padding: 60px;
 	}
-	
+
 	.hero-unit h1 {
 		font-size: 60px;
 	}
-	
+
 	/* hide edit comment button and show on hover on desktop version */
 	.edit-comment{
 		display: none;
 	}
-	
+
 	.vcard:hover .edit-comment{
 		display: inline-block;
 	}
-	
+
 	#s{
 		width: 210px;
 		margin-bottom: 6px;
 	}
-	
+
 	.widget_search input{
 		width: 209px;
 	}
-	
+
 	.comment .vcard .comment-text{
 		padding-left: 0;
 		padding-right: 0;
