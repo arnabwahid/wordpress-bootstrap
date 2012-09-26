@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The WordPress template hierarchy first checks for any
+ * MIME-types and then looks for the attachment.php file.
+ *
+ * @link codex.wordpress.org/Template_Hierarchy#Attachment_display 
+ */ 
+
+get_header(); ?>
 			
 			<div id="content" class="clearfix row-fluid">
 			
@@ -8,7 +16,7 @@
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
-						<header>
+						<header> 
 							
 							<div class="page-header"><h1 class="single-title" itemprop="headline"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <?php the_title(); ?></h1></div>
 							
@@ -101,16 +109,26 @@
 					       }
 					
 					// Start to display EXIF and IPTC data of digital photograph
-					       echo __("Date Taken","bonestheme") . ": " . date("d-M-Y H:i:s", $imgmeta['image_meta']['created_timestamp'])."<br />";
-					       echo __("Copyright","bonestheme") . ": " . $imgmeta['image_meta']['copyright']."<br />";
-					       echo __("Credit","bonestheme") . ": " . $imgmeta['image_meta']['credit']."<br />";
-					       echo __("Title","bonestheme") . ": " . $imgmeta['image_meta']['title']."<br />";
-					       echo __("Caption","bonestheme") . ": " . $imgmeta['image_meta']['caption']."<br />";
-					       echo __("Camera","bonestheme") . ": " . $imgmeta['image_meta']['camera']."<br />";
-					       echo __("Focal Length","bonestheme") . ": " . $imgmeta['image_meta']['focal_length']."mm<br />";
-					       echo __("Aperture","bonestheme") . ": f/" . $imgmeta['image_meta']['aperture']."<br />";
-					       echo __("ISO","bonestheme") . ": " . $imgmeta['image_meta']['iso']."<br />";
-					       echo __("Shutter Speed","bonestheme") . ": " . $pshutter . "<br />"
+					       if ( $imgmeta['image_meta']['created_timestamp'] ) { 
+					           echo __("Date Taken","bonestheme") . ": " . date("d-M-Y H:i:s", $imgmeta['image_meta']['created_timestamp'])."<br />"; }
+					       if ( $imgmeta['image_meta']['copyright'] ) { 
+					           echo __("Copyright","bonestheme") . ": " . $imgmeta['image_meta']['copyright']."<br />"; }
+					       if ( $imgmeta['image_meta']['credit'] ) { 
+					           echo __("Credit","bonestheme") . ": " . $imgmeta['image_meta']['credit']."<br />"; }
+					       if ( $imgmeta['image_meta']['title'] ) { 
+					           echo __("Title","bonestheme") . ": " . $imgmeta['image_meta']['title']."<br />"; }
+					       if ( $imgmeta['image_meta']['caption'] ) { 
+					           echo __("Caption","bonestheme") . ": " . $imgmeta['image_meta']['caption']."<br />"; }
+					       if ( $imgmeta['image_meta']['camera'] ) { 
+					           echo __("Camera","bonestheme") . ": " . $imgmeta['image_meta']['camera']."<br />"; }
+					       if ( $imgmeta['image_meta']['focal_length'] ) { 
+					           echo __("Focal Length","bonestheme") . ": " . $imgmeta['image_meta']['focal_length']."mm<br />"; }
+					       if ( $imgmeta['image_meta']['aperture'] ) { 
+					           echo __("Aperture","bonestheme") . ": f/" . $imgmeta['image_meta']['aperture']."<br />"; }
+					       if ( $imgmeta['image_meta']['iso'] ) { 
+					           echo __("ISO","bonestheme") . ": " . $imgmeta['image_meta']['iso']."<br />"; }
+					       if ( $pshutter ) { 
+					           echo __("Shutter Speed","bonestheme") . ": " . $pshutter . "<br />"; }
 					   ?>
 					</div>
 					
