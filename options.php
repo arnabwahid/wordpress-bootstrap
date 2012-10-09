@@ -83,13 +83,13 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Headings",
 						"desc" => "Used in H1, H2, H3, H4, H5 & H6 tags.",
 						"id" => "heading_typography",
-						"std" => array('face' => '"Helvetica Neue",Helvetica,Arial,sans-serif','style' => 'bold','color' => '#404040'),
+						"std" => "",
 						"type" => "wpbs_typography");
 						
 	$options[] = array( "name" => "Main Body Text",
 						"desc" => "Used in P tags.",
 						"id" => "main_body_typography",
-						"std" => array('face' => '"Helvetica Neue",Helvetica,Arial,sans-serif','style' => 'normal','color' => '#404040'),
+						"std" => "",
 						"type" => "wpbs_typography");
 						
 	$options[] = array( "name" => "Link Color",
@@ -116,7 +116,7 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Position",
 						"desc" => "Fixed to the top of the window or scroll with content.",
 						"id" => "nav_position",
-						"std" => "fixed",
+						"std" => "",
 						"type" => "select",
 						"class" => "mini", //mini, tiny, small
 						"options" => $fixed_scroll);
@@ -124,50 +124,50 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Top nav background color",
 						"desc" => "Default used if no color is selected.",
 						"id" => "top_nav_bg_color",
-						"std" => "#222222",
+						"std" => "",
 						"type" => "color");
 						
 	$options[] = array( "name" => "Check to use a gradient for top nav background",
 						"desc" => "Use gradient",
 						"id" => "showhidden_gradient",
-						"std" => "1",
+						"std" => "",
 						"type" => "checkbox");
 	
 	$options[] = array( "name" => "Bottom gradient color",
 						"desc" => "Top nav background color used as top gradient color.",
 						"id" => "top_nav_bottom_gradient_color",
-						"std" => "#333333",
+						"std" => "",
 						"class" => "hidden",
 						"type" => "color");
 						
 	$options[] = array( "name" => "Top nav item color",
 						"desc" => "Link color.",
 						"id" => "top_nav_link_color",
-						"std" => "#BFBFBF",
+						"std" => "",
 						"type" => "color");
 						
 	$options[] = array( "name" => "Top nav item hover color",
 						"desc" => "Link hover color.",
 						"id" => "top_nav_link_hover_color",
-						"std" => "#FFFFFF",
+						"std" => "",
 						"type" => "color");
 						
 	$options[] = array( "name" => "Top nav dropdown item color",
 						"desc" => "Dropdown item color.",
 						"id" => "top_nav_dropdown_item",
-						"std" => "#555555",
+						"std" => "",
 						"type" => "color");
 						
 	$options[] = array( "name" => "Top nav dropdown item hover bg color",
 						"desc" => "Background of dropdown item hover color.",
 						"id" => "top_nav_dropdown_hover_bg",
-						"std" => "#0088CC",
+						"std" => "",
 						"type" => "color");
 	
 	$options[] = array( "name" => "Search bar",
 						"desc" => "Show search bar in top nav",
 						"id" => "search_bar",
-						"std" => "1",
+						"std" => "",
 						"type" => "checkbox");
 						
 	$options[] = array( "name" => "Theme",
@@ -211,7 +211,7 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Homepage page template hero-unit background color",
 						"desc" => "Default used if no color is selected.",
 						"id" => "hero_unit_bg_color",
-						"std" => "#F5F5F5",
+						"std" => "",
 						"type" => "color");
 						
 	$options[] = array( "name" => "'Comments are closed' message on pages",
