@@ -6,14 +6,14 @@ Twitter's bootstrap (http://twitter.github.com/bootstrap) in Wordpress theme for
 FEATURES
 ________
 
-We’ve built the WordPress Bootstrap theme so that it could be used as-is or as a starting point for theme developers. It’s built on top of the brilliant Bones theme framework by Eddie Machado and based on v2.0 of Twitter’s Bootstrap.
+We’ve built the WordPress Bootstrap theme so that it could be used as-is or as a starting point for theme developers. It’s built on top of the brilliant Bones theme framework by Eddie Machado and based on v2.1.1 of Twitter’s Bootstrap.
 
-Here’s what we’ve got so far. Watch this project on Github to keep up with some enhancements we’re developing.
+Here’s what we’ve got so far. Star this project on Github to keep up with its progress.
 
 Responsive
 __________
 
-We’ve built this with a responsive approach.  This will look good on everything from mobile to desktop.
+We stick as closely as possible to bootstrap so this thing is natually responsive. 
 
 Page Templates
 ______________
@@ -28,7 +28,7 @@ We’ve packaged four different page templates into this theme.
 Theme Options Panel
 ___________________
 
-Want to change some colors? Want the top nav to scroll with the content? Hide the search box in the top nav? Do it all in our options panel.
+Want to change some colors? Want the top nav to scroll with the content? Hide the search box in the top nav? Do it in the options panel.
 
 Shortcodes
 __________
@@ -38,4 +38,4 @@ We’ve built in some shortcodes so you can easily add UI elements found in Twit
 Sidebars
 ________
 
-We’ve built in two different sidebars. One for the homepage and one for the other pages. Add widgets to your heart’s content.
+We’ve built in two different sidebars. One for the homepage and one for the other pages. Add widgets to them.
