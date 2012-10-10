@@ -165,6 +165,7 @@ div[id*='attachment_']{
 }
 
 #main article img{
+	height: auto;
 	max-width: 100%;
 }
 
