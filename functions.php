@@ -139,10 +139,10 @@ function bones_comments($comment, $args, $depth) {
 	<li <?php comment_class(); ?>>
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
 			<div class="comment-author vcard row-fluid clearfix">
-				<div class="avatar span2">
+				<div class="avatar span3">
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
-				<div class="span10 comment-text">
+				<div class="span9 comment-text">
 					<?php printf(__('<h4>%s</h4>','bonestheme'), get_comment_author_link()) ?>
 					<?php edit_comment_link(__('Edit','bonestheme'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
                     

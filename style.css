@@ -123,10 +123,6 @@ input, textarea, select, .uneditable-input {
 	padding: 0 0 9px;
 }
 
-.sidebar{
-	margin-top: 18px !important;
-}
-
 #main article footer{
 	border-top: none;
 	margin-top: 0;
@@ -261,7 +257,7 @@ ol.commentlist ul.children{
 	margin-left: 0;
 }
 
-.comment .vcard div{
+.comment .vcard > div{
 	margin-top: 8px;
 	padding: 0 10px;
 }

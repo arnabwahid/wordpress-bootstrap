@@ -29,7 +29,7 @@ function addTwitterBSClass(thisObj) {
   return true;
 }
 
-// as the page loads, cal these scripts
+// as the page loads, call these scripts
 $(document).ready(function() {
 
 	// modify tag cloud links to match up with twitter bootstrap
