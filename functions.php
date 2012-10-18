@@ -143,7 +143,7 @@ function bones_comments($comment, $args, $depth) {
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
 				<div class="span9 comment-text">
-					<?php printf(__('<h4>%s</h4>','bonestheme'), get_comment_author_link()) ?>
+					<?php printf('<h4>%s</h4>', get_comment_author_link()) ?>
 					<?php edit_comment_link(__('Edit','bonestheme'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
                     
                     <?php if ($comment->comment_approved == '0') : ?>
@@ -205,7 +205,7 @@ function custom_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
-	' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ,'bonestheme') . '
+	' . '<p>' . __( "This post is password protected. To view it please enter your password below:" ,'bonestheme') . '</p>' . '
 	<label for="' . $label . '">' . __( "Password:" ,'bonestheme') . ' </label><div class="input-append"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'bonestheme' ) . '" /></div>
 	</form></div>
 	';

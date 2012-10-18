@@ -38,10 +38,10 @@
 					
 					<article id="post-not-found">
 					    <header>
-					    	<h1>Not Found</h1>
+					    	<h1><?php _e("Not Found","bonestheme"); ?></h1>
 					    </header>
 					    <section class="post_content">
-					    	<p>Sorry, but the requested resource was not found on this site.</p>
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.","bonestheme"); ?></p>
 					    </section>
 					    <footer>
 					    </footer>
