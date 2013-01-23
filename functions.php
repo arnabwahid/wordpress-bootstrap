@@ -582,14 +582,15 @@ function get_wpbs_theme_options(){
       }
       
       $topbar_bg_color = of_get_option('top_nav_bg_color');
-      if ( $topbar_bg_color ) {
+      $use_gradient = of_get_option('showhidden_gradient');
+      if ( $topbar_bg_color && !$use_gradient ) {
         $theme_options_styles .= '
         .navbar-inner, .navbar .fill { 
           background-color: '. $topbar_bg_color . ';
+          background-image: none;
         }' . $topbar_bg_color;
       }
       
-      $use_gradient = of_get_option('showhidden_gradient');
       if ($use_gradient) {
         $topbar_bottom_gradient_color = of_get_option('top_nav_bottom_gradient_color');
       
