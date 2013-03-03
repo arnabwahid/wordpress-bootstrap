@@ -9,8 +9,14 @@
 function optionsframework_option_name() {
 
 	// This gets the theme name from the stylesheet (lowercase and without spaces)
-	$the_theme = wp_get_theme();
-	$themename = $the_theme->Name;
+	if ( function_exists( 'wp_get_theme' ) ) {
+                $the_theme = wp_get_theme(  get_template_directory() . '/style.css' );
+        // WordPress 3.3
+        } else {
+                $the_theme = get_theme_data(  get_template_directory() . '/style.css' );
+        }
+        $themename = $the_theme['Title'];
+        
 	$themename = preg_replace("/\W/", "", strtolower($themename) );
 	
 	$optionsframework_settings = get_option('optionsframework');
