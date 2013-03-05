@@ -10,8 +10,13 @@ function optionsframework_fields() {
 	$optionsframework_settings = get_option('optionsframework');
 	
 	// Get the theme name so we can display it up top
-	$the_theme = wp_get_theme();
-	$themename = $the_theme->Name;
+	if ( function_exists( 'wp_get_theme' ) ) {
+                $the_theme = wp_get_theme(  get_template_directory() . '/style.css' );
+        // WordPress 3.3
+        } else {
+                $the_theme = get_theme_data(  get_template_directory() . '/style.css' );
+        }
+        $themename = $the_theme['Title'];
 
 	// Gets the unique option id
 	if (isset($optionsframework_settings['id'])) {
