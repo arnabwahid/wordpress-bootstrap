@@ -27,10 +27,6 @@ function bones_head_cleanup() {
 	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );             // start link
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Links for Adjacent Posts
 	remove_action( 'wp_head', 'wp_generator' );                           // WP version
-	if (!is_admin()) {
-		wp_deregister_script('jquery');                                   // De-Register jQuery
-		wp_register_script('jquery', '', '', '', true);                   // It's already in the Header
-	}	
 }
 	// launching operation cleanup
 	add_action('init', 'bones_head_cleanup');
