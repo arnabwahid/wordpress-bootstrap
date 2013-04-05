@@ -458,45 +458,46 @@ function add_active_class($classes, $item) {
 }
 
 // enqueue styles
-
-function theme_styles()  
-{ 
-    // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-    wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
-    wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.0', 'all' );
-    wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
-    
-    wp_enqueue_style( 'bootstrap' );
-    wp_enqueue_style( 'bootstrap-responsive' );
-    wp_enqueue_style( 'wp-bootstrap');
+if(!function_exists("theme_styles")) {  
+    function theme_styles()  
+    { 
+        // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
+        wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
+        wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.0', 'all' );
+        wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
+        
+        wp_enqueue_style( 'bootstrap' );
+        wp_enqueue_style( 'bootstrap-responsive' );
+        wp_enqueue_style( 'wp-bootstrap');
+    }
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
 
 // enqueue javascript
-
-function theme_js(){
-
-  wp_register_script( 'bootstrap', 
-    get_template_directory_uri() . '/library/js/bootstrap.min.js', 
-    array('jquery'), 
-    '1.2' );
-
-  wp_register_script( 'wpbs-scripts', 
-    get_template_directory_uri() . '/library/js/scripts.js', 
-    array('jquery'), 
-    '1.2' );
-
-  wp_register_script(  'modernizr', 
-    get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
-    array('jquery'), 
-    '1.2' );
-
-  wp_enqueue_script('bootstrap');
-  wp_enqueue_script('wpbs-scripts');
-  wp_enqueue_script('modernizr');
-  
+if(!function_exists("theme_js")) {  
+    function theme_js(){
+    
+      wp_register_script( 'bootstrap', 
+        get_template_directory_uri() . '/library/js/bootstrap.min.js', 
+        array('jquery'), 
+        '1.2' );
+    
+      wp_register_script( 'wpbs-scripts', 
+        get_template_directory_uri() . '/library/js/scripts.js', 
+        array('jquery'), 
+        '1.2' );
+    
+      wp_register_script(  'modernizr', 
+        get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
+        array('jquery'), 
+        '1.2' );
+    
+      wp_enqueue_script('bootstrap');
+      wp_enqueue_script('wpbs-scripts');
+      wp_enqueue_script('modernizr');
+      
+    }
 }
-
 add_action('wp_enqueue_scripts', 'theme_js');
 
 // Get theme options
