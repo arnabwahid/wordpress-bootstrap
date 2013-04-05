@@ -139,7 +139,7 @@ function bones_comments($comment, $args, $depth) {
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
 			<div class="comment-author vcard row-fluid clearfix">
 				<div class="avatar span3">
-					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
+					<?php echo get_avatar( $comment, $size='75' ); ?>
 				</div>
 				<div class="span9 comment-text">
 					<?php printf('<h4>%s</h4>', get_comment_author_link()) ?>
