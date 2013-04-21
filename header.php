@@ -9,25 +9,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		
-		<title>
-			<?php if ( !is_front_page() ) { echo wp_title( ' ', true, 'left' ); echo ' | '; }
-			echo bloginfo( 'name' ); echo ' - '; bloginfo( 'description', 'display' );  ?> 
-		</title>
-				
+		<title><?php wp_title( '|', true, 'right' ); ?></title>	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<!-- icons & favicons -->
-		<!-- For iPhone 4 -->
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/h/apple-touch-icon.png">
-		<!-- For iPad 1-->
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/m/apple-touch-icon.png">
-		<!-- For iPhone 3G, iPod Touch and Android -->
-		<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon-precomposed.png">
-		<!-- For Nokia -->
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon.png">
-		<!-- For everything else -->
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 				
 		<!-- media-queries.js (fallback) -->
 		<!--[if lt IE 9]>
@@ -48,39 +31,8 @@
 		<!-- theme options from options panel -->
 		<?php get_wpbs_theme_options(); ?>
 
-		<?php 
-
-			// check wp user level
-			get_currentuserinfo(); 
-			// store to use later
-			global $user_level; 
-
-			// get list of post names to use in 'typeahead' plugin for search bar
-			if(of_get_option('search_bar', '1')) { // only do this if we're showing the search bar in the nav
-
-				global $post;
-				$tmp_post = $post;
-				$get_num_posts = 40; // go back and get this many post titles
-				$args = array( 'numberposts' => $get_num_posts );
-				$myposts = get_posts( $args );
-				$post_num = 0;
-
-				global $typeahead_data;
-				$typeahead_data = "[";
-
-				foreach( $myposts as $post ) :	setup_postdata($post);
-					$typeahead_data .= '"' . get_the_title() . '",';
-				endforeach;
-
-				$typeahead_data = substr($typeahead_data, 0, strlen($typeahead_data) - 1);
-
-				$typeahead_data .= "]";
-
-				$post = $tmp_post;
-
-			} // end if search bar is used
-
-		?>
+		<!-- typeahead plugin - if top nav search bar enabled -->
+		<?php require_once('library/typeahead.php'); ?>
 				
 	</head>
 	
@@ -114,9 +66,9 @@
 							</form>
 							<?php } ?>
 							
-						</div>
-					</div>
-				</div>
+						</div> <!-- end .nav-container -->
+					</div> <!-- end .navbar-inner -->
+				</div> <!-- end .navbar -->
 			
 			</div> <!-- end #inner-header -->
 		
