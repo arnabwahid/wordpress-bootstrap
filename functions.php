@@ -568,6 +568,9 @@ function get_wpbs_theme_options(){
         body{
           padding-top: 0;
         }
+        #content {
+          padding-top: 27px;
+        }
         ' 
         ;
       }
