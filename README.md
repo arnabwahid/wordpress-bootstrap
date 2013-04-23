@@ -1,14 +1,14 @@
-WORDPRESS BOOTSTRAP
+WP-BOOTSTRAP
 ===================
 
-Twitter's bootstrap (http://twitter.github.com/bootstrap) in Wordpress theme form. Using Eddie Machado's Bones for a starting point (https://github.com/eddiemachado/bones). 
+Bootstrap (http://twitter.github.io/bootstrap) in Wordpress theme form. Using Eddie Machado's Bones for a starting point (https://github.com/eddiemachado/bones). 
 
 FEATURES
 ________
 
-We’ve built the WordPress Bootstrap theme so that it could be used as-is or as a starting point for theme developers. It’s built on top of the brilliant Bones theme framework by Eddie Machado and based on v2.1.1 of Twitter’s Bootstrap.
+We’ve built the WP-Bootstrap theme so that it could be used as-is or as a starting point for theme developers. It’s built on top of the brilliant Bones theme framework by Eddie Machado and based on v2.3.1 of Bootstrap.
 
-Here’s what we’ve got so far. Star this project on Github to keep up with its progress.
+Star this project on Github to keep up with its progress.
 
 Responsive
 __________
