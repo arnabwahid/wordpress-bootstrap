@@ -220,7 +220,6 @@ function of_sanitize_font_face( $value ) {
 	return apply_filters( 'of_default_font_face', current( $recognized ) );
 }
 add_filter( 'of_font_face', 'of_sanitize_font_face' );
-
 /**
  * Get recognized background repeat settings
  *
