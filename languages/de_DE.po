@@ -160,7 +160,7 @@ msgstr "Sie m&uuml;ssen"
 
 #: comments.php:89
 msgid "logged in"
-msgstr "eingellogt sein"
+msgstr "eingellogt "
 
 #: comments.php:89
 msgid "to post a comment"
@@ -168,7 +168,7 @@ msgstr "um einen Kommentar zu schreiben"
 
 #: comments.php:97
 msgid "Logged in as"
-msgstr "Eingeloggt sein als"
+msgstr "Eingeloggt als"
 
 #: comments.php:97
 msgid "Log out of this account"
@@ -208,7 +208,7 @@ msgstr "Ihre Website"
 
 #: comments.php:137
 msgid "Your Comment Here…"
-msgstr "Schreiben Sie hier ihren Kommentar"
+msgstr "Ihr Kommentar..."
 
 #: comments.php:142
 msgid "Submit Comment"
