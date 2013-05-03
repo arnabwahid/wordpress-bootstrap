@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: /Users/kafran/Documents/wordpress-bootstrap\n"
@@ -29,8 +29,8 @@ msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
 msgstr ""
-"Das, wonach Sie suchen, konnte nicht gefunden werden, aber versuchen Sie es nochmal "
-"oder versuchen Sie es mit dem nachfolgenden Suchformular."
+"Das, wonach Sie suchen, konnte nicht gefunden werden, aber versuchen Sie es "
+"nochmal oder versuchen Sie es mit dem nachfolgenden Suchformular."
 
 #: archive.php:10
 msgid "Posts Categorized:"
@@ -102,7 +102,8 @@ msgstr "Nicht gefunden"
 #: page-homepage.php:129 page-left-sidebar.php:49 page.php:41 search.php:57
 #: single.php:54
 msgid "Sorry, but the requested resource was not found on this site."
-msgstr "Es tut uns leid, aber die gew&uuml;nschte Ressource existiert hier nicht."
+msgstr ""
+"Es tut uns leid, aber die gew&uuml;nschte Ressource existiert hier nicht."
 
 #: comments.php:11
 msgid "This post is password protected. Enter the password to view comments."
@@ -160,7 +161,7 @@ msgstr "Sie m&uuml;ssen"
 
 #: comments.php:89
 msgid "logged in"
-msgstr "eingellogt "
+msgstr "eingeloggt "
 
 #: comments.php:89
 msgid "to post a comment"
@@ -230,8 +231,8 @@ msgstr "Suche nach:"
 msgid ""
 "This post is password protected. To view it please enter your password below:"
 msgstr ""
-"Dieser Beitrag ist Passwort-verschl&uuml;sselt. Bitte geben Sie ihr Passwort ein, um ihn zu sehen: "
-""
+"Dieser Beitrag ist Passwort-verschl&uuml;sselt. Bitte geben Sie ihr Passwort "
+"ein, um ihn zu sehen: "
 
 #: functions.php:209
 msgid "Password:"
@@ -308,8 +309,8 @@ msgstr "Beitrag bearbeiten"
 #: admin/options-framework.php:230
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
-"Bitte klicken Sie auf OK zum Zur&uuml;cksetzen. Alle Einstellungen gehen dabei verloren!  "
-""
+"Bitte klicken Sie auf OK zum Zur&uuml;cksetzen. Alle Einstellungen gehen "
+"dabei verloren!  "
 
 #: admin/options-framework.php:263
 msgid "Default options restored."
