@@ -261,14 +261,18 @@ function my_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 
-// filter tag clould output so that it can be styled by CSS
+// filter tag cloud output so that it can be styled by CSS
 function add_tag_class( $taglinks ) {
     $tags = explode('</a>', $taglinks);
     $regex = "#(.*tag-link[-])(.*)(' title.*)#e";
+    $term_slug = "(get_tag($2) ? get_tag($2)->slug : get_category($2)->slug)";
+
         foreach( $tags as $tag ) {
-        	$tagn[] = preg_replace($regex, "('$1$2 label tag-'.get_tag($2)->slug.'$3')", $tag );
+        	$tagn[] = preg_replace($regex, "('$1$2 label tag-'.$term_slug.'$3')", $tag );
         }
+
     $taglinks = implode('</a>', $tagn);
+
     return $taglinks;
 }
 
