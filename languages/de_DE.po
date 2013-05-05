@@ -96,7 +96,7 @@ msgstr "Tags"
 #: page-homepage.php:126 page-left-sidebar.php:46 page.php:38 search.php:54
 #: single.php:51
 msgid "Not Found"
-msgstr "Nicht gefunden"
+msgstr "Nichts gefunden"
 
 #: attachment.php:44 image.php:70 index.php:72 page-full-width.php:47
 #: page-homepage.php:129 page-left-sidebar.php:49 page.php:41 search.php:57
@@ -121,15 +121,15 @@ msgstr "Antworten"
 
 #: comments.php:21
 msgid "One"
-msgstr "Ein"
+msgstr "Eine"
 
 #: comments.php:21
 msgid "Response"
-msgstr "Antwort"
+msgstr "Reaktion"
 
 #: comments.php:21
 msgid "to"
-msgstr "an"
+msgstr "auf"
 
 #: comments.php:25 comments.php:46
 msgid "Older comments"
