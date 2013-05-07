@@ -24,7 +24,8 @@
 		<!-- For Nokia -->
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon.png">
 		<!-- For everything else -->
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+		<?php $favicon_url = (of_get_option('favicon_url','')!='') ? of_get_option('favicon_url') : get_template_directory_uri() . '/favicon.ico'; ?>
+		<link rel="shortcut icon" href="<?php echo $favicon_url; ?>">
 				
 		<!-- media-queries.js (fallback) -->
 		<!--[if lt IE 9]>
@@ -91,7 +92,11 @@
 					<div class="navbar-inner">
 						<div class="container-fluid nav-container">
 							<nav role="navigation">
-								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
+									<?php if(of_get_option('branding_logo','')!='') { ?>
+										<img src="<?php echo of_get_option('branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
+										<?php }
+										if(of_get_option('site_name','1')) bloginfo('name'); ?></a>
 								
 								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							        <span class="icon-bar"></span>

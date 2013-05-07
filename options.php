@@ -176,6 +176,18 @@ function optionsframework_options() {
 						"id" => "search_bar",
 						"std" => "",
 						"type" => "checkbox");
+
+	$options[] = array( "name" => "Branding Logo",
+						"desc" => "Select an image to use for site branding",
+						"id" => "branding_logo",
+						"std" => "",
+						"type" => "upload");
+
+	$options[] = array( "name" => "Site name",
+						"desc" => "Check to show the site name in the navbar",
+						"id" => "site_name",
+						"std" => "1",
+						"type" => "checkbox");
 						
 	$options[] = array( "name" => "Theme",
 						"type" => "heading");
@@ -232,13 +244,19 @@ function optionsframework_options() {
 						"id" => "blog_hero",
 						"std" => "1",
 						"type" => "checkbox");
+
+	$options[] = array( "name" => "Custom favicon",
+						"desc" => "URL for a valid .ico favicon",
+						"id" => "favicon_url",
+						"std" => "",
+						"type" => "text");
 	
 	$options[] = array( "name" => "CSS",
 						"desc" => "Additional CSS",
 						"id" => "wpbs_css",
 						"std" => "",
 						"type" => "textarea");
-									
+															
 	return $options;
 }
 
