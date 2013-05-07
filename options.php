@@ -232,13 +232,19 @@ function optionsframework_options() {
 						"id" => "blog_hero",
 						"std" => "1",
 						"type" => "checkbox");
+
+	$options[] = array( "name" => "Custom favicon",
+						"desc" => "URL for a valid .ico favicon",
+						"id" => "favicon_url",
+						"std" => "",
+						"type" => "text");
 	
 	$options[] = array( "name" => "CSS",
 						"desc" => "Additional CSS",
 						"id" => "wpbs_css",
 						"std" => "",
 						"type" => "textarea");
-									
+															
 	return $options;
 }
 
