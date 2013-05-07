@@ -176,6 +176,18 @@ function optionsframework_options() {
 						"id" => "search_bar",
 						"std" => "",
 						"type" => "checkbox");
+
+	$options[] = array( "name" => "Branding Logo",
+						"desc" => "Select an image to use for site branding",
+						"id" => "branding_logo",
+						"std" => "",
+						"type" => "upload");
+
+	$options[] = array( "name" => "Site name",
+						"desc" => "Check to show the site name in the navbar",
+						"id" => "site_name",
+						"std" => "1",
+						"type" => "checkbox");
 						
 	$options[] = array( "name" => "Theme",
 						"type" => "heading");
