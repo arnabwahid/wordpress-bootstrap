@@ -1,0 +1,346 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPBS\n"
+"POT-Creation-Date: 2012-10-17 23:02-0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Filip Vasiljevic <filip@thegreatinternet.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: /Users/kafran/Documents/wordpress-bootstrap\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "Epic 404 - Article Not Found"
+msgstr "Epic 404 - Artikel nicht gefunden"
+
+#: 404.php:14
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr "Das ist peinlich. Wir können das Gesuchte nicht finden."
+
+#: 404.php:22
+msgid ""
+"Whatever you were looking for was not found, but maybe try looking again or "
+"search using the form below."
+msgstr ""
+"Das gesuchte konnte nicht gefunden werden, aber vielleicht versuchst du es "
+"noch einmal oder suchst mit der untenstehenden Suchmaske."
+
+#: archive.php:10
+msgid "Posts Categorized:"
+msgstr "Kategorisierte Beiträge:"
+
+#: archive.php:14
+msgid "Posts Tagged:"
+msgstr "Verschlagwortete Beiträge:"
+
+#: archive.php:18 author.php:8
+msgid "Posts By:"
+msgstr "Beiträge von:"
+
+#: archive.php:22
+msgid "Daily Archives:"
+msgstr "Tages Archiv:"
+
+#: archive.php:26
+msgid "Monthly Archives:"
+msgstr "Monats Archiv:"
+
+#: archive.php:30
+msgid "Yearly Archives:"
+msgstr "Jahres Archiv:"
+
+#: archive.php:43 attachment.php:15 author.php:31 image.php:23 index.php:34
+#: search.php:17 single.php:17
+msgid "Posted"
+msgstr "Veröffentlicht"
+
+#: archive.php:43 attachment.php:15 author.php:31 image.php:23 index.php:34
+#: search.php:17 single.php:17
+msgid "by"
+msgstr "von"
+
+#: archive.php:43 attachment.php:15 author.php:31 index.php:34 search.php:17
+#: single.php:17
+msgid "filed under"
+msgstr "archiviert unter"
+
+#: archive.php:70 author.php:58 index.php:59 search.php:42
+msgid "&laquo; Older Entries"
+msgstr "&laquo; ältere Beiträge"
+
+#: archive.php:71 author.php:59 index.php:60 search.php:43
+msgid "Newer Entries &raquo;"
+msgstr "Neuere Beiträge &raquo;"
+
+#: archive.php:81 author.php:69
+msgid "No Posts Yet"
+msgstr "Bisher keine Beiträge"
+
+#: archive.php:84 author.php:72
+msgid "Sorry, What you were looking for is not here."
+msgstr "Entschuldigung, was du gesucht hast ist nicht hier."
+
+#: attachment.php:27 image.php:53 index.php:44 page-full-width.php:30
+#: page-homepage.php:109 page-left-sidebar.php:32 page.php:24 single.php:30
+msgid "Tags"
+msgstr "Schlagworte"
+
+#: attachment.php:41 image.php:67 index.php:69 page-full-width.php:44
+#: page-homepage.php:126 page-left-sidebar.php:46 page.php:38 search.php:54
+#: single.php:51
+msgid "Not Found"
+msgstr "Nicht gefunden"
+
+#: attachment.php:44 image.php:70 index.php:72 page-full-width.php:47
+#: page-homepage.php:129 page-left-sidebar.php:49 page.php:41 search.php:57
+#: single.php:54
+msgid "Sorry, but the requested resource was not found on this site."
+msgstr ""
+"Entschuldigung, aber die abgefragte Ressource ist nicht auf dieser Seite "
+"gefunden worden."
+
+#: comments.php:11
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Dieser Beitrag ist passwortgeschützt. Gebe ein Passwort ein um die "
+"Kommentare sehen zu können."
+
+#: comments.php:21
+msgid "No"
+msgstr "Keine"
+
+#: comments.php:21
+msgid "Responses"
+msgstr "Antworten"
+
+#: comments.php:21
+msgid "One"
+msgstr "Ein"
+
+#: comments.php:21
+msgid "Response"
+msgstr "Antwort"
+
+#: comments.php:21
+msgid "to"
+msgstr "für"
+
+#: comments.php:25 comments.php:46
+msgid "Older comments"
+msgstr "Ältere Kommentare"
+
+#: comments.php:26 comments.php:47
+msgid "Newer comments"
+msgstr "Neuere Kommentare"
+
+#: comments.php:68
+msgid "Comments are closed"
+msgstr "Kommentare sind geschlossen"
+
+#: comments.php:81
+msgid "Leave a Reply"
+msgstr "Hinterlasse eine Antwort"
+
+#: comments.php:81
+msgid "Leave a Reply to"
+msgstr "Hinterlasse eine Antwort an"
+
+#: comments.php:84
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: comments.php:89
+msgid "You must be"
+msgstr "Du musst"
+
+#: comments.php:89
+msgid "logged in"
+msgstr "angemeldet sein"
+
+#: comments.php:89
+msgid "to post a comment"
+msgstr "um einen Kommentar zu veröffentlichen"
+
+#: comments.php:97
+msgid "Logged in as"
+msgstr "Angemeldet als"
+
+#: comments.php:97
+msgid "Log out of this account"
+msgstr "Konto abmelden"
+
+#: comments.php:97
+msgid "Log out"
+msgstr "Abmelden"
+
+#: comments.php:105
+msgid "Name"
+msgstr "Name"
+
+#: comments.php:107
+msgid "Your Name"
+msgstr "Dein Name"
+
+#: comments.php:114
+msgid "Mail"
+msgstr "E-Mail"
+
+#: comments.php:116
+msgid "Your Email"
+msgstr "Deine E-Mail"
+
+#: comments.php:117
+msgid "will not be published"
+msgstr "wird nicht veröffentlicht"
+
+#: comments.php:124
+msgid "Website"
+msgstr "Webseite"
+
+#: comments.php:126
+msgid "Your Website"
+msgstr "Deine Webseite"
+
+#: comments.php:137
+msgid "Your Comment Here…"
+msgstr "Dein Kommentar hier…"
+
+#: comments.php:142
+msgid "Submit Comment"
+msgstr "Kommentar einreichen"
+
+#: functions.php:147
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: functions.php:151
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Moderation."
+
+#: functions.php:193
+msgid "Search for:"
+msgstr "Suchen nach:"
+
+#: functions.php:208
+msgid ""
+"This post is password protected. To view it please enter your password below:"
+msgstr ""
+"Dieser Beitrag ist durch ein Passwort geschützt. Um ihn zu sehen, gebe bitte "
+"dein Passwort unten ein:"
+
+#: functions.php:209
+msgid "Password:"
+msgstr "Passwort:"
+
+#: header.php:116 searchform.php:5
+msgid "Search"
+msgstr "Suche"
+
+#: image.php:89
+msgid "Image metadata"
+msgstr "Metadaten des Bildes"
+
+#: image.php:113
+msgid "Date Taken"
+msgstr "Aufnahemdatum"
+
+#: image.php:115
+msgid "Copyright"
+msgstr "Copyright"
+
+#: image.php:117
+msgid "Credit"
+msgstr "Bildnachweis"
+
+#: image.php:119
+msgid "Title"
+msgstr "Titel"
+
+#: image.php:121
+msgid "Caption"
+msgstr "Untertitel"
+
+#: image.php:123
+msgid "Camera"
+msgstr "Kamera"
+
+#: image.php:125
+msgid "Focal Length"
+msgstr "Brennweite"
+
+#: image.php:127
+msgid "Aperture"
+msgstr "Blende"
+
+#: image.php:129
+msgid "ISO"
+msgstr "ISO"
+
+#: image.php:131
+msgid "Shutter Speed"
+msgstr "Belichtungszeit"
+
+#: index.php:39
+msgid "Read more &raquo;"
+msgstr "Mehr &raquo;"
+
+#: search.php:7
+msgid "Search Results for"
+msgstr "Suchergebnis für"
+
+#: search.php:22
+msgid "Read more on"
+msgstr "Lese mehr über"
+
+#: sidebar-sidebar2.php:13 sidebar.php:13
+msgid "Please activate some Widgets"
+msgstr "Bitte aktiviere einige Widgets"
+
+#: single.php:36
+msgid "Edit post"
+msgstr "Beitrag bearbeiten"
+
+#: admin/options-framework.php:230
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+"Drücke OK zum Zurücksetzen. Alle Einstellungen des Themse werden gelöscht!"
+
+#: admin/options-framework.php:263
+msgid "Default options restored."
+msgstr "Vorgabe-Einstellungen wieder hergestellt."
+
+#: admin/options-framework.php:304
+msgid "Options saved."
+msgstr "Einstellungen gespeichert."
+
+#: admin/options-framework.php:362
+msgid "Theme Options"
+msgstr "Einstellungen des Themes"
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr "Options Framework Internal Container"
+
+#: admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr "Hochladen"
+
+#: admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr "Daten ansehen"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr "Galerie"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr "Früher hochgeladen"
+
+#~ msgid "<h4>%s</h4>"
+#~ msgstr "<h4>%s</h4>"
