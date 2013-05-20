@@ -97,8 +97,8 @@ function bones_main_nav() {
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
     		'container' => 'false', /* container class */
     		'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
-    		'depth' => '2', /* suppress lower levels for now */
-    		'walker' => new description_walker()
+    		'depth' => '3', /* suppress lower levels for now */
+    		'walker' => new Bootstrap_Walker()
     	)
     );
 }

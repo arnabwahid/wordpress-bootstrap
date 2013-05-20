@@ -8,35 +8,16 @@ jQuery(document).ready(function($) {
 	// Fade out the save message
 	$('.fade').delay(1000).fadeOut(1000);
 	
-	// Color Picker
-	$('.colorSelector').each(function(){
-		var Othis = this; //cache a copy of the this variable for use inside nested function
-		var initialColor = $(Othis).next('input').attr('value');
-		$(this).ColorPicker({
-		color: initialColor,
-		onShow: function (colpkr) {
-		$(colpkr).fadeIn(500);
-		return false;
-		},
-		onHide: function (colpkr) {
-		$(colpkr).fadeOut(500);
-		return false;
-		},
-		onChange: function (hsb, hex, rgb) {
-		$(Othis).children('div').css('backgroundColor', '#' + hex);
-		$(Othis).next('input').attr('value','#' + hex);
-	}
-	});
-	}); //end color picker
+	$('.of-color').wpColorPicker();
 	
 	// Switches option sections
 	$('.group').hide();
-	var activetab = '';
+	var active_tab = '';
 	if (typeof(localStorage) != 'undefined' ) {
-		activetab = localStorage.getItem("activetab");
+		active_tab = localStorage.getItem("active_tab");
 	}
-	if (activetab != '' && $(activetab).length ) {
-		$(activetab).fadeIn();
+	if (active_tab != '' && $(active_tab).length ) {
+		$(active_tab).fadeIn();
 	} else {
 		$('.group:first').fadeIn();
 	}
@@ -50,23 +31,32 @@ jQuery(document).ready(function($) {
 				$(this).filter('.hidden').removeClass('hidden');
 			});
 	});
-	
-	if (activetab != '' && $(activetab + '-tab').length ) {
-		$(activetab + '-tab').addClass('nav-tab-active');
+	if (active_tab != '' && $(active_tab + '-tab').length ) {
+		$(active_tab + '-tab').addClass('nav-tab-active');
 	}
 	else {
 		$('.nav-tab-wrapper a:first').addClass('nav-tab-active');
 	}
+	
 	$('.nav-tab-wrapper a').click(function(evt) {
 		$('.nav-tab-wrapper a').removeClass('nav-tab-active');
 		$(this).addClass('nav-tab-active').blur();
 		var clicked_group = $(this).attr('href');
 		if (typeof(localStorage) != 'undefined' ) {
-			localStorage.setItem("activetab", $(this).attr('href'));
+			localStorage.setItem("active_tab", $(this).attr('href'));
 		}
 		$('.group').hide();
 		$(clicked_group).fadeIn();
 		evt.preventDefault();
+		
+		// Editor Height (needs improvement)
+		$('.wp-editor-wrap').each(function() {
+			var editor_iframe = $(this).find('iframe');
+			if ( editor_iframe.height() < 30 ) {
+				editor_iframe.css({'height':'auto'});
+			}
+		});
+	
 	});
            					
 	$('.group .collapsed input:checkbox').click(unhideHidden);

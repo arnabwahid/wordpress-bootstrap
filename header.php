@@ -9,7 +9,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><?php wp_title( '|', true, 'right' ); ?></title>	
+		
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+				
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				
 		<!-- media-queries.js (fallback) -->
@@ -46,7 +48,11 @@
 					<div class="navbar-inner">
 						<div class="container-fluid nav-container">
 							<nav role="navigation">
-								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
+									<?php if(of_get_option('branding_logo','')!='') { ?>
+										<img src="<?php echo of_get_option('branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
+										<?php }
+										if(of_get_option('site_name','1')) bloginfo('name'); ?></a>
 								
 								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							        <span class="icon-bar"></span>
