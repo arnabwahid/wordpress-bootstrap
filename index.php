@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
 			<?php
-				$blog_hero = of_get_option('blog_hero');
-				if ($blog_hero){
+				//$blog_hero = of_get_option('blog_hero');
+				//if ($blog_hero){
 			?>
 			<div class="clearfix row-fluid">
 				<div class="hero-unit">
@@ -14,7 +14,7 @@
 				</div>
 			</div>
 			<?php
-				}
+				//}
 			?>
 			
 			<div id="content" class="clearfix row-fluid">

@@ -10,12 +10,13 @@ function optionsframework_option_name() {
 
 	// This gets the theme name from the stylesheet (lowercase and without spaces)
 	if ( function_exists( 'wp_get_theme' ) ) {
-                $the_theme = wp_get_theme(  get_template_directory() . '/style.css' );
+		$the_theme = wp_get_theme(  get_template_directory() . '/style.css' );
         // WordPress 3.3
-        } else {
-                $the_theme = get_theme_data(  get_template_directory() . '/style.css' );
-        }
-        $themename = $the_theme['Title'];
+	} else {
+    	$the_theme = get_theme_data(  get_template_directory() . '/style.css' );
+    }
+    
+    $themename = $the_theme['Title'];
         
 	$themename = preg_replace("/\W/", "", strtolower($themename) );
 	
@@ -317,7 +318,14 @@ function wpbs_refresh_themes() {
 		fclose($filehandle);
 		// resize thumb
 		$destDirectory = substr( $filenameThumb, 0, strlen( $filenameThumb-14 ) );
-		image_resize( $filenameThumb, 100, 60, true, '', $destDirectory, 100 );
+		//image_resize( $filenameThumb, 100, 60, true, '', $destDirectory, 100 );
+
+		$image = wp_get_image_editor( $filenameThumb );
+		
+		if ( ! is_wp_error( $image ) ) {
+		    $image->resize( 100, 60, true );
+		    $image->save( $filenameThumb );
+		}
 		
     }
     

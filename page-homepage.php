@@ -12,8 +12,8 @@ Template Name: Homepage
 
 					<?php
 
-					$use_carousel = of_get_option('showhidden_slideroptions');
-      				if ($use_carousel) {
+					//$use_carousel = of_get_option('showhidden_slideroptions');
+      				//if ($use_carousel) {
 
 					?>
 
@@ -66,7 +66,7 @@ Template Name: Homepage
 					    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 				    </div>
 
-				    <?php } // ends the if use carousel statement ?>
+				    <?php //} // ends the if use carousel statement ?>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

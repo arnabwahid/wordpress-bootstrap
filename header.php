@@ -29,10 +29,10 @@
 		<!-- end of wordpress head -->
 
 		<!-- theme options from options panel -->
-		<?php get_wpbs_theme_options(); ?>
+		<?php //get_wpbs_theme_options(); ?>
 
 		<!-- typeahead plugin - if top nav search bar enabled -->
-		<?php require_once('library/typeahead.php'); ?>
+		<?php //require_once('library/typeahead.php'); ?>
 				
 	</head>
 	
@@ -60,11 +60,11 @@
 								
 							</nav>
 							
-							<?php if(of_get_option('search_bar', '1')) {?>
+							<?php //if(of_get_option('search_bar', '1')) {?>
 							<form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 								<input name="s" id="s" type="text" class="search-query" autocomplete="off" placeholder="<?php _e('Search','bonestheme'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
 							</form>
-							<?php } ?>
+							<?php //} ?>
 							
 						</div> <!-- end .nav-container -->
 					</div> <!-- end .navbar-inner -->

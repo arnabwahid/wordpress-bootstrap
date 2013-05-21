@@ -81,7 +81,7 @@ function optionsframework_init() {
 		require_once dirname( __FILE__ ) . '/options.php';
 	}
 	
-	$optionsframework_settings = get_option('optionsframework' );
+	$optionsframework_settings = get_option( 'optionsframework' );
 	
 	// Updates the unique option id in the database if it has changed
 	optionsframework_option_name();
