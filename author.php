@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row-fluid">
+			<div id="content" class="clearfix row">
 			
-				<div id="main" class="span8 clearfix" role="main">
+				<div id="main" class="col col-lg-8 clearfix" role="main">
 				
 					<div class="page-header"><h1 class="archive_title h2">
 						<span><?php _e("Posts By:", "bonestheme"); ?></span> 

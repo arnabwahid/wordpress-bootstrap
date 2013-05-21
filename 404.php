@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row-fluid">
+			<div id="content" class="clearfix row">
 			
-				<div id="main" class="span12 clearfix" role="main">
+				<div id="main" class="col col-lg-12 clearfix" role="main">
 
 					<article id="post-not-found" class="clearfix">
 						
@@ -21,8 +21,8 @@
 							
 							<p><?php _e("Whatever you were looking for was not found, but maybe try looking again or search using the form below.","bonestheme"); ?></p>
 
-							<div class="row-fluid">
-								<div class="span12">
+							<div class="row">
+								<div class="col col-lg-12">
 									<?php get_search_form(); ?>
 								</div>
 							</div>

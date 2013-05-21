@@ -44,7 +44,7 @@
 				
 				<div class="navbar navbar-fixed-top">
 					<div class="navbar-inner">
-						<div class="container-fluid nav-container">
+						<div class="container nav-container">
 							<nav role="navigation">
 								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
 								
@@ -74,4 +74,4 @@
 		
 		</header> <!-- end header -->
 		
-		<div class="container-fluid">
+		<div class="container">
