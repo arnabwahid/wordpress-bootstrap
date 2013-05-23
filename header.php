@@ -39,38 +39,32 @@
 	<body <?php body_class(); ?>>
 				
 		<header role="banner">
-		
-			<div id="inner-header" class="clearfix">
 				
-				<div class="navbar navbar-fixed-top">
-					<div class="navbar-inner">
-						<div class="container-fluid nav-container">
-							<nav role="navigation">
-								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-								
-								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							        <span class="icon-bar"></span>
-							        <span class="icon-bar"></span>
-							        <span class="icon-bar"></span>
-								</a>
-								
-								<div class="nav-collapse">
-									<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-								</div>
-								
-							</nav>
-							
-							<?php if(of_get_option('search_bar', '1')) {?>
-							<form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-								<input name="s" id="s" type="text" class="search-query" autocomplete="off" placeholder="<?php _e('Search','bonestheme'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
-							</form>
-							<?php } ?>
-							
-						</div> <!-- end .nav-container -->
-					</div> <!-- end .navbar-inner -->
-				</div> <!-- end .navbar -->
-			
-			</div> <!-- end #inner-header -->
+			<div class="navbar navbar-fixed-top">
+				<div class="container">
+          
+          <a class="navbar-brand" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+          
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+          
+					<!--<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>-->
+          
+					<div class="nav-collapse collapse navbar-responsive-collapse">
+						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+					</div>
+					
+					<?php if(of_get_option('search_bar', '1')) {?>
+					<form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+						<input name="s" id="s" type="text" class="search-query" autocomplete="off" placeholder="<?php _e('Search','bonestheme'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
+					</form>
+					<?php } ?>
+					
+				</div> <!-- end .container -->
+			</div> <!-- end .navbar -->
 		
 		</header> <!-- end header -->
 		
