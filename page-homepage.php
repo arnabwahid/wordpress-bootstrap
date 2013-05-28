@@ -6,9 +6,9 @@ Template Name: Homepage
 
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row-fluid">
+			<div id="content" class="clearfix row">
 			
-				<div id="main" class="span12 clearfix" role="main">
+				<div id="main" class="col col-lg-12 clearfix" role="main">
 
 					<?php
 
@@ -89,9 +89,9 @@ Template Name: Homepage
 
 						</header>
 						
-						<section class="row-fluid post_content">
+						<section class="row post_content">
 						
-							<div class="span8">
+							<div class="col col-lg-8">
 						
 								<?php the_content(); ?>
 								
