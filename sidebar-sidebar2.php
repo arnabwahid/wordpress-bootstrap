@@ -1,4 +1,4 @@
-				<div id="sidebar2" class="fluid-sidebar sidebar span4" role="complementary">
+				<div id="sidebar2" class="fluid-sidebar sidebar col col-lg-4" role="complementary">
 				
 					<?php if ( is_active_sidebar( 'sidebar2' ) ) : ?>
 
