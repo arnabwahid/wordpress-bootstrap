@@ -102,30 +102,32 @@ The comments page for Bones
 		
 		<li>
 			<div class="control-group">
-			  <label for="author"><?php _e("Name","bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
-			  <div class="input-prepend">
-			  	<span class="add-on"><i class="icon-user"></i></span><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Your Name","bonestheme"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-			  </div>
-		  	</div>
+				<label for="author" class="control-label"><?php _e("Name","bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+					<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Your Name","bonestheme"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+				</div>
+			</div>
 		</li>
 		
 		<li>
 			<div class="control-group">
-			  <label for="email"><?php _e("Mail","bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
-			  <div class="input-prepend">
-			  	<span class="add-on"><i class="icon-envelope"></i></span><input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Your Email","bonestheme"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-			  	<span class="help-inline">(<?php _e("will not be published","bonestheme"); ?>)</span>
-			  </div>
-		  	</div>
+				<label for="email" class="control-label"><?php _e("Mail","bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+					<input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Your Email (will not be published)","bonestheme"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+				</div>
+			</div>
 		</li>
 		
 		<li>
 			<div class="control-group">
-			  <label for="url"><?php _e("Website","bonestheme"); ?></label>
-			  <div class="input-prepend">
-			  <span class="add-on"><i class="icon-home"></i></span><input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Your Website","bonestheme"); ?>" tabindex="3" />
-			  </div>
-		  	</div>
+				<label for="url" class="control-label"><?php _e("Website","bonestheme"); ?></label>
+				<div class="input-group">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+					<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Your Website","bonestheme"); ?>" tabindex="3" />
+				</div>
+			</div>
 		</li>
 		
 	</ul>
