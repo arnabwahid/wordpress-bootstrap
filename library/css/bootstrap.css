@@ -4829,8 +4829,13 @@ li.previous a:hover:before {
 	padding-left: 0;
 }
 
-.widget_search input {
-	width: 121px;
+.row.form-inline {
+	margin-left: 0;
+}
+
+form.col {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 #calendar_wrap {
@@ -4917,10 +4922,6 @@ blockquote.pull-left {
 		margin-top: 0 !important;
 	}
 	
-	.widget_search input {
-		width: 230px;
-	}
-	
 	.blog .hero-unit {
 		margin-top: 10px;
 	}
@@ -4945,10 +4946,6 @@ blockquote.pull-left {
 	#s {
 		width: 210px;
 		margin-bottom: 6px;
-	}
-	
-	.widget_search input {
-		width: 209px;
 	}
 	
 	.comment .vcard .comment-text {
