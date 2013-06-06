@@ -285,25 +285,20 @@ jQuery(document).ready(function($) {
 add_action('wp_ajax_wpbs_theme_check', 'wpbs_refresh_themes');
 
 function wpbs_refresh_themes() {
-	// this gets the xml feed from thomas park
-	$xml_feed_url = 'http://feeds.pinboard.in/rss/u:thomaspark/t:bootswatch/';
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $xml_feed_url);
-	curl_setopt($ch, CURLOPT_HEADER, false);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$xml = curl_exec($ch);
-	curl_close($ch);
-	
-	$feed = new SimpleXmlElement($xml, LIBXML_NOCDATA);	
-	
-    $cnt = count($feed->item);
     
-    // go through each item found
-    for($i=0; $i<$cnt; $i++)
+    //Bootswatch API Method
+    $BS_url = 'http://api.bootswatch.com';
+    $content = file_get_contents($BS_url);
+    $json = json_decode($content, true);
+    
+    
+    foreach ($json['themes'] as $item)
     {
-		$url 	= $feed->item[$i]->link;
-		$title 	= strtolower($feed->item[$i]->title);
-		$desc = $feed->item[$i]->description;
+		
+		$url = $item['css-min'];
+		$title = strtolower($item['name']);
+		$desc = $item['description'];
+		
 		
 		// retrieve the contents of the css file
 		$css_url = $url;
@@ -314,8 +309,8 @@ function wpbs_refresh_themes() {
 		$css_contents = curl_exec($ch);
 		curl_close($ch);
 		
-		$thumb_url_prefix = 'http://bootswatch.com/';
-		$thumb_url = $thumb_url_prefix . $title . '/thumbnail.png';
+		//retreive thumbnail
+		$thumb_url = $item['thumbnail'];
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $thumb_url);
 		curl_setopt($ch, CURLOPT_HEADER, false);
@@ -344,6 +339,7 @@ function wpbs_refresh_themes() {
 
 	die(); // this is required to return a proper result
 }
+
 
 
 ?>
