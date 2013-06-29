@@ -1,0 +1,342 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPBS\n"
+"POT-Creation-Date: 2012-10-17 23:02-0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dmitry Kochnev <trasyhoob@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: /Poedit\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "Epic 404 - Article Not Found"
+msgstr "Ошибка 404 - Статья не найдена"
+
+#: 404.php:14
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr "Мы не смогли найти то, что вы ищете."
+
+#: 404.php:22
+msgid ""
+"Whatever you were looking for was not found, but maybe try looking again or "
+"search using the form below."
+msgstr ""
+"Не удалось найти то, что вы искали, попробуйте еще раз или используйте "
+"поиск, заполнив форму ниже."
+
+#: archive.php:10
+msgid "Posts Categorized:"
+msgstr "Записи категорий:"
+
+#: archive.php:14
+msgid "Posts Tagged:"
+msgstr "Записи с тегами:"
+
+#: archive.php:18 author.php:8
+msgid "Posts By:"
+msgstr "Записи авторов:"
+
+#: archive.php:22
+msgid "Daily Archives:"
+msgstr "Архивы по дням:"
+
+#: archive.php:26
+msgid "Monthly Archives:"
+msgstr "Архивы по месяцам:"
+
+#: archive.php:30
+msgid "Yearly Archives:"
+msgstr "Архивы по годам:"
+
+#: archive.php:43 attachment.php:15 author.php:31 image.php:23 index.php:34
+#: search.php:17 single.php:17
+msgid "Posted"
+msgstr "Опубликовано"
+
+#: archive.php:43 attachment.php:15 author.php:31 image.php:23 index.php:34
+#: search.php:17 single.php:17
+msgid "by"
+msgstr "авторы"
+
+#: archive.php:43 attachment.php:15 author.php:31 index.php:34 search.php:17
+#: single.php:17
+msgid "filed under"
+msgstr "в рубриках"
+
+#: archive.php:70 author.php:58 index.php:59 search.php:42
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Старые записи"
+
+#: archive.php:71 author.php:59 index.php:60 search.php:43
+msgid "Newer Entries &raquo;"
+msgstr "Новые записи &raquo;"
+
+#: archive.php:81 author.php:69
+msgid "No Posts Yet"
+msgstr "Еще нет сообщений"
+
+#: archive.php:84 author.php:72
+msgid "Sorry, What you were looking for is not here."
+msgstr "К сожалению, того, что Вы искали, здесь нет."
+
+#: attachment.php:27 image.php:53 index.php:44 page-full-width.php:30
+#: page-homepage.php:109 page-left-sidebar.php:32 page.php:24 single.php:30
+msgid "Tags"
+msgstr "Теги"
+
+#: attachment.php:41 image.php:67 index.php:69 page-full-width.php:44
+#: page-homepage.php:126 page-left-sidebar.php:46 page.php:38 search.php:54
+#: single.php:51
+msgid "Not Found"
+msgstr "Не найдено"
+
+#: attachment.php:44 image.php:70 index.php:72 page-full-width.php:47
+#: page-homepage.php:129 page-left-sidebar.php:49 page.php:41 search.php:57
+#: single.php:54
+msgid "Sorry, but the requested resource was not found on this site."
+msgstr "Извините, но запрошенный ресурс не найден на этом сайте."
+
+#: comments.php:11
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Это сообщение защищено паролем. Введите пароль для просмотра комментариев."
+
+#: comments.php:21
+msgid "No"
+msgstr "Нет"
+
+#: comments.php:21
+msgid "Responses"
+msgstr "Ответы"
+
+#: comments.php:21
+msgid "One"
+msgstr "Один"
+
+#: comments.php:21
+msgid "Response"
+msgstr "Ответ"
+
+#: comments.php:21
+msgid "to"
+msgstr "для"
+
+#: comments.php:25 comments.php:46
+msgid "Older comments"
+msgstr "Старые комментарии"
+
+#: comments.php:26 comments.php:47
+msgid "Newer comments"
+msgstr "Новые комментарии"
+
+#: comments.php:68
+msgid "Comments are closed"
+msgstr "Комментарии закрыты"
+
+#: comments.php:81
+msgid "Leave a Reply"
+msgstr "Написать ответ"
+
+#: comments.php:81
+msgid "Leave a Reply to"
+msgstr "Написать ответ к"
+
+#: comments.php:84
+msgid "Cancel"
+msgstr "Отмена"
+
+#: comments.php:89
+msgid "You must be"
+msgstr "Вы должны быть"
+
+#: comments.php:89
+msgid "logged in"
+msgstr "авторизованы"
+
+#: comments.php:89
+msgid "to post a comment"
+msgstr "чтобы оставить комментарий"
+
+#: comments.php:97
+msgid "Logged in as"
+msgstr "Вы вошли как"
+
+#: comments.php:97
+msgid "Log out of this account"
+msgstr "Выйдите из этой учетной записи"
+
+#: comments.php:97
+msgid "Log out"
+msgstr "Выйти"
+
+#: comments.php:105
+msgid "Name"
+msgstr "Имя"
+
+#: comments.php:107
+msgid "Your Name"
+msgstr "Ваше имя"
+
+#: comments.php:114
+msgid "Mail"
+msgstr "E-mail"
+
+#: comments.php:116
+msgid "Your Email"
+msgstr "Ваш E-mail"
+
+#: comments.php:117
+msgid "will not be published"
+msgstr "не будет опубликовано"
+
+#: comments.php:124
+msgid "Website"
+msgstr "Сайт"
+
+#: comments.php:126
+msgid "Your Website"
+msgstr "Ваш сайт"
+
+#: comments.php:137
+msgid "Your Comment Here…"
+msgstr "Ваш комментарий здесь..."
+
+#: comments.php:142
+msgid "Submit Comment"
+msgstr "Оставить комментарий"
+
+#: functions.php:147
+msgid "Edit"
+msgstr "Редактировать"
+
+#: functions.php:151
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
+
+#: functions.php:193
+msgid "Search for:"
+msgstr "Поиск:"
+
+#: functions.php:208
+msgid ""
+"This post is password protected. To view it please enter your password below:"
+msgstr ""
+"Это сообщение защищено паролем. Для его просмотра введите, пожалуйста, "
+"пароль:"
+
+#: functions.php:209
+msgid "Password:"
+msgstr "Пароль:"
+
+#: header.php:116 searchform.php:5
+msgid "Search"
+msgstr "Поиск"
+
+#: image.php:89
+msgid "Image metadata"
+msgstr "Метаданные изображения"
+
+#: image.php:113
+msgid "Date Taken"
+msgstr "Дата получения"
+
+#: image.php:115
+msgid "Copyright"
+msgstr "Copyright"
+
+#: image.php:117
+msgid "Credit"
+msgstr "Благодарность"
+
+#: image.php:119
+msgid "Title"
+msgstr "Название"
+
+#: image.php:121
+msgid "Caption"
+msgstr "подпись"
+
+#: image.php:123
+msgid "Camera"
+msgstr "Камера"
+
+#: image.php:125
+msgid "Focal Length"
+msgstr "Фокусное расстояние"
+
+#: image.php:127
+msgid "Aperture"
+msgstr "Апертура"
+
+#: image.php:129
+msgid "ISO"
+msgstr "ISO"
+
+#: image.php:131
+msgid "Shutter Speed"
+msgstr "Выдержка"
+
+#: index.php:39
+msgid "Read more &raquo;"
+msgstr "Подробнее &raquo;"
+
+#: search.php:7
+msgid "Search Results for"
+msgstr "Результат поиска"
+
+#: search.php:22
+msgid "Read more on"
+msgstr "Читайте больше на"
+
+#: sidebar-sidebar2.php:13 sidebar.php:13
+msgid "Please activate some Widgets"
+msgstr "Пожалуйста, включите виджеты"
+
+#: single.php:36
+msgid "Edit post"
+msgstr "Редактировать запись"
+
+#: admin/options-framework.php:230
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Нажмите OK, для сброса. Любая настройки темы будут утеряны!"
+
+#: admin/options-framework.php:263
+msgid "Default options restored."
+msgstr "Настройки по умолчанию восстановлены."
+
+#: admin/options-framework.php:304
+msgid "Options saved."
+msgstr "Настройки сохранены."
+
+#: admin/options-framework.php:362
+msgid "Theme Options"
+msgstr "Настройки темы"
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr "Options Framework Internal Container"
+
+#: admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr "Загрузить"
+
+#: admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr "Просмотр файла"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr "Галерея"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr "Ранее загруженные"
+
+#~ msgid "<h4>%s</h4>"
+#~ msgstr "<h4>%s</h4>"
