@@ -9,26 +9,35 @@ remove_shortcode('gallery', 'gallery_shortcode');
 add_shortcode('gallery', 'gallery_shortcode_tbs');
 
 function gallery_shortcode_tbs($attr) {
-	global $post, $wp_locale;
 
-	$output = "";
+    $output = "";
+    
+    $ids = explode(",",$array['ids']);
+    $posts=array();
 
-	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
-	$attachments = get_posts($args);
-	if ($attachments) {
-		$output = '<div class="row-fluid"><ul class="thumbnails">';
-		foreach ( $attachments as $attachment ) {
-			$output .= '<li class="span2">';
-			$att_title = apply_filters( 'the_title' , $attachment->post_title );
-			$output .= wp_get_attachment_link( $attachment->ID , 'thumbnail', true );
-			$output .= '</li>';
-		}
-		$output .= '</ul></div>';
-	}
+    $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' =>'any', 'post_parent' => $post->ID ); 
 
-	return $output;
+    $attachments = get_posts($args);
+    if ($attachments) {
+        $output = '<div class="row-fluid"><ul class="thumbnails">';
+
+        foreach ( $attachments as $attachment ) {
+            $posts[$attachment->ID]=$attachment;
+        }
+        foreach ( $ids as $id ) {
+            $attachment = $posts[$id];
+            
+            $output .= '<li class="span3">';
+            $att_title = apply_filters( 'the_title' , $attachment->post_title );
+            $output .= wp_get_attachment_link( $attachment->ID , 'thubnail', true );
+            $output .= '</li>';
+        }
+        $output .= '</ul></div>';
+    }
+    return $output;
+    
+    wp_reset_postdata();
 }
-
 
 
 // Buttons
