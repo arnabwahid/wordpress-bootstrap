@@ -4472,7 +4472,7 @@ select,
 }
 .navbar-form,
 .navbar-search {
-  margin: 0 0 9px;
+  margin: 9px 0;
 }
 .navbar-search {
   padding-left: 0;
@@ -4770,9 +4770,6 @@ li.previous a:hover:before {
 .widget_search form {
   padding-left: 0;
 }
-.widget_search input {
-  width: 121px;
-}
 /* calendar widget */
 #calendar_wrap {
   border: 1px solid #ddd;
@@ -4841,9 +4838,6 @@ blockquote.pull-left {
   .sidebar {
     margin-top: 0 !important;
   }
-  .widget_search input {
-    width: 230px;
-  }
   .blog .hero-unit {
     margin-top: 10px;
   }
@@ -4864,9 +4858,6 @@ blockquote.pull-left {
   #s {
     width: 210px;
     margin-bottom: 6px;
-  }
-  .widget_search input {
-    width: 209px;
   }
   .comment .vcard .comment-text {
     padding-left: 0;
