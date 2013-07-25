@@ -4446,7 +4446,7 @@ a.list-group-item.active > .badge,
 /* wp-specific classes */
 /* layout */
 body {
-  padding-top: 0;
+  padding-top: 60px;
 }
 /* Admin Top Navigation fixes */
 body.admin-bar .navbar-fixed-top {
@@ -4472,7 +4472,7 @@ select,
 }
 .navbar-form,
 .navbar-search {
-  margin: 9px 0;
+  margin: 9px 15px 9px 0;
 }
 .navbar-search {
   padding-left: 0;
