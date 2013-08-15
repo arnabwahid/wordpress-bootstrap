@@ -1,7 +1,7 @@
-/* ========================================================
+/* ========================================================================
  * Bootstrap: tab.js v3.0.0
- * http://twitter.github.com/bootstrap/javascript.html#tabs
- * ========================================================
+ * http://twbs.github.com/bootstrap/javascript.html#tabs
+ * ========================================================================
  * Copyright 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================== */
+ * ======================================================================== */
 
 
-!function ($) { "use strict";
++function ($) { "use strict";
 
   // TAB CLASS DEFINITION
   // ====================
@@ -88,7 +88,9 @@
     }
 
     transition ?
-      $active.one($.support.transition.end, next) :
+      $active
+        .one($.support.transition.end, next)
+        .emulateTransitionEnd(150) :
       next()
 
     $active.removeClass('in')

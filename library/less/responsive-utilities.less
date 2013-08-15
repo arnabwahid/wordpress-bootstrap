@@ -29,49 +29,121 @@
 // Hide from screenreaders and browsers
 // Credit: HTML5 Boilerplate
 .hidden {
-  display: none;
-  visibility: hidden;
+  display: none !important;
+  visibility: hidden !important;
 }
 
 // Visibility utilities
 
-// For Phones
-.visible-sm   { display: block !important; }
-.visible-md   { display: none !important; }
-.visible-lg   { display: none !important; }
-
-.hidden-sm    { display: none !important; }
-.hidden-md    { display: block !important; }
-.hidden-lg    { display: block !important; }
-
-
-// Tablets & small desktops only
-@media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
-  .visible-sm   { display: none !important; }
-  .visible-md   { display: block !important; }
-  .visible-lg   { display: none !important; }
-
-  .hidden-sm    { display: block !important; }
-  .hidden-md    { display: none !important; }
-  .hidden-lg    { display: block !important; }
+.visible-xs {
+  .responsive-visibility();
+  @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-large-desktop) {
+    .responsive-invisibility();
+  }
+}
+.visible-sm {
+  .responsive-invisibility();
+  @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+    .responsive-visibility();
+  }
+  @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-large-desktop) {
+    .responsive-invisibility();
+  }
+}
+.visible-md {
+  .responsive-invisibility();
+  @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .responsive-visibility();
+  }
+  @media (min-width: @screen-large-desktop) {
+    .responsive-invisibility();
+  }
+}
+.visible-lg {
+  .responsive-invisibility();
+  @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-large-desktop) {
+    .responsive-visibility();
+  }
 }
 
-// For desktops
-@media (min-width: @screen-desktop) {
-  .visible-sm   { display: none !important; }
-  .visible-md   { display: none !important; }
-  .visible-lg   { display: block !important; }
-
-  .hidden-sm    { display: block !important; }
-  .hidden-md    { display: block !important; }
-  .hidden-lg    { display: none !important; }
+.hidden-xs {
+  .responsive-invisibility();
+  @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+    .responsive-visibility();
+  }
+  @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .responsive-visibility();
+  }
+  @media (min-width: @screen-large-desktop) {
+    .responsive-visibility();
+  }
+}
+.hidden-sm {
+  .responsive-visibility();
+  @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .responsive-visibility();
+  }
+  @media (min-width: @screen-large-desktop) {
+    .responsive-visibility();
+  }
+}
+.hidden-md {
+  .responsive-visibility();
+  @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+    .responsive-visibility();
+  }
+  @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .responsive-invisibility();
+  }
+  @media (min-width: @screen-large-desktop) {
+    .responsive-visibility();
+  }
+}
+.hidden-lg {
+  .responsive-visibility();
+  @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+    .responsive-visibility();
+  }
+  @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .responsive-visibility();
+  }
+  @media (min-width: @screen-large-desktop) {
+    .responsive-invisibility();
+  }
 }
 
 // Print utilities
-.visible-print  { display: none !important; }
-.hidden-print   { }
+.visible-print {
+  .responsive-invisibility();
+}
+.hidden-print  { }
 
 @media print {
-  .visible-print  { display: block !important; }
-  .hidden-print   { display: none !important; }
+  .visible-print {
+    .responsive-visibility();
+  }
+  .hidden-print {
+    .responsive-invisibility();
+  }
 }
