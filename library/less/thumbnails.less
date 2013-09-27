@@ -3,26 +3,17 @@
 // --------------------------------------------------
 
 
-// Base classes
-// For thumbnail block-level composite components and simple image styles
-
-// The actual thumbnailed element
-// Can be `a`, `div`, or `img`
-.thumbnail,
-.img-thumbnail {
-  padding: 4px;
-  line-height: @line-height-base;
-  background-color: @thumbnail-bg;
-  border: 1px solid @thumbnail-border;
-  border-radius: @thumbnail-border-radius;
-  .transition(all .2s ease-in-out);
-}
+// Mixin and adjust the regular image class
 .thumbnail {
-  display: block;
+  .img-thumbnail();
+  display: block; // Override the inline-block from `.img-thumbnail`
+  margin-bottom: @line-height-computed;
+
+  > img {
+    .img-responsive();
+  }
 }
-.img-thumbnail {
-  display: inline-block;
-}
+
 
 // Add a hover state for linked versions only
 a.thumbnail:hover,
@@ -32,12 +23,10 @@ a.thumbnail:focus {
 
 // Images and captions
 .thumbnail > img {
-  display: block;
-  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 .thumbnail .caption {
-  padding: 9px;
+  padding: @thumbnail-caption-padding;
   color: @thumbnail-caption-color;
 }
