@@ -79,15 +79,12 @@ function bones_theme_support() {
 	);	
 }
 
-	// launching this stuff after theme setup
-	add_action('after_setup_theme','bones_theme_support');	
-	// adding sidebars to Wordpress (these are created in functions.php)
-	add_action( 'widgets_init', 'bones_register_sidebars' );
-	// adding the bones search form (created in functions.php)
-	add_filter( 'get_search_form', 'bones_wpsearch' );
-	
+// launching this stuff after theme setup
+add_action('after_setup_theme','bones_theme_support');
 
- 
+// adding sidebars to Wordpress (these are created in functions.php)
+add_action( 'widgets_init', 'bones_register_sidebars' );
+
 function bones_main_nav() {
 	// display the wp3 menu if available
     wp_nav_menu( 
