@@ -4,14 +4,12 @@
 				$blog_hero = of_get_option('blog_hero');
 				if ($blog_hero){
 			?>
-			<div class="clearfix row">
-				<div class="hero-unit">
+			<div class="jumbotron">
 				
-					<h1><?php bloginfo('title'); ?></h1>
-					
-					<p><?php bloginfo('description'); ?></p>
+				<div class="page-header">
+					<h1><?php bloginfo('title'); ?><small><?php bloginfo('description'); ?></small></h1>
+				</div>				
 				
-				</div>
 			</div>
 			<?php
 				}
@@ -19,7 +17,7 @@
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col col-lg-8 clearfix" role="main">
+				<div id="main" class="col-sm-8 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

@@ -2,7 +2,7 @@
 			
 				<div id="inner-footer" class="clearfix">
 		          <hr />
-		          <div id="widget-footer" class="clearfix row-fluid">
+		          <div id="widget-footer" class="clearfix row">
 		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
 		            <?php endif; ?>
 		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer2') ) : ?>

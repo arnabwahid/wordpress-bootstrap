@@ -8,7 +8,7 @@ Template Name: Homepage
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col col-lg-12 clearfix" role="main">
+				<div id="main" class="col-sm-12 clearfix" role="main">
 
 					<?php
 
@@ -78,20 +78,20 @@ Template Name: Homepage
 								$post_thumbnail_id = get_post_thumbnail_id();
 								$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'wpbs-featured-home' );
 							?>
-						
-							<div class="hero-unit" style="background-image: url('<?php echo $featured_src[0]; ?>'); background-repeat: no-repeat; background-position: 0 0;">
 
-								<h1><?php the_title(); ?></h1>
+							<div class="jumbotron" style="background-image: url('<?php echo $featured_src[0]; ?>'); background-repeat: no-repeat; background-position: 0 0;">
+				
+								<div class="page-header">
+									<h1><?php bloginfo('title'); ?><small><?php echo get_post_meta($post->ID, 'custom_tagline' , true);?></small></h1>
+								</div>				
 								
-								<?php echo get_post_meta($post->ID, 'custom_tagline' , true);?>
-							
 							</div>
-
+						
 						</header>
 						
 						<section class="row post_content">
 						
-							<div class="col col-lg-8">
+							<div class="col-sm-8">
 						
 								<?php the_content(); ?>
 								
