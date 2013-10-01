@@ -297,6 +297,35 @@ a.comment-reply-link{
 	margin: 0;
 }
 
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-comment{
+	.form-group;
+
+	input,
+	textarea{
+		.form-control;
+	}
+
+	textarea{
+		height: auto;
+	}
+}
+
+.form-allowed-tags{
+	code{
+		white-space: normal;
+	}
+}
+
+.form-submit{
+	input[type='submit']{
+		.btn;
+		.btn-primary;
+	}
+}
+
 .comment .vcard .avatar{
 	padding-right: 0;
 }
@@ -325,10 +354,6 @@ ol.commentlist li{
 ol.pinglist{
 	list-style-type: none;
 	margin: 0 0 9px 0;
-}
-
-#comment{
-	width: 270px;
 }
 
 ol.commentlist #respond{

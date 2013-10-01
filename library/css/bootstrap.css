@@ -6192,6 +6192,218 @@ a.comment-reply-link {
   list-style-type: none;
   margin: 0;
 }
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-comment {
+  margin-bottom: 15px;
+}
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input,
+.comment-form-comment input,
+.comment-form-author textarea,
+.comment-form-email textarea,
+.comment-form-url textarea,
+.comment-form-comment textarea {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.comment-form-author input:-moz-placeholder,
+.comment-form-email input:-moz-placeholder,
+.comment-form-url input:-moz-placeholder,
+.comment-form-comment input:-moz-placeholder,
+.comment-form-author textarea:-moz-placeholder,
+.comment-form-email textarea:-moz-placeholder,
+.comment-form-url textarea:-moz-placeholder,
+.comment-form-comment textarea:-moz-placeholder {
+  color: #999999;
+}
+.comment-form-author input::-moz-placeholder,
+.comment-form-email input::-moz-placeholder,
+.comment-form-url input::-moz-placeholder,
+.comment-form-comment input::-moz-placeholder,
+.comment-form-author textarea::-moz-placeholder,
+.comment-form-email textarea::-moz-placeholder,
+.comment-form-url textarea::-moz-placeholder,
+.comment-form-comment textarea::-moz-placeholder {
+  color: #999999;
+}
+.comment-form-author input:-ms-input-placeholder,
+.comment-form-email input:-ms-input-placeholder,
+.comment-form-url input:-ms-input-placeholder,
+.comment-form-comment input:-ms-input-placeholder,
+.comment-form-author textarea:-ms-input-placeholder,
+.comment-form-email textarea:-ms-input-placeholder,
+.comment-form-url textarea:-ms-input-placeholder,
+.comment-form-comment textarea:-ms-input-placeholder {
+  color: #999999;
+}
+.comment-form-author input::-webkit-input-placeholder,
+.comment-form-email input::-webkit-input-placeholder,
+.comment-form-url input::-webkit-input-placeholder,
+.comment-form-comment input::-webkit-input-placeholder,
+.comment-form-author textarea::-webkit-input-placeholder,
+.comment-form-email textarea::-webkit-input-placeholder,
+.comment-form-url textarea::-webkit-input-placeholder,
+.comment-form-comment textarea::-webkit-input-placeholder {
+  color: #999999;
+}
+.comment-form-author input:focus,
+.comment-form-email input:focus,
+.comment-form-url input:focus,
+.comment-form-comment input:focus,
+.comment-form-author textarea:focus,
+.comment-form-email textarea:focus,
+.comment-form-url textarea:focus,
+.comment-form-comment textarea:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.comment-form-author input[disabled],
+.comment-form-email input[disabled],
+.comment-form-url input[disabled],
+.comment-form-comment input[disabled],
+.comment-form-author textarea[disabled],
+.comment-form-email textarea[disabled],
+.comment-form-url textarea[disabled],
+.comment-form-comment textarea[disabled],
+.comment-form-author input[readonly],
+.comment-form-email input[readonly],
+.comment-form-url input[readonly],
+.comment-form-comment input[readonly],
+.comment-form-author textarea[readonly],
+.comment-form-email textarea[readonly],
+.comment-form-url textarea[readonly],
+.comment-form-comment textarea[readonly],
+fieldset[disabled] .comment-form-author input,
+fieldset[disabled] .comment-form-email input,
+fieldset[disabled] .comment-form-url input,
+fieldset[disabled] .comment-form-comment input,
+fieldset[disabled] .comment-form-author textarea,
+fieldset[disabled] .comment-form-email textarea,
+fieldset[disabled] .comment-form-url textarea,
+fieldset[disabled] .comment-form-comment textarea {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+textarea.comment-form-author input,
+textarea.comment-form-email input,
+textarea.comment-form-url input,
+textarea.comment-form-comment input,
+textarea.comment-form-author textarea,
+textarea.comment-form-email textarea,
+textarea.comment-form-url textarea,
+textarea.comment-form-comment textarea {
+  height: auto;
+}
+.comment-form-author textarea,
+.comment-form-email textarea,
+.comment-form-url textarea,
+.comment-form-comment textarea {
+  height: auto;
+}
+.form-allowed-tags code {
+  white-space: normal;
+}
+.form-submit input[type='submit'] {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.form-submit input[type='submit']:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.form-submit input[type='submit']:hover,
+.form-submit input[type='submit']:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.form-submit input[type='submit']:active,
+.form-submit input[type='submit'].active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.form-submit input[type='submit'].disabled,
+.form-submit input[type='submit'][disabled],
+fieldset[disabled] .form-submit input[type='submit'] {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-submit input[type='submit']:hover,
+.form-submit input[type='submit']:focus,
+.form-submit input[type='submit']:active,
+.form-submit input[type='submit'].active,
+.open .dropdown-toggle.form-submit input[type='submit'] {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+.form-submit input[type='submit']:active,
+.form-submit input[type='submit'].active,
+.open .dropdown-toggle.form-submit input[type='submit'] {
+  background-image: none;
+}
+.form-submit input[type='submit'].disabled,
+.form-submit input[type='submit'][disabled],
+fieldset[disabled] .form-submit input[type='submit'],
+.form-submit input[type='submit'].disabled:hover,
+.form-submit input[type='submit'][disabled]:hover,
+fieldset[disabled] .form-submit input[type='submit']:hover,
+.form-submit input[type='submit'].disabled:focus,
+.form-submit input[type='submit'][disabled]:focus,
+fieldset[disabled] .form-submit input[type='submit']:focus,
+.form-submit input[type='submit'].disabled:active,
+.form-submit input[type='submit'][disabled]:active,
+fieldset[disabled] .form-submit input[type='submit']:active,
+.form-submit input[type='submit'].disabled.active,
+.form-submit input[type='submit'][disabled].active,
+fieldset[disabled] .form-submit input[type='submit'].active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
 .comment .vcard .avatar {
   padding-right: 0;
 }
@@ -6214,9 +6426,6 @@ ol.commentlist li {
 ol.pinglist {
   list-style-type: none;
   margin: 0 0 9px 0;
-}
-#comment {
-  width: 270px;
 }
 ol.commentlist #respond {
   padding: 5px 10px;
