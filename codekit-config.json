@@ -1069,6 +1069,17 @@
       "outputAbbreviatedPath" : "\/library\/js\/alert-ck.js",
       "fileType" : 64
     },
+    "\/library\/js\/modernizr.full.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/library\/js\/modernizr.full.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/library\/js\/modernizr.full.min-ck.js",
+      "fileType" : 64
+    },
     "\/library\/images\/custom-post-icon.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1080,15 +1091,6 @@
       "initialSize" : 462,
       "fileType" : 8192
     },
-    "\/library\/css\/normalize.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/css\/normalize.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/admin\/themes\/journal.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1098,16 +1100,14 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/library\/js\/modernizr.full.min.js" : {
+    "\/library\/css\/normalize.css" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/modernizr.full.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/library\/js\/modernizr.full.min-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/library\/css\/normalize.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/search.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1212,17 +1212,6 @@
       "outputAbbreviatedPath" : "\/library\/js\/button-ck.js",
       "fileType" : 64
     },
-    "\/screenshot.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/screenshot.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/screenshot.png",
-      "initialSize" : 48480,
-      "fileType" : 8192
-    },
     "\/library\/less\/glyphicons.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/library\/less\/glyphicons.less",
@@ -1239,6 +1228,17 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/screenshot.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/screenshot.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/screenshot.png",
+      "initialSize" : 48480,
+      "fileType" : 8192
     },
     "\/library\/options-panel.php" : {
       "ignoreWasSetByUser" : 0,

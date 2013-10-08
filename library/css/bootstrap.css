@@ -6034,6 +6034,15 @@ select,
 ul.nav li.dropdown:hover > ul.dropdown-menu {
   display: block;
 }
+ul.nav li.dropdown > ul.dropdown-menu .dropdown-menu {
+  left: 100%;
+  top: 0;
+  margin-top: -6px;
+  border-radius: 0 4px 4px 0;
+}
+ul.nav > li.dropdown > ul.dropdown-menu > li.dropdown:hover ul.dropdown-menu {
+  border-radius: 0 0 4px 0;
+}
 /* post styling */
 #main p.meta {
   font-style: italic;
