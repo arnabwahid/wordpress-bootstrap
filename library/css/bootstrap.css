@@ -6678,9 +6678,31 @@ li.previous a:hover:before {
   margin-bottom: 18px;
   line-height: 160%;
 }
-/* for some reason the bs version currently available for download doesn't have this style */
-.label {
-  text-transform: uppercase;
+.tags a {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background-color: #999999;
+}
+.tags a[href]:hover,
+.tags a[href]:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tags a:empty {
+  display: none;
+}
+.tags a[href]:hover,
+.tags a[href]:focus {
+  background-color: #808080;
 }
 /* override standard link hover for the tag cloud widget */
 #tag-cloud a:hover,
