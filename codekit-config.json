@@ -251,15 +251,6 @@
       "initialSize" : 1171,
       "fileType" : 8192
     },
-    "\/editor-style.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/editor-style.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/library\/js\/dropdown.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -271,15 +262,6 @@
       "outputAbbreviatedPath" : "\/library\/js\/dropdown-ck.js",
       "fileType" : 64
     },
-    "\/author.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/author.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/admin\/images\/ico-delete.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -290,6 +272,24 @@
       "outputAbbreviatedPath" : "\/admin\/images\/ico-delete.png",
       "initialSize" : 715,
       "fileType" : 8192
+    },
+    "\/author.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/author.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/editor-style.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/editor-style.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/admin\/themes\/simplex-thumbnail.png" : {
       "ignoreWasSetByUser" : 0,
@@ -889,26 +889,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/library\/js\/tooltip.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/tooltip.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/library\/js\/tooltip-ck.js",
-      "fileType" : 64
-    },
-    "\/library\/css\/login.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/css\/login.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/admin\/themes\/cerulean-thumbnail-100x60.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -919,6 +899,26 @@
       "outputAbbreviatedPath" : "\/admin\/themes\/cerulean-thumbnail-100x60.png",
       "initialSize" : 5211,
       "fileType" : 8192
+    },
+    "\/library\/css\/login.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/library\/css\/login.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/library\/js\/tooltip.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/library\/js\/tooltip.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/library\/js\/tooltip-ck.js",
+      "fileType" : 64
     },
     "\/library\/less\/code.less" : {
       "ieCompatibility" : 1,
@@ -1069,17 +1069,6 @@
       "outputAbbreviatedPath" : "\/library\/js\/alert-ck.js",
       "fileType" : 64
     },
-    "\/library\/js\/modernizr.full.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/modernizr.full.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/library\/js\/modernizr.full.min-ck.js",
-      "fileType" : 64
-    },
     "\/library\/images\/custom-post-icon.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1091,6 +1080,15 @@
       "initialSize" : 462,
       "fileType" : 8192
     },
+    "\/library\/css\/normalize.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/library\/css\/normalize.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/admin\/themes\/journal.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1100,14 +1098,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/library\/css\/normalize.css" : {
+    "\/library\/js\/modernizr.full.min.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/css\/normalize.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/library\/js\/modernizr.full.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/library\/js\/modernizr.full.min-ck.js",
+      "fileType" : 64
     },
     "\/search.php" : {
       "ignoreWasSetByUser" : 0,
