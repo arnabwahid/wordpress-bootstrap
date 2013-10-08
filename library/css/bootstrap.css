@@ -6043,6 +6043,12 @@ ul.nav li.dropdown > ul.dropdown-menu .dropdown-menu {
 ul.nav > li.dropdown > ul.dropdown-menu > li.dropdown:hover ul.dropdown-menu {
   border-radius: 0 0 4px 0;
 }
+ul.nav .dropdown > .dropdown-menu .caret {
+  border-top: 4px solid transparent;
+  border-left: 4px solid #428bca;
+  border-bottom: 4px solid transparent;
+  border-right-width: 0;
+}
 /* post styling */
 #main p.meta {
   font-style: italic;
