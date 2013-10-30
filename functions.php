@@ -101,6 +101,7 @@ you like. Enjoy!
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
+if ( ! function_exists( 'bones_register_sidebars' ) ) {
 function bones_register_sidebars() {
     register_sidebar(array(
     	'id' => 'sidebar1',
@@ -164,7 +165,7 @@ function bones_register_sidebars() {
     sidebar-sidebar2.php
     
     */
-} // don't remove this bracket!
+} } // don't remove this bracket!
 
 /************* COMMENT LAYOUT *********************/
 		
