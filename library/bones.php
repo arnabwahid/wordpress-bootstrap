@@ -70,7 +70,6 @@ function bones_theme_support() {
 			'chat'     // chat transcript 
 		)
 	);	
-	add_theme_support( 'menus' );            // wp menus
 	register_nav_menus(                      // wp3+ menus
 		array( 
 			'main_nav' => 'The Main Menu',   // main nav in header
