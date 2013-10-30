@@ -684,7 +684,7 @@ function get_wpbs_theme_options(){
         .navbar-inner, .navbar .fill { 
           background-color: '. $topbar_bg_color . ';
           background-image: none;
-        }' . $topbar_bg_color;
+        }';
       }
       
       if ( $use_gradient ) {
