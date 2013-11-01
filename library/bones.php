@@ -183,7 +183,7 @@ function page_navi($before = '', $after = '') {
 		$start_page = 1;
 	}
 		
-	echo $before.'<div class="pagination"><ul class="clearfix">'."";
+	echo $before.'<ul class="pagination">'."";
 	if ($paged > 1) {
 		$first_page_text = "&laquo";
 		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="First">'.$first_page_text.'</a></li>';
@@ -207,7 +207,7 @@ function page_navi($before = '', $after = '') {
 		$last_page_text = "&raquo;";
 		echo '<li class="next"><a href="'.get_pagenum_link($max_page).'" title="Last">'.$last_page_text.'</a></li>';
 	}
-	echo '</ul></div>'.$after."";
+	echo '</ul>'.$after."";
 }
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
