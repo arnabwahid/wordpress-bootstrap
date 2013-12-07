@@ -6,7 +6,7 @@
 	global $user_level; 
 
 	// get list of post names to use in 'typeahead' plugin for search bar
-	if(of_get_option('search_bar', '1')) { // only do this if we're showing the search bar in the nav
+	//if(of_get_option('search_bar', '1')) { // only do this if we're showing the search bar in the nav
 
 		global $post;
 		$tmp_post = $post;
@@ -28,6 +28,6 @@
 
 		$post = $tmp_post;
 
-	} // end if search bar is used
+	//} // end if search bar is used
 
 ?>

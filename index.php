@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 			
 			<?php
-				$blog_hero = of_get_option('blog_hero');
+				//$blog_hero = of_get_option('blog_hero');
 				if ($blog_hero){
 			?>
 			<div class="jumbotron">

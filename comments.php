@@ -57,7 +57,7 @@ The comments page for Bones
 	?>
 	
 	<?php
-		$suppress_comments_message = of_get_option('suppress_comments_message');
+		//$suppress_comments_message = of_get_option('suppress_comments_message');
 
 		if (is_page() && $suppress_comments_message) :
 	?>
