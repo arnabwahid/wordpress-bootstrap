@@ -35,7 +35,7 @@ function yoast_allow_rel() {
 add_action( 'wp_loaded', 'yoast_allow_rel' );
 
 // adding facebook, twitter, & google+ links to the user profile
-function bones_add_user_fields( $contactmethods ) {
+function wp_bootstrap_add_user_fields( $contactmethods ) {
 	// Add Facebook
 	$contactmethods['user_fb'] = 'Facebook';
 	// Add Twitter
@@ -45,7 +45,7 @@ function bones_add_user_fields( $contactmethods ) {
 	// Save 'Em
 	return $contactmethods;
 }
-add_filter('user_contactmethods','bones_add_user_fields',10,1);
+add_filter('user_contactmethods','wp_bootstrap_add_user_fields',10,1);
 
 
 ?>

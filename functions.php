@@ -22,13 +22,13 @@ require_once('library/shortcodes.php');
 // require_once('library/admin.php');         // custom admin functions
 
 // Custom Backend Footer
-add_filter('admin_footer_text', 'bones_custom_admin_footer');
-function bones_custom_admin_footer() {
+add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');
+function wp_bootstrap_custom_admin_footer() {
 	echo '<span id="footer-thankyou">Developed by <a href="http://320press.com" target="_blank">320press</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.';
 }
 
 // adding it to the admin area
-add_filter('admin_footer_text', 'bones_custom_admin_footer');
+add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');
 
 // Set content width
 if ( ! isset( $content_width ) ) $content_width = 580;
@@ -63,7 +63,7 @@ you like. Enjoy!
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function bones_register_sidebars() {
+function wp_bootstrap_register_sidebars() {
     register_sidebar(array(
     	'id' => 'sidebar1',
     	'name' => 'Main Sidebar',
@@ -131,7 +131,7 @@ function bones_register_sidebars() {
 /************* COMMENT LAYOUT *********************/
 		
 // Comment Layout
-function bones_comments($comment, $args, $depth) {
+function wp_bootstrap_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?>>
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
