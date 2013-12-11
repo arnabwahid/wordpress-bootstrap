@@ -8,7 +8,7 @@ The comments page for Bones
     die ('Please do not load this page directly. Thanks!');
 
   if ( post_password_required() ) { ?>
-  	<div class="alert alert-info"><?php _e("This post is password protected. Enter the password to view comments.","bonestheme"); ?></div>
+  	<div class="alert alert-info"><?php _e("This post is password protected. Enter the password to view comments.","wpbootstrap"); ?></div>
   <?php
     return;
   }
@@ -18,12 +18,12 @@ The comments page for Bones
 
 <?php if ( have_comments() ) : ?>
 	<?php if ( ! empty($comments_by_type['comment']) ) : ?>
-	<h3 id="comments"><?php comments_number('<span>' . __("No","bonestheme") . '</span> ' . __("Responses","bonestheme") . '', '<span>' . __("One","bonestheme") . '</span> ' . __("Response","bonestheme") . '', '<span>%</span> ' . __("Responses","bonestheme") );?> <?php _e("to","bonestheme"); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+	<h3 id="comments"><?php comments_number('<span>' . __("No","wpbootstrap") . '</span> ' . __("Responses","wpbootstrap") . '', '<span>' . __("One","wpbootstrap") . '</span> ' . __("Response","wpbootstrap") . '', '<span>%</span> ' . __("Responses","wpbootstrap") );?> <?php _e("to","wpbootstrap"); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<nav id="comment-nav">
 		<ul class="clearfix">
-	  		<li><?php previous_comments_link( __("Older comments","bonestheme") ) ?></li>
-	  		<li><?php next_comments_link( __("Newer comments","bonestheme") ) ?></li>
+	  		<li><?php previous_comments_link( __("Older comments","wpbootstrap") ) ?></li>
+	  		<li><?php next_comments_link( __("Newer comments","wpbootstrap") ) ?></li>
 	 	</ul>
 	</nav>
 	
@@ -43,8 +43,8 @@ The comments page for Bones
 	
 	<nav id="comment-nav">
 		<ul class="clearfix">
-	  		<li><?php previous_comments_link( __("Older comments","bonestheme") ) ?></li>
-	  		<li><?php next_comments_link( __("Newer comments","bonestheme") ) ?></li>
+	  		<li><?php previous_comments_link( __("Older comments","wpbootstrap") ) ?></li>
+	  		<li><?php next_comments_link( __("Newer comments","wpbootstrap") ) ?></li>
 		</ul>
 	</nav>
   
@@ -65,7 +65,7 @@ The comments page for Bones
 		<?php else : ?>
 		
 			<!-- If comments are closed. -->
-			<p class="alert alert-info"><?php _e("Comments are closed","bonestheme"); ?>.</p>
+			<p class="alert alert-info"><?php _e("Comments are closed","wpbootstrap"); ?>.</p>
 			
 		<?php endif; ?>
 
