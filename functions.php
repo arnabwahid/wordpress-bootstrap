@@ -10,10 +10,6 @@ sidebars, comments, ect.
 
 // Get Bones Core Up & Running!
 require_once('library/bones.php');            // core functions (don't remove)
-require_once('library/plugins.php');          // plugins & extra functions (optional)
-
-// Options panel
-//require_once('library/options-panel.php');
 
 // Shortcodes
 require_once('library/shortcodes.php');
