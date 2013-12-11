@@ -10,6 +10,11 @@ We’ve built the WordPress Bootstrap theme so that it could be used as-is or as
 
 Watch this project to keep up with its progress.
 
+Multi-Lingual
+_____________
+
+WP-Bootstrap is translated in 3 languages - Spanish, French and Portuguese. 
+
 Page Templates
 ______________
 
