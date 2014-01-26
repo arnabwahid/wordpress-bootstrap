@@ -100,4 +100,4 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
  
-}); /* end of as page load scripts 
+});
