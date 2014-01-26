@@ -55,20 +55,10 @@ The comments page for Bones
 
 	<?php else : // comments are closed 
 	?>
-	
-	<?php
-		//$suppress_comments_message = of_get_option('suppress_comments_message');
-
-		if (is_page() && $suppress_comments_message) :
-	?>
-			
-		<?php else : ?>
 		
-			<!-- If comments are closed. -->
-			<p class="alert alert-info"><?php _e("Comments are closed","wpbootstrap"); ?>.</p>
+	<!-- If comments are closed. -->
+	<p class="alert alert-info"><?php _e("Comments are closed","wpbootstrap"); ?>.</p>
 			
-		<?php endif; ?>
-
 	<?php endif; ?>
 
 <?php endif; ?>
