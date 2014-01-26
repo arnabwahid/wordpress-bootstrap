@@ -379,9 +379,9 @@ function first_paragraph( $content ){
 add_filter( 'the_content', 'first_paragraph' );
 
 // Menu output mods
-class description_walker extends Walker_Nav_Menu{
+class Bootstrap_walker extends Walker_Nav_Menu{
 
-  function start_el(&$output, $item, $depth, $args){
+  function start_el(&$output, $object, $depth = 0, $args = Array(), $current_object_id = 0){
 
 	 global $wp_query;
 	 $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -393,17 +393,17 @@ class description_walker extends Walker_Nav_Menu{
 			$class_names = "dropdown ";
 		}
 	
-		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
 		
-		$class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+		$class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $object ) );
 		$class_names = ' class="'. esc_attr( $class_names ) . '"';
        
-   	$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+   	$output .= $indent . '<li id="menu-item-'. $object->ID . '"' . $value . $class_names .'>';
 
-   	$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-   	$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-   	$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-   	$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+   	$attributes  = ! empty( $object->attr_title ) ? ' title="'  . esc_attr( $object->attr_title ) .'"' : '';
+   	$attributes .= ! empty( $object->target )     ? ' target="' . esc_attr( $object->target     ) .'"' : '';
+   	$attributes .= ! empty( $object->xfn )        ? ' rel="'    . esc_attr( $object->xfn        ) .'"' : '';
+   	$attributes .= ! empty( $object->url )        ? ' href="'   . esc_attr( $object->url        ) .'"' : '';
 
    	// if the item has children add these two attributes to the anchor tag
    	// if ( $args->has_children ) {
@@ -412,7 +412,7 @@ class description_walker extends Walker_Nav_Menu{
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
-    $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
+    $item_output .= $args->link_before .apply_filters( 'the_title', $object->title, $object->ID );
     $item_output .= $args->link_after;
 
     // if the item has children add the caret just before closing the anchor tag
@@ -425,10 +425,10 @@ class description_walker extends Walker_Nav_Menu{
 
     $item_output .= $args->after;
 
-    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $object, $depth, $args );
   } // end start_el function
         
-  function start_lvl(&$output, $depth) {
+  function start_lvl(&$output, $depth = 0, $args = Array()) {
     $indent = str_repeat("\t", $depth);
     $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
   }
