@@ -166,18 +166,6 @@ function list_pings($comment, $args, $depth) {
 
 }
 
-// Only display comments in comment count (which isn't currently displayed in wp-bootstrap, but i'm putting this in now so i don't forget to later)
-add_filter('get_comments_number', 'comment_count', 0);
-function comment_count( $count ) {
-	if ( ! is_admin() ) {
-		global $id;
-	    $comments_by_type = separate_comments(get_comments('status=approve&post_id=' . $id));
-	    return count($comments_by_type['comment']);
-	} else {
-	    return $count;
-	}
-}
-
 /************* SEARCH FORM LAYOUT *****************/
 
 /****************** password protected post form *****/
