@@ -1,20 +1,5 @@
 <?php get_header(); ?>
 			
-			<?php
-				//$blog_hero = of_get_option('blog_hero');
-				if ($blog_hero){
-			?>
-			<div class="jumbotron">
-				
-				<div class="page-header">
-					<h1><?php bloginfo('title'); ?><small><?php bloginfo('description'); ?></small></h1>
-				</div>				
-				
-			</div>
-			<?php
-				}
-			?>
-			
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="col-sm-8 clearfix" role="main">
