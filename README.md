@@ -15,7 +15,7 @@ Watch or star this project to keep up with its progress.
 Multi-Lingual
 _____________
 
-WP-Bootstrap is translated in 3 languages - Spanish, French and Portuguese. 
+WP-Bootstrap is translated in 4 languages - Spanish, French, Portuguese and German. 
 
 Page Templates
 ______________

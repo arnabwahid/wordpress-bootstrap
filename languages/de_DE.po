@@ -141,7 +141,7 @@ msgstr "Entschuldigung, die angeforderte Ressource konnten wir nicht finden"
 
 #: comments.php:11
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Dieser Post ist passwordgeschützt. Gib dein Passwort ein, um die Kommentare zu sehen."
+msgstr "Dieser Post ist passwortgeschützt. Gib dein Passwort ein, um die Kommentare zu sehen."
 
 #: comments.php:21
 msgid "No"
