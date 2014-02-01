@@ -13,7 +13,7 @@ function addTwitterBSClass(thisObj) {
     if (titles[0]) {
       var num = parseInt(titles[0]);
       if (num > 0)
-      	jQuery(thisObj).addClass('label');
+      	jQuery(thisObj).addClass('label label-default');
       if (num == 2)
         jQuery(thisObj).addClass('label label-info');
       if (num > 2 && num < 4)
