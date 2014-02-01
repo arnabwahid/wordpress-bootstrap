@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-bootstrap\n"
+"POT-Creation-Date: 2014-01-29 18:43+0100\n"
+"PO-Revision-Date: 2014-01-29 19:03+0100\n"
+"Last-Translator: Punch Creative <mail@punchcreative>\n"
+"Language-Team: Punch Creative <mail@punchcreative>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "Epic 404 - Article Not Found"
+msgstr "404 - Artikel niet gevonden"
+
+#: 404.php:14
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr "Het spijt ons. Wat je zoekt is niet gevonden."
+
+#: 404.php:22
+msgid ""
+"Whatever you were looking for was not found, but maybe try looking again or "
+"search using the form below."
+msgstr ""
+"Wat je zocht is hier niet gevonden, maar probeer het gerust opnieuw of "
+"gebruik het zoekformulier hieronder."
+
+#: archive.php:10
+msgid "Posts Categorized:"
+msgstr "Berichten op categorie:"
+
+#: archive.php:14
+msgid "Posts Tagged:"
+msgstr "Berichten met tag: "
+
+#: archive.php:18 author.php:8
+msgid "Posts By:"
+msgstr "Berichten van:"
+
+#: archive.php:22
+msgid "Daily Archives:"
+msgstr "Archief per dag:"
+
+#: archive.php:26
+msgid "Monthly Archives:"
+msgstr "Archief per maand:"
+
+#: archive.php:30
+msgid "Yearly Archives:"
+msgstr "Archief per jaar:"
+
+#: archive.php:43 attachment.php:15 author.php:31 image.php:23 index.php:17
+#: search.php:17 single.php:17
+msgid "Posted"
+msgstr "Geplaatst"
+
+#: archive.php:43 attachment.php:15 author.php:31 image.php:23 index.php:17
+#: search.php:17 single.php:17
+msgid "by"
+msgstr "door"
+
+#: archive.php:43 attachment.php:15 author.php:31 index.php:17 search.php:17
+#: single.php:17
+msgid "filed under"
+msgstr "opgeslagen onder"
+
+#: archive.php:70 author.php:58 index.php:42 search.php:42
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Oudere items"
+
+#: archive.php:71 author.php:59 index.php:43 search.php:43
+msgid "Newer Entries &raquo;"
+msgstr "Nieuwere items &raquo; "
+
+#: archive.php:81 author.php:69
+msgid "No Posts Yet"
+msgstr "Nog geen berichten"
+
+#: archive.php:84 author.php:72
+msgid "Sorry, What you were looking for is not here."
+msgstr "Sorry, wat je zoekt is hier niet te vinden."
+
+#: attachment.php:27 image.php:53 index.php:27 page-full-width.php:30
+#: page-homepage.php:48 page-left-sidebar.php:32 page.php:24 single.php:30
+msgid "Tags"
+msgstr "Label"
+
+#: attachment.php:41 image.php:67 index.php:52 page-full-width.php:44
+#: page-homepage.php:65 page-left-sidebar.php:46 page.php:38 search.php:54
+#: single.php:51
+msgid "Not Found"
+msgstr "Niet gevonden"
+
+#: attachment.php:44 image.php:70 index.php:55 page-full-width.php:47
+#: page-homepage.php:68 page-left-sidebar.php:49 page.php:41 search.php:57
+#: single.php:54
+msgid "Sorry, but the requested resource was not found on this site."
+msgstr "Sorry, het gezochte bestand is niet op deze site gevonden."
+
+#: comments.php:11
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Dit bericht is beschermd met een wachtwoord. Voer het wachtwoord in om de "
+"reacties te zien."
+
+#: comments.php:21
+msgid "No"
+msgstr "Geen"
+
+#: comments.php:21
+msgid "Responses"
+msgstr "Reacties"
+
+#: comments.php:21
+msgid "One"
+msgstr "Eén"
+
+#: comments.php:21
+msgid "Response"
+msgstr "Reactie"
+
+#: comments.php:21
+msgid "to"
+msgstr "aan"
+
+#: comments.php:25 comments.php:46
+msgid "Older comments"
+msgstr "Oudere reacties"
+
+#: comments.php:26 comments.php:47
+msgid "Newer comments"
+msgstr "Nieuwere reacties"
+
+#: comments.php:60
+msgid "Comments are closed"
+msgstr "Geen reacties meer mogelijk"
+
+#: functions.php:140
+msgid "Edit"
+msgstr "Bewerk"
+
+#: functions.php:144
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie wacht op goedkeuring."
+
+#: functions.php:179
+msgid ""
+"This post is password protected. To view it please enter your password below:"
+msgstr ""
+"Dit bericht is beschermd met een wachtwoord. Voer je wachtwoord in om het te "
+"lezen:"
+
+#: functions.php:180
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: functions.php:180
+msgid "Submit"
+msgstr "Verzend"
+
+#: header.php:59 searchform.php:4 searchform.php:6
+msgid "Search"
+msgstr "Zoek"
+
+#: image.php:89
+msgid "Image metadata"
+msgstr "Afbeelding metadata"
+
+#: image.php:113
+msgid "Date Taken"
+msgstr "Datum opname"
+
+#: image.php:115
+msgid "Copyright"
+msgstr ""
+
+#: image.php:117
+msgid "Credit"
+msgstr ""
+
+#: image.php:119
+msgid "Title"
+msgstr "Titel"
+
+#: image.php:121
+msgid "Caption"
+msgstr "Onderschrift"
+
+#: image.php:123
+msgid "Camera"
+msgstr ""
+
+#: image.php:125
+msgid "Focal Length"
+msgstr "Focus afstand"
+
+#: image.php:127
+msgid "Aperture"
+msgstr "Diafragma"
+
+#: image.php:129
+msgid "ISO"
+msgstr ""
+
+#: image.php:131
+msgid "Shutter Speed"
+msgstr "Sluitertijd"
+
+#: index.php:22
+msgid "Read more &raquo;"
+msgstr "Lees verder &raquo;"
+
+#: search.php:7
+msgid "Search Results for"
+msgstr "Zoek resultaten voor"
+
+#: search.php:22
+msgid "Read more on"
+msgstr "Lees verder op"
+
+#: sidebar-sidebar2.php:13 sidebar.php:13
+msgid "Please activate some Widgets"
+msgstr "Widgets zijn nog niet ingesteld"
+
+#: single.php:36
+msgid "Edit post"
+msgstr "Bewerk bericht"
