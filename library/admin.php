@@ -101,7 +101,7 @@ function wp_bootstrap_login_css() {
 function wp_bootstrap_login_url() { return get_bloginfo('url', 'raw'); }
 
 // changing the alt text on the logo to show your site name 
-function wp_bootstrap_login_title() { return  get_option('blogname'); }
+function wp_bootstrap_login_title() { return get_option('blogname'); }
 
 // calling it only on the login page
 add_action('login_head', 'wp_bootstrap_login_css');
