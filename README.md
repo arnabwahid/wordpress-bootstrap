@@ -8,7 +8,7 @@ Used Eddie Machado's Bones for a starting point (https://github.com/eddiemachado
 FEATURES
 ________
 
-We’ve built the WP Bootstrap theme so that it could be used as-is as a very basic theme or as a starting point for theme developers. It’s built on top of the Bones theme framework by Eddie Machado and based on v3.0.3 of Bootstrap.
+We’ve built the WP Bootstrap theme so that it could be used as-is as a very basic theme or as a starting point for theme developers. It’s built on top of the Bones theme framework by Eddie Machado and based on v3.1.0 of Bootstrap.
 
 Watch or star this project to keep up with its progress.
 
