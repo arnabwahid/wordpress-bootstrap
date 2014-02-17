@@ -20,3 +20,5 @@ Desktop.ini
 $RECYCLE.BIN/
 
 codekit-config.json
+
+.sass-cache/
