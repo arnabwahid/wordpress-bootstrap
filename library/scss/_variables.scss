@@ -76,9 +76,9 @@ $headings-color:          inherit !default;
 //
 //## Specify custom locations of the include Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
-$icon-font-path: "bootstrap/" !default;
-$icon-font-name:          "glyphicons-halflings-regular" !default;
-$icon-font-svg-id:        "glyphicons_halflingsregular" !default;
+$icon-font-path: "../fonts/" !default;
+$icon-font-name:          "glyphiconshalflings-regular" !default;
+$icon-font-svg-id:        "glyphicons-halflingsregular" !default;
 
 //== Components
 //
