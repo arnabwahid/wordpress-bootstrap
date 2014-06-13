@@ -1,0 +1,345 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPBS\n"
+"POT-Creation-Date: 2012-10-17 23:02-0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: /Users/kafran/Documents/wordpress-bootstrap\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "Epic 404 - Article Not Found"
+msgstr "404 - Artikel hittades inte"
+
+#: 404.php:14
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr "Det här är pinsamt. Vi kan inte hitta vad du letade efter."
+
+#: 404.php:22
+msgid ""
+"Whatever you were looking for was not found, but maybe try looking again or "
+"search using the form below."
+msgstr ""
+"Vad du än letade efter hittades inte, men du kanske kan försöka igen eller "
+"sök efter något annat med formuläret nedan."
+
+#: archive.php:10
+msgid "Posts Categorized:"
+msgstr "Kategoriserade inlägg"
+
+#: archive.php:14
+msgid "Posts Tagged:"
+msgstr "Inlägg med etikett"
+
+#: archive.php:18 author.php:8
+msgid "Posts By:"
+msgstr "Inlägg av"
+
+#: archive.php:22
+msgid "Daily Archives:"
+msgstr "Daglig arkiv"
+
+#: archive.php:26
+msgid "Monthly Archives:"
+msgstr "Månatlig arkiv"
+
+#: archive.php:30
+msgid "Yearly Archives:"
+msgstr "Årlig arkiv"
+
+#: archive.php:43 attachment.php:15 author.php:31 image.php:23 index.php:34
+#: search.php:17 single.php:17
+msgid "Posted"
+msgstr "Skapad"
+
+#: archive.php:43 attachment.php:15 author.php:31 image.php:23 index.php:34
+#: search.php:17 single.php:17
+msgid "by"
+msgstr "av"
+
+#: archive.php:43 attachment.php:15 author.php:31 index.php:34 search.php:17
+#: single.php:17
+msgid "filed under"
+msgstr "Inlämnad under"
+
+#: archive.php:70 author.php:58 index.php:59 search.php:42
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Äldre inlägg"
+
+#: archive.php:71 author.php:59 index.php:60 search.php:43
+msgid "Newer Entries &raquo;"
+msgstr "Nyare inlägg &raquo;"
+
+#: archive.php:81 author.php:69
+msgid "No Posts Yet"
+msgstr "Inga inlägg än"
+
+#: archive.php:84 author.php:72
+msgid "Sorry, What you were looking for is not here."
+msgstr "Vi ber om ursäkt, det du letade efter finns inte här"
+
+#: attachment.php:27 image.php:53 index.php:44 page-full-width.php:30
+#: page-homepage.php:109 page-left-sidebar.php:32 page.php:24 single.php:30
+msgid "Tags"
+msgstr "Etiketter"
+
+#: attachment.php:41 image.php:67 index.php:69 page-full-width.php:44
+#: page-homepage.php:126 page-left-sidebar.php:46 page.php:38 search.php:54
+#: single.php:51
+msgid "Not Found"
+msgstr "Hittades inte"
+
+#: attachment.php:44 image.php:70 index.php:72 page-full-width.php:47
+#: page-homepage.php:129 page-left-sidebar.php:49 page.php:41 search.php:57
+#: single.php:54
+msgid "Sorry, but the requested resource was not found on this site."
+msgstr ""
+"Vi ber om ursäkt, men den efterfrågade resursen hittades inte på denna sajt."
+
+#: comments.php:11
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+"Detta inlägg är lösenordsskyddad. Ange lösenordet för att läsa kommentarerna."
+
+#: comments.php:21
+msgid "No"
+msgstr "Nej"
+
+#: comments.php:21
+msgid "Responses"
+msgstr "Svar"
+
+#: comments.php:21
+msgid "One"
+msgstr "Ett"
+
+#: comments.php:21
+msgid "Response"
+msgstr "Svar"
+
+#: comments.php:21
+msgid "to"
+msgstr "till"
+
+#: comments.php:25 comments.php:46
+msgid "Older comments"
+msgstr "Äldre kommentarer"
+
+#: comments.php:26 comments.php:47
+msgid "Newer comments"
+msgstr "Nyare kommentarer"
+
+#: comments.php:68
+msgid "Comments are closed"
+msgstr "Kommentarfunktionen är avstängd"
+
+#: comments.php:81
+msgid "Leave a Reply"
+msgstr "Lämna ett svar"
+
+#: comments.php:81
+msgid "Leave a Reply to"
+msgstr "Lämna ett svar till"
+
+#: comments.php:84
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: comments.php:89
+msgid "You must be"
+msgstr "Du måste vara"
+
+#: comments.php:89
+msgid "logged in"
+msgstr "inloggad"
+
+#: comments.php:89
+msgid "to post a comment"
+msgstr "för att kommentera"
+
+#: comments.php:97
+msgid "Logged in as"
+msgstr "Inloggad som"
+
+#: comments.php:97
+msgid "Log out of this account"
+msgstr "Logga ut från detta konto"
+
+#: comments.php:97
+msgid "Log out"
+msgstr "Logga ut"
+
+#: comments.php:105
+msgid "Name"
+msgstr "Namn"
+
+#: comments.php:107
+msgid "Your Name"
+msgstr "Ditt namn"
+
+#: comments.php:114
+msgid "Mail"
+msgstr "E-post"
+
+#: comments.php:116
+msgid "Your Email"
+msgstr "Din e-post"
+
+#: comments.php:117
+msgid "will not be published"
+msgstr "kommer inte publiceras"
+
+#: comments.php:124
+msgid "Website"
+msgstr "Hemsida"
+
+#: comments.php:126
+msgid "Your Website"
+msgstr "Din hemsida"
+
+#: comments.php:137
+msgid "Your Comment Here…"
+msgstr "Din kommentar här..."
+
+#: comments.php:142
+msgid "Submit Comment"
+msgstr "Skicka kommentar"
+
+#: functions.php:147
+msgid "Edit"
+msgstr "Redigera"
+
+#: functions.php:151
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar väntar på godkännande"
+
+#: functions.php:193
+msgid "Search for:"
+msgstr "Sök efter:"
+
+#: functions.php:208
+msgid ""
+"This post is password protected. To view it please enter your password below:"
+msgstr ""
+"Detta inlägg är lösenordsskyddad. Ange ditt lösenord nedan för att läsa det:"
+
+#: functions.php:209
+msgid "Password:"
+msgstr "Lösenord"
+
+#: header.php:116 searchform.php:5
+msgid "Search"
+msgstr "Sök"
+
+#: image.php:89
+msgid "Image metadata"
+msgstr "Bild-metainformation"
+
+#: image.php:113
+msgid "Date Taken"
+msgstr "Taget datum"
+
+#: image.php:115
+msgid "Copyright"
+msgstr "Copyright"
+
+#: image.php:117
+msgid "Credit"
+msgstr "Kredit"
+
+#: image.php:119
+msgid "Title"
+msgstr "Rubrik"
+
+#: image.php:121
+msgid "Caption"
+msgstr "Bildtext"
+
+#: image.php:123
+msgid "Camera"
+msgstr "Kamera"
+
+#: image.php:125
+msgid "Focal Length"
+msgstr "Brännvidd"
+
+#: image.php:127
+msgid "Aperture"
+msgstr "Bländare"
+
+#: image.php:129
+msgid "ISO"
+msgstr "ISO"
+
+#: image.php:131
+msgid "Shutter Speed"
+msgstr "Slutartid"
+
+#: index.php:39
+msgid "Read more &raquo;"
+msgstr "Läs mer &raquo;"
+
+#: search.php:7
+msgid "Search Results for"
+msgstr "Sökresultat för"
+
+#: search.php:22
+msgid "Read more on"
+msgstr "Läs mer om"
+
+#: sidebar-sidebar2.php:13 sidebar.php:13
+msgid "Please activate some Widgets"
+msgstr "Vänligen aktivera några Widget"
+
+#: single.php:36
+msgid "Edit post"
+msgstr "Redigera inlägg"
+
+#: admin/options-framework.php:230
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+"Klicka OK för att återställa. Alla temainställningar kommer att försvinna!"
+
+#: admin/options-framework.php:263
+msgid "Default options restored."
+msgstr "Standardinställningar återställda."
+
+#: admin/options-framework.php:304
+msgid "Options saved."
+msgstr "Inställningar sparade."
+
+#: admin/options-framework.php:362
+msgid "Theme Options"
+msgstr "Temainställningar"
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr "Inställningar intern ramverk behållare"
+
+#: admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr "Ladda upp"
+
+#: admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr "Visa fil"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr "Bildgalleri"
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr "Tidigare uppladdad"
+
+msgid "<h4>%s</h4>"
+msgstr "<h4>%s</h4>"
