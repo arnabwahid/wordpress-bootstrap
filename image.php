@@ -92,21 +92,25 @@ get_header(); ?>
 					      $imgmeta = wp_get_attachment_metadata( $id );
 					
 					// Convert the shutter speed retrieve from database to fraction
-					      if ((1 / $imgmeta['image_meta']['shutter_speed']) > 1)
-					      {
-					         if ((number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1)) == 1.3
-					         or number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1) == 1.5
-					         or number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1) == 1.6
-					         or number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1) == 2.5){
-					            $pshutter = "1/" . number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1, '.', '') . " second";
-					         }
-					         else{
-					           $pshutter = "1/" . number_format((1 / $imgmeta['image_meta']['shutter_speed']), 0, '.', '') . " second";
-					         }
-					      }
-					      else{
-					         $pshutter = $imgmeta['image_meta']['shutter_speed'] . " seconds";
-					       }
+							if (($imgmeta['shutter_speed']) != 0) {
+								if ((1 / $imgmeta['image_meta']['shutter_speed']) > 1)
+								{
+									if ((number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1)) == 1.3
+									or number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1) == 1.5
+									or number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1) == 1.6
+									or number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1) == 2.5)
+									{
+										$pshutter = "1/" . number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1, '.', '') . " second";
+									} else {
+										$pshutter = "1/" . number_format((1 / $imgmeta['image_meta']['shutter_speed']), 0, '.', '') . " second";
+									}
+									} else {
+										$pshutter = $imgmeta['image_meta']['shutter_speed'] . " seconds";
+									}
+								}
+							else {
+								echo("Shutter Speed Unavailable");
+							}
 					
 					// Start to display EXIF and IPTC data of digital photograph
 					       if ( $imgmeta['image_meta']['created_timestamp'] ) { 
