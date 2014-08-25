@@ -14,6 +14,9 @@ require_once('library/bones.php');            // core functions (don't remove)
 // Shortcodes
 require_once('library/shortcodes.php');
 
+// Customizations
+require_once('library/customizations.php');
+
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 
@@ -509,5 +512,6 @@ function wp_bootstrap_wp_title( $title, $sep ) {
   return $title;
 }
 add_filter( 'wp_title', 'wp_bootstrap_wp_title', 10, 2 );
+
 
 ?>

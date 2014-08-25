@@ -1,6 +1,6 @@
 			<footer role="contentinfo">
 			
-				<div id="inner-footer" class="clearfix">
+				<div id="inner-footer" class="container clearfix">
 		          <hr />
 		          <div id="widget-footer" class="clearfix row">
 		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
