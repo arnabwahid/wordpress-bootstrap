@@ -1,14 +1,11 @@
 			<footer role="contentinfo">
-			
-				<div id="inner-footer" class="container clearfix">
+				<div id="inner-footer" class="<?php if (get_post_meta( $post->ID, '_layout_width_meta', '' )[0] != "container") echo "container";?> clearfix">
 		          <hr />
 		          <div id="widget-footer" class="clearfix row">
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
-		            <?php endif; ?>
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer2') ) : ?>
-		            <?php endif; ?>
-		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer3') ) : ?>
-		            <?php endif; ?>
+		          	<?php for ($i=1; $i <= get_theme_mod('footer_widget_areas'); $i++){ ?>
+			            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("footer$i") ) : ?>
+			            <?php endif; ?>
+		            <?php }?>
 		          </div>
 					
 					<nav class="clearfix">

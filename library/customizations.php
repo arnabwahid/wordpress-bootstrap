@@ -86,7 +86,15 @@ function wp_bootstrap_customize_register( $wp_customize ) {
           'capability' => 'edit_theme_options',
        ) 
     );
-    
+
+    $wp_customize->add_section( 'wp_bootstrap_footer_options', 
+       array(
+          'title' => __( 'Footer', 'wpbootstrap' ),
+          'priority' => 36,
+          'capability' => 'edit_theme_options',
+       ) 
+    );
+
     $wp_customize->add_setting( 'logo',
        array(
           'default' => '',
@@ -165,6 +173,29 @@ function wp_bootstrap_customize_register( $wp_customize ) {
         'settings' => 'show_search',
         'type'     => 'checkbox',
         'default' => true,
+      )
+    );
+
+
+    $wp_customize->add_setting( 'footer_widget_areas',
+       array(
+          'default' => 3,
+          'type' => 'theme_mod', 
+          'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+          'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+       )
+    );
+
+    $wp_customize->add_control( 'wp_bootstrap_footer_widget_areas', 
+      array(
+        'label'    => __( 'Footer Widget Areas', 'wpbootstrap' ),
+        'section'  => 'wp_bootstrap_footer_options',
+        'settings' => 'footer_widget_areas',
+        'type'     => 'select',
+        'default' => 3,
+        'choices'  => array(
+          1=>1, 2=>2, 3=>3, 4=>4, 6=>6
+        ),
       )
     );
 }
