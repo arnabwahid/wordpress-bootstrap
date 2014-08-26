@@ -73,5 +73,9 @@
 		
 		</header> <!-- end header -->
 		
-		<?php $container_class = get_post_meta( $post->ID, '_layout_width_meta', 'container' );?>
+		<?php 
+			$container_class = 'container';
+			if(get_post_type( get_the_ID() ) == 'page')
+				$container_class = get_post_meta( $post->ID, '_layout_width_meta', 'container' );
+			?>
 		<div class="<?php echo $container_class;?>">
