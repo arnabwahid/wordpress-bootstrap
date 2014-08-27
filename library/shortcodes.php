@@ -177,5 +177,37 @@ function column( $atts, $content = null ) {
 	return $output;
 }
 
-add_shortcode('column', 'column'); 
+add_shortcode('column', 'column');
+
+
+function accordion( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'id' => 'accordion',
+	'class' => '',
+	), $atts ) );
+	$output = '<div id="'. $id .'" class="panel-group '. $class .'">'. do_shortcode($content) .'</div>';
+	return $output;
+}
+
+add_shortcode('accordion', 'accordion');
+
+function accordion_item( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'parent_id' => 'accordion',
+	'title' => 'Accordion Item Title',
+	'opened' => false,
+	), $atts ) );
+	$href = "panel-".uniqid();
+	$output = '<div class="panel panel-default">';
+	$output .= '<div class="panel-heading">';
+	$output .= '<h4 class="panel-title">';
+	$output .= '<a data-toggle="collapse" data-parent="#'.$parent_id.'" href="#'.$href.'">'.$title.'</a>';
+	$output .= '</h4></div>';
+	$output .= '<div id="'.$href.'" class="panel-collapse collapse '.($opened?'in':'').'">';
+	$output .= '<div class="panel-body">'.do_shortcode($content).'</div>';
+	$output .= '</div></div>';
+	return $output;
+}
+
+add_shortcode('accordion_item', 'accordion_item');
 ?>
