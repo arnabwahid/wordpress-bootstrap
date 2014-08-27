@@ -185,8 +185,9 @@ function accordion( $atts, $content = null ) {
 	'id' => 'accordion',
 	'class' => '',
 	), $atts ) );
+	
 	$output = '<div id="'. $id .'" class="panel-group '. $class .'">'. do_shortcode($content) .'</div>';
-	return $output;
+	return clean_paragraphs($output);
 }
 
 add_shortcode('accordion', 'accordion');
