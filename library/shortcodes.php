@@ -202,7 +202,7 @@ function accordion_item( $atts, $content = null ) {
 	$output = '<div class="panel panel-default">';
 	$output .= '<div class="panel-heading">';
 	$output .= '<h4 class="panel-title">';
-	$output .= '<a data-toggle="collapse" data-parent="#'.$parent_id.'" href="#'.$href.'">'.$title.'</a>';
+	$output .= '<a class="'.($opened?'':'collapsed').'" data-toggle="collapse" data-parent="#'.$parent_id.'" href="#'.$href.'">'.$title.'</a>';
 	$output .= '</h4></div>';
 	$output .= '<div id="'.$href.'" class="panel-collapse collapse '.($opened?'in':'').'">';
 	$output .= '<div class="panel-body">'.do_shortcode($content).'</div>';
