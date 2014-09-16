@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: WPBS\n"
 "POT-Creation-Date: 2012-10-17 23:02-0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Carlos Sanz <carlos.sanz@gmail.com>\n"
+"Last-Translator: Eduardo Aguayo <eduardoaguayo@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: /Users/kafran/Documents/wordpress-bootstrap\n"
+"Language: es_ES\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:13
@@ -27,8 +28,8 @@ msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
 msgstr ""
-"No ha sido posible encontrar lo que estabas buscando, intentado otra vez o "
-"busca usando el formulario a continuación."
+"No ha sido posible encontrar lo que solicitas; inténtalo otra vez o búscalo "
+"usando el formulario a continuación."
 
 #: archive.php:10
 msgid "Posts Categorized:"
@@ -44,7 +45,7 @@ msgstr "Entradas Por:"
 
 #: archive.php:22
 msgid "Daily Archives:"
-msgstr "Arquivo Diario:"
+msgstr "Archivo Diario:"
 
 #: archive.php:26
 msgid "Monthly Archives:"
@@ -75,11 +76,11 @@ msgstr "&laquo; Entradas Anteriores"
 
 #: archive.php:71 author.php:59 index.php:60 search.php:43
 msgid "Newer Entries &raquo;"
-msgstr "Entradas Posteriores &raquo;"
+msgstr "Siguientes Entradas &raquo;"
 
 #: archive.php:81 author.php:69
 msgid "No Posts Yet"
-msgstr "Todabia no hay entradas"
+msgstr "Todavía no hay entradas"
 
 #: archive.php:84 author.php:72
 msgid "Sorry, What you were looking for is not here."
@@ -229,8 +230,8 @@ msgstr "Busca por:"
 msgid ""
 "This post is password protected. To view it please enter your password below:"
 msgstr ""
-"Esta entrada está protegida con clave. Para poder verla por favor introduce "
-"la clave a continuación:"
+"Esta entrada está protegida con clave. Para verla por favor introduce la "
+"clave a continuación:"
 
 #: functions.php:209
 msgid "Password:"
@@ -270,7 +271,7 @@ msgstr "Cámera"
 
 #: image.php:125
 msgid "Focal Length"
-msgstr "Distáncia Focal"
+msgstr "Distancia Focal"
 
 #: image.php:127
 msgid "Aperture"
