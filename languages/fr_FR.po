@@ -29,7 +29,7 @@ msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
 msgstr ""
-"Ce que vous chercher n'a pas été trouvé, mais essayer de chercher à nouveau "
+"Ce que vous cherchez n'a pas été trouvé, mais essayez de chercher à nouveau "
 "ou effectuez une recherche avec le formulaire ci-dessous."
 
 #: archive.php:10
@@ -85,7 +85,7 @@ msgstr "Pas encore d'article"
 
 #: archive.php:84 author.php:72
 msgid "Sorry, What you were looking for is not here."
-msgstr "Désolé, Qu'est-ce que vous recherchez n'est pas ici."
+msgstr "Désolé, Ce que vous recherchez n'est pas disponible."
 
 #: attachment.php:27 image.php:53 index.php:44 page-full-width.php:30
 #: page-homepage.php:109 page-left-sidebar.php:32 page.php:24 single.php:30
@@ -196,7 +196,7 @@ msgstr "Votre e-mail"
 
 #: comments.php:117
 msgid "will not be published"
-msgstr "Se sera pas publier"
+msgstr "Ce ne sera pas publié"
 
 #: comments.php:124
 msgid "Website"
@@ -208,7 +208,7 @@ msgstr "Votre Site Web"
 
 #: comments.php:137
 msgid "Your Comment Here…"
-msgstr "Laissez un commentaire ici"
+msgstr "Laisser un commentaire ici"
 
 #: comments.php:142
 msgid "Submit Comment"
