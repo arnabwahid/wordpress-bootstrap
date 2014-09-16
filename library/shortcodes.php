@@ -129,6 +129,86 @@ function blockquotes( $atts, $content = null ) {
 add_shortcode('blockquote', 'blockquotes'); 
  
 
+// Rows, Columns, Layout
+
+function clean_paragraphs( $string )
+{
+
+    $string = preg_replace("#<p[^>]*><div#", '<div', $string);
+    $string = preg_replace("#div></p>#", 'div>', $string);
+    $string = preg_replace("#(<div[^>]*>)</p>#", '$1', $string);
+    $string = preg_replace("#<p></div>#", '</div>', $string);
+    return $string;
+}
 
 
+function boxed( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'id' => '',
+	'class' => '',
+	), $atts ) );
+	$output = '<div id="'. $id .'" class="container '. $class .'">'. do_shortcode($content) .'</div>';
+	return clean_paragraphs($output);
+}
+
+add_shortcode('boxed', 'boxed'); 
+
+
+function row( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'id' => '',
+	'class' => '',
+	), $atts ) );
+	$output = '<div id="'. $id .'" class="row clearfix '. $class .'">'. do_shortcode($content) .'</div>';
+	return clean_paragraphs($output);
+}
+
+add_shortcode('row', 'row'); 
+
+
+function column( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'type' => 'sm', //xs | sm | md | lg
+	'width' => 1,
+	'id' => '',
+	'class' => '',
+	), $atts ) );
+	$output = '<div id="'. $id .'" class="col-'. $type .'-'. $width .' '. $class .'">'. do_shortcode($content) .'</div>';
+	return $output;
+}
+
+add_shortcode('column', 'column');
+
+
+function accordion( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'id' => 'accordion',
+	'class' => '',
+	), $atts ) );
+	
+	$output = '<div id="'. $id .'" class="panel-group '. $class .'">'. do_shortcode($content) .'</div>';
+	return clean_paragraphs($output);
+}
+
+add_shortcode('accordion', 'accordion');
+
+function accordion_item( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'parent_id' => 'accordion',
+	'title' => 'Accordion Item Title',
+	'opened' => false,
+	), $atts ) );
+	$href = "panel-".uniqid();
+	$output = '<div class="panel panel-default">';
+	$output .= '<div class="panel-heading">';
+	$output .= '<h4 class="panel-title">';
+	$output .= '<a class="'.($opened?'':'collapsed').'" data-toggle="collapse" data-parent="#'.$parent_id.'" href="#'.$href.'">'.$title.'</a>';
+	$output .= '</h4></div>';
+	$output .= '<div id="'.$href.'" class="panel-collapse collapse '.($opened?'in':'').'">';
+	$output .= '<div class="panel-body">'.do_shortcode($content).'</div>';
+	$output .= '</div></div>';
+	return $output;
+}
+
+add_shortcode('accordion_item', 'accordion_item');
 ?>

@@ -14,6 +14,9 @@ require_once('library/bones.php');            // core functions (don't remove)
 // Shortcodes
 require_once('library/shortcodes.php');
 
+// Customizations
+require_once('library/customizations.php');
+
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 
@@ -79,34 +82,18 @@ function wp_bootstrap_register_sidebars() {
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
     ));
-    
-    register_sidebar(array(
-      'id' => 'footer1',
-      'name' => 'Footer 1',
-      'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h4 class="widgettitle">',
-      'after_title' => '</h4>',
-    ));
 
-    register_sidebar(array(
-      'id' => 'footer2',
-      'name' => 'Footer 2',
-      'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h4 class="widgettitle">',
-      'after_title' => '</h4>',
-    ));
-
-    register_sidebar(array(
-      'id' => 'footer3',
-      'name' => 'Footer 3',
-      'before_widget' => '<div id="%1$s" class="widget col-sm-4 %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h4 class="widgettitle">',
-      'after_title' => '</h4>',
-    ));
-    
+    for ($i=1; $i <= get_theme_mod('footer_widget_areas'); $i++){
+      $cols = 12/get_theme_mod('footer_widget_areas');
+      register_sidebar(array(
+        'id' => "footer$i",
+        'name' => "Footer $i",
+        'before_widget' => '<div id="%1$s" class="widget col-sm-'.$cols.' %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+      ));
+    }
     
     /* 
     to add more sidebars or widgetized areas, just copy
@@ -509,5 +496,6 @@ function wp_bootstrap_wp_title( $title, $sep ) {
   return $title;
 }
 add_filter( 'wp_title', 'wp_bootstrap_wp_title', 10, 2 );
+
 
 ?>
