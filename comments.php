@@ -47,18 +47,9 @@ The comments page for Bones
 	  		<li><?php next_comments_link( __("Newer comments","wpbootstrap") ) ?></li>
 		</ul>
 	</nav>
-  
-	<?php else : // this is displayed if there are no comments so far ?>
 
-	<?php if ( comments_open() ) : ?>
-    	<!-- If comments are open, but there are no comments. -->
-
-	<?php else : // comments are closed 
-	?>
-		
-	<!-- If comments are closed. -->
+	<?php if ( ! comments_open() ) : ?>
 	<p class="alert alert-info"><?php _e("Comments are closed","wpbootstrap"); ?>.</p>
-				
 	<?php endif; ?>
 
 <?php endif; ?>
