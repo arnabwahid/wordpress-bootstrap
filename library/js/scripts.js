@@ -59,21 +59,6 @@ jQuery(document).ready(function($) {
 		$('a.edit-post').hide();
 	});
 	
-	// Input placeholder text fix for IE
-	// $('[placeholder]').focus(function() {
-	//   var input = $(this);
-	//   if (input.val() == input.attr('placeholder')) {
-	// 	input.val('');
-	// 	input.removeClass('placeholder');
-	//   }
-	// }).blur(function() {
-	//   var input = $(this);
-	//   if (input.val() == '' || input.val() == input.attr('placeholder')) {
-	// 	input.addClass('placeholder');
-	// 	input.val(input.attr('placeholder'));
-	//   }
-	// }).blur();
-	
 	// Prevent submission of empty form
 	$('[placeholder]').parents('form').submit(function() {
 	  $(this).find('[placeholder]').each(function() {
@@ -83,18 +68,6 @@ jQuery(document).ready(function($) {
 		}
 	  })
 	});
-	
-	// $('#s').focus(function(){
-	// 	if( $(window).width() < 940 ){
-	// 		$(this).animate({ width: '200px' });
-	// 	}
-	// });
-	
-	// $('#s').blur(function(){
-	// 	if( $(window).width() < 940 ){
-	// 		$(this).animate({ width: '100px' });
-	// 	}
-	// });
 			
 	$('.alert-message').alert();
 	

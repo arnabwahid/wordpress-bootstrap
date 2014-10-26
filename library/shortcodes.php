@@ -2,32 +2,6 @@
 
 // shortcodes
 
-// Gallery shortcode
-
-// remove the standard shortcode
-remove_shortcode('gallery', 'gallery_shortcode');
-add_shortcode('gallery', 'gallery_shortcode_tbs');
-
-function gallery_shortcode_tbs($attr) {
-	global $post, $wp_locale;
-
-	$output = "";
-
-	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
-	$attachments = get_posts($args);
-	if ($attachments) {
-		$output = '<div class="row-fluid"><ul class="thumbnails">';
-		foreach ( $attachments as $attachment ) {
-			$output .= '<li class="span2">';
-			$att_title = apply_filters( 'the_title' , $attachment->post_title );
-			$output .= wp_get_attachment_link( $attachment->ID , 'thumbnail', true );
-			$output .= '</li>';
-		}
-		$output .= '</ul></div>';
-	}
-
-	return $output;
-}
 
 
 

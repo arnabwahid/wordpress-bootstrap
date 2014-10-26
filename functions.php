@@ -495,9 +495,9 @@ class Bootstrap_walker extends Walker_Nav_Menu{
    	$attributes .= ! empty( $object->url )        ? ' href="'   . esc_attr( $object->url        ) .'"' : '';
 
    	// if the item has children add these two attributes to the anchor tag
-   	// if ( $args->has_children ) {
-		  // $attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
-    // }
+   	if ( $args->has_children ) {
+		  $attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
+    }
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
@@ -548,8 +548,8 @@ add_filter('nav_menu_css_class', 'add_active_class', 10, 2 );
 if( !function_exists("theme_styles") ) {  
     function theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-        wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
-        wp_enqueue_style( 'bootstrap' );
+        wp_register_style( 'wpbs', get_template_directory_uri() . '/library/css/styles.css', array(), '1.0', 'all' );
+        wp_enqueue_style( 'wpbs' );
 
         // For child themes
         wp_register_style( 'wpbs-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0', 'all' );
@@ -566,25 +566,26 @@ if( !function_exists( "theme_js" ) ) {
       if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1) ) 
         wp_enqueue_script( 'comment-reply' );
     }
-  
+
+    // This is the full Bootstrap js distribution file. If you only use a few components that require the js files consider loading them individually instead
     wp_register_script( 'bootstrap', 
-      get_template_directory_uri() . '/library/js/bootstrap.min.js', 
+      get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.js', 
+      array('jquery'), 
+      '1.2' );
+
+    wp_register_script( 'wpbs-js', 
+      get_template_directory_uri() . '/library/js/scripts.js',
+      array('bootstrap'), 
+      '1.2' );
+  
+    wp_register_script( 'modernizr', 
+      get_template_directory_uri() . '/bower_components/modernizer/modernizr.js', 
       array('jquery'), 
       '1.2' );
   
-    wp_register_script( 'wpbs-scripts', 
-      get_template_directory_uri() . '/library/js/scripts.js', 
-      array('jquery'), 
-      '1.2' );
-  
-    wp_register_script(  'modernizr', 
-      get_template_directory_uri() . '/library/js/modernizr.full.min.js', 
-      array('jquery'), 
-      '1.2' );
-  
-    wp_enqueue_script('bootstrap');
-    wp_enqueue_script('wpbs-scripts');
-    wp_enqueue_script('modernizr');
+    wp_enqueue_script( 'bootstrap' );
+    wp_enqueue_script( 'wpbs-js' );
+    wp_enqueue_script( 'modernizr' );
     
   }
 }
