@@ -1,12 +1,24 @@
 WP BOOTSTRAP
 ===================
 
-Bootstrap (http://getbootstrap.com) in WordPress theme form. 
+Bootstrap (http://getbootstrap.com) in WordPress theme form.
+
+GETTING STARTED
+_______________
+
+To get started, open Terminal or a command prompt and run:
+
+	cd path/to/wp-content/themes
+	git clone https://github.com/320press/wordpress-bootstrap.git
+	npm install
+	grunt dev
 
 FEATURES
 ________
 
 We’ve built the WP Bootstrap theme so that it could be used as-is as a very basic theme or as a starting point for theme developers. It uses v3.2.0 of Bootstrap.
+
+WP-Bootstrap uses grunt as a task manager to help aid development. Check out the gruntfile.js file for more detail on the default tasks. WP-Bootstrap comes with the livereload, less, grunticon and more tasks out of the box. 
 
 Watch or star this project to keep up with its progress.
 
