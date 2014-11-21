@@ -16,7 +16,7 @@ To get started, open Terminal or a command prompt and run:
 FEATURES
 ________
 
-We’ve built the WP Bootstrap theme so that it could be used as-is as a very basic theme or as a starting point for theme developers. It uses v3.2.0 of Bootstrap.
+We’ve built the WP Bootstrap theme so that it could be used as-is as a very basic theme or as a starting point for theme developers. It uses v3.3.1 of Bootstrap.
 
 WP-Bootstrap uses grunt as a task manager to help aid development. Check out the gruntfile.js file for more detail on the default tasks. WP-Bootstrap comes with the livereload, less, grunticon and more tasks out of the box. 
 
