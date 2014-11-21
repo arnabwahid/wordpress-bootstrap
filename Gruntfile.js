@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     less: {
       dist: {
         files: {
-          'library/css/styles.css': [
+          'library/dist/css/styles.css': [
             'library/less/styles.less'
           ]
         },
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           // LESS source map
           // To enable, set sourceMap to true and update sourceMapRootpath based on your install
           sourceMap: true,
-          sourceMapFilename: 'library/css/styles.css.map',
+          sourceMapFilename: 'library/dist/css/styles.css.map',
           sourceMapRootpath: '/wp-content/themes/wordpress-bootstrap/' // If you name your theme something different you may need to change this
         }
       }
@@ -31,9 +31,10 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'library/js/scripts.min.js': [
+          'library/dist/js/scripts.min.js': [
             'library/js/*.js'
           ]
+          // Consider adding bootstrap js files here to consolidate your browser requests
         },
         options: {
           // JS source map: to enable, uncomment the lines below and update sourceMappingURL based on your install
@@ -57,7 +58,7 @@ module.exports = function(grunt) {
     version: {
       assets: {
         files: {
-          'functions.php': ['library/css/styles.css', 'library/js/scripts.min.js']
+          'functions.php': ['library/dist/css/styles.css', 'library/dist/js/scripts.min.js']
         }
       }
     },
@@ -68,7 +69,7 @@ module.exports = function(grunt) {
           'bower_components/font-awesome/less/*.less',
           'library/less/*.less'
         ],
-        tasks: ['less']
+        tasks: ['less', 'version']
       },
       js: {
         files: [
@@ -83,7 +84,7 @@ module.exports = function(grunt) {
           livereload: true
         },
         files: [
-          'library/css/styles.css',
+          'library/dist/css/styles.css',
           'library/js/*',
           'style.css',
           '*.php'
@@ -92,7 +93,8 @@ module.exports = function(grunt) {
     },
     clean: {
       dist: [
-        'style.css'
+        'library/dist/css',
+        'library/dist/js'
       ]
     }
   });
@@ -117,7 +119,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'clean',
+    'clean:dist',
     'less',
     'uglify',
     'grunticon',
