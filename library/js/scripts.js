@@ -53,11 +53,11 @@ jQuery(document).ready(function($) {
 		return true;
 	});
 	
-	$('article.post').hover(function(){
-		$('a.edit-post').show();
-	},function(){
-		$('a.edit-post').hide();
-	});
+	// $('article.post').hover(function(){
+	// 	$('a.edit-post').show();
+	// },function(){
+	// 	$('a.edit-post').hide();
+	// });
 	
 	// Prevent submission of empty form
 	$('[placeholder]').parents('form').submit(function() {
