@@ -271,9 +271,9 @@ function list_pings($comment, $args, $depth) {
 
 /****************** password protected post form *****/
 
-add_filter( 'the_password_form', 'custom_password_form' );
+add_filter( 'the_password_form', 'wp_bootstrap_custom_password_form' );
 
-function custom_password_form() {
+function wp_bootstrap_custom_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
@@ -286,9 +286,9 @@ function custom_password_form() {
 
 /*********** update standard wp tag cloud widget so it looks better ************/
 
-add_filter( 'widget_tag_cloud_args', 'my_widget_tag_cloud_args' );
+add_filter( 'widget_tag_cloud_args', 'wp_bootstrap_my_widget_tag_cloud_args' );
 
-function my_widget_tag_cloud_args( $args ) {
+function wp_bootstrap_my_widget_tag_cloud_args( $args ) {
 	$args['number'] = 20; // show less tags
 	$args['largest'] = 9.75; // make largest and smallest the same - i don't like the varying font-size look
 	$args['smallest'] = 9.75;
@@ -297,7 +297,7 @@ function my_widget_tag_cloud_args( $args ) {
 }
 
 // filter tag clould output so that it can be styled by CSS
-function add_tag_class( $taglinks ) {
+function wp_bootstrap_add_tag_class( $taglinks ) {
     $tags = explode('</a>', $taglinks);
     $regex = "#(.*tag-link[-])(.*)(' title.*)#e";
 
@@ -310,11 +310,11 @@ function add_tag_class( $taglinks ) {
     return $taglinks;
 }
 
-add_action( 'wp_tag_cloud', 'add_tag_class' );
+add_action( 'wp_tag_cloud', 'wp_bootstrap_add_tag_class' );
 
-add_filter( 'wp_tag_cloud','wp_tag_cloud_filter', 10, 2) ;
+add_filter( 'wp_tag_cloud','wp_bootstrap_wp_tag_cloud_filter', 10, 2) ;
 
-function wp_tag_cloud_filter( $return, $args )
+function wp_bootstrap_wp_tag_cloud_filter( $return, $args )
 {
   return '<div id="tag-cloud">' . $return . '</div>';
 }
@@ -323,7 +323,7 @@ function wp_tag_cloud_filter( $return, $args )
 add_filter( 'widget_text', 'do_shortcode' );
 
 // Disable jump in 'read more' link
-function remove_more_jump_link( $link ) {
+function wp_bootstrap_remove_more_jump_link( $link ) {
 	$offset = strpos($link, '#more-');
 	if ( $offset ) {
 		$end = strpos( $link, '"',$offset );
@@ -333,19 +333,19 @@ function remove_more_jump_link( $link ) {
 	}
 	return $link;
 }
-add_filter( 'the_content_more_link', 'remove_more_jump_link' );
+add_filter( 'the_content_more_link', 'wp_bootstrap_remove_more_jump_link' );
 
 // Remove height/width attributes on images so they can be responsive
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
-add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'post_thumbnail_html', 'wp_bootstrap_remove_thumbnail_dimensions', 10 );
+add_filter( 'image_send_to_editor', 'wp_bootstrap_remove_thumbnail_dimensions', 10 );
 
-function remove_thumbnail_dimensions( $html ) {
+function wp_bootstrap_remove_thumbnail_dimensions( $html ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
 
 // Add the Meta Box to the homepage template
-function add_homepage_meta_box() {  
+function wp_bootstrap_add_homepage_meta_box() {  
 	global $post;
 
 	// Only add homepage meta box if template being used is the homepage template
@@ -357,14 +357,14 @@ function add_homepage_meta_box() {
 	    add_meta_box(  
 	        'homepage_meta_box', // $id  
 	        'Optional Homepage Tagline', // $title  
-	        'show_homepage_meta_box', // $callback  
+	        'wp_bootstrap_show_homepage_meta_box', // $callback  
 	        'page', // $page  
 	        'normal', // $context  
 	        'high'); // $priority  
     }
 }
 
-add_action( 'add_meta_boxes', 'add_homepage_meta_box' );
+add_action( 'add_meta_boxes', 'wp_bootstrap_add_homepage_meta_box' );
 
 // Field Array  
 $prefix = 'custom_';  
@@ -378,7 +378,7 @@ $custom_meta_fields = array(
 );  
 
 // The Homepage Meta Box Callback  
-function show_homepage_meta_box() {  
+function wp_bootstrap_show_homepage_meta_box() {  
   global $custom_meta_fields, $post;
 
   // Use nonce for verification
@@ -413,7 +413,7 @@ function show_homepage_meta_box() {
 }  
 
 // Save the Data  
-function save_homepage_meta( $post_id ) {  
+function wp_bootstrap_save_homepage_meta( $post_id ) {  
 
     global $custom_meta_fields;  
   
@@ -445,18 +445,18 @@ function save_homepage_meta( $post_id ) {
         }
     } // end foreach
 }
-add_action( 'save_post', 'save_homepage_meta' );
+add_action( 'save_post', 'wp_bootstrap_save_homepage_meta' );
 
 // Add thumbnail class to thumbnail links
-function add_class_attachment_link( $html ) {
+function wp_bootstrap_add_class_attachment_link( $html ) {
     $postid = get_the_ID();
     $html = str_replace( '<a','<a class="thumbnail"',$html );
     return $html;
 }
-add_filter( 'wp_get_attachment_link', 'add_class_attachment_link', 10, 1 );
+add_filter( 'wp_get_attachment_link', 'wp_bootstrap_add_class_attachment_link', 10, 1 );
 
 // Add lead class to first paragraph
-function first_paragraph( $content ){
+function wp_bootstrap_first_paragraph( $content ){
     global $post;
 
     // if we're on the homepage, don't add the lead class to the first paragraph of text
@@ -465,7 +465,7 @@ function first_paragraph( $content ){
     else
         return preg_replace('/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1);
 }
-add_filter( 'the_content', 'first_paragraph' );
+add_filter( 'the_content', 'wp_bootstrap_first_paragraph' );
 
 // Menu output mods
 class Bootstrap_walker extends Walker_Nav_Menu{
@@ -533,7 +533,7 @@ class Bootstrap_walker extends Walker_Nav_Menu{
 
 add_editor_style('editor-style.css');
 
-function add_active_class($classes, $item) {
+function wp_bootstrap_add_active_class($classes, $item) {
 	if( $item->menu_item_parent == 0 && in_array('current-menu-item', $classes) ) {
     $classes[] = "active";
 	}
@@ -542,11 +542,11 @@ function add_active_class($classes, $item) {
 }
 
 // Add Twitter Bootstrap's standard 'active' class name to the active nav link item
-add_filter('nav_menu_css_class', 'add_active_class', 10, 2 );
+add_filter('nav_menu_css_class', 'wp_bootstrap_add_active_class', 10, 2 );
 
 // enqueue styles
-if( !function_exists("theme_styles") ) {  
-    function theme_styles() { 
+if( !function_exists("wp_bootstrap_theme_styles") ) {  
+    function wp_bootstrap_theme_styles() { 
         // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
         wp_register_style( 'wpbs', get_template_directory_uri() . '/library/dist/css/styles.cafe6462.min.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'wpbs' );
@@ -556,11 +556,11 @@ if( !function_exists("theme_styles") ) {
         wp_enqueue_style( 'wpbs-style' );
     }
 }
-add_action( 'wp_enqueue_scripts', 'theme_styles' );
+add_action( 'wp_enqueue_scripts', 'wp_bootstrap_theme_styles' );
 
 // enqueue javascript
-if( !function_exists( "theme_js" ) ) {  
-  function theme_js(){
+if( !function_exists( "wp_bootstrap_theme_js" ) ) {  
+  function wp_bootstrap_theme_js(){
 
     if ( !is_admin() ){
       if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1) ) 
@@ -574,7 +574,7 @@ if( !function_exists( "theme_js" ) ) {
       '1.2' );
 
     wp_register_script( 'wpbs-js', 
-      get_template_directory_uri() . '/library/dist/js/scripts.8f60997b.min.js',
+      get_template_directory_uri() . '/library/dist/js/scripts.d1e3d952.min.js',
       array('bootstrap'), 
       '1.2' );
   
@@ -589,7 +589,7 @@ if( !function_exists( "theme_js" ) ) {
     
   }
 }
-add_action( 'wp_enqueue_scripts', 'theme_js' );
+add_action( 'wp_enqueue_scripts', 'wp_bootstrap_theme_js' );
 
 // Get <head> <title> to behave like other themes
 function wp_bootstrap_wp_title( $title, $sep ) {
@@ -643,7 +643,7 @@ function wp_bootstrap_related_posts() {
 }
 
 // Numeric Page Navi (built into the theme by default)
-function page_navi($before = '', $after = '') {
+function wp_bootstrap_page_navi($before = '', $after = '') {
   global $wpdb, $wp_query;
   $request = $wp_query->request;
   $posts_per_page = intval(get_query_var('posts_per_page'));
@@ -702,9 +702,9 @@ function page_navi($before = '', $after = '') {
 }
 
 // Remove <p> tags from around images
-function filter_ptags_on_images( $content ){
+function wp_bootstrap_filter_ptags_on_images( $content ){
   return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
 }
-add_filter( 'the_content', 'filter_ptags_on_images' );
+add_filter( 'the_content', 'wp_bootstrap_filter_ptags_on_images' );
 
 ?>
