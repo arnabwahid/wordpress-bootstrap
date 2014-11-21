@@ -1,6 +1,6 @@
 {
   "name": "wordpress-bootstrap",
-  "version": "3.2.0",
+  "version": "3.3.1",
   "homepage": "https://github.com/320press/wordpress-bootstrap",
   "authors": [
     "chrisbarnes <barnes.chris@gmail.com>"
@@ -24,6 +24,6 @@
   "dependencies": {
     "modernizer": "~2.8.2",
     "font-awesome": "~4.2.0",
-    "bootstrap": ">3.2.0"
+    "bootstrap": "~3.3.1"
   }
 }
