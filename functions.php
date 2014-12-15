@@ -583,15 +583,9 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
       array('jquery'), 
       '1.2' );
       
-    wp_register_script( 'app-js', 
-      get_template_directory_uri() . '/js/app.js', 
-      array('jquery'), 
-      '1.2' );
-  
     wp_enqueue_script( 'bootstrap' );
     wp_enqueue_script( 'wpbs-js' );
     wp_enqueue_script( 'modernizr' );
-      wp_enqueue_script( 'app-js' );
     
   }
 }
