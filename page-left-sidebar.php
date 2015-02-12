@@ -8,7 +8,9 @@ Template Name: Left Sidebar Page
 			
 			<div id="content" class="clearfix row">
             
-            	<?php get_sidebar(); // sidebar 1 ?>
+            	<div class="hidden-xs">
+            		<?php get_sidebar(); // sidebar 1 ?>
+            	</div>
 			
 				<div id="main" class="col col-lg-8 clearfix" role="main">
 
