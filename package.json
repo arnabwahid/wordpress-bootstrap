@@ -1,14 +1,11 @@
 {
   "name": "wp_bootstrap",
-  "version": "3.2.0",
-  "author": "Chris Barnes <barnes.chris@gmail.com>",
-  "homepage": "http://cbarn.es",
+  "version": "1.0.0",
+  "author": "mkronenfeld <github@mkronenfeld.de>",
+  "homepage": "https://github.com/mkronenfeld/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/320press/wordpress-bootstrap.git"
-  },
-  "bugs": {
-    "url": "https://github.com/320press/wordpress-bootstrap/issues"
+    "url": "https://github.com/mkronenfeld/wordpress-bootstrap.git"
   },
   "licenses": [
     {

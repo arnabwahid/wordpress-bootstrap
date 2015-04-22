@@ -1,11 +1,12 @@
 {
   "name": "wordpress-bootstrap",
   "version": "3.3.1",
-  "homepage": "https://github.com/320press/wordpress-bootstrap",
+  "homepage": "https://github.com/mkronenfeld/wordpress-bootstrap",
   "authors": [
-    "chrisbarnes <barnes.chris@gmail.com>"
+    "chrisbarnes <barnes.chris@gmail.com>",
+    "mkronenfeld <github@mkronenfeld.de>"
   ],
-  "description": "A simple WordPress theme based on Bootstrap.",
+  "description": "A simple WordPress theme based on Bootstrap. Branch of 320press/wordpress-bootstrap.",
   "moduleType": [
     "node"
   ],
@@ -22,8 +23,8 @@
     "tests"
   ],
   "dependencies": {
-    "modernizer": "~2.8.2",
-    "font-awesome": "~4.2.0",
-    "bootstrap": "~3.3.1"
+    "modernizer": "~2.*",
+    "font-awesome": "~4.*",
+    "bootstrap": "~3.*"
   }
 }
