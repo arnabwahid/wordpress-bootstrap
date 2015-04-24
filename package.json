@@ -24,7 +24,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-less": "~0.8.1",
     "grunt-wp-version": "~0.1.0",
-    "grunt-grunticon": "^1.2.9",
+    "grunt-grunticon": "^2.1.*",
     "grunt-svgstore": "^0.3.6",
     "grunt-wp-assets": "^0.2.6"
   }
