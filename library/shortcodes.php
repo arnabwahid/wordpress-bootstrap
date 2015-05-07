@@ -103,6 +103,33 @@ function blockquotes( $atts, $content = null ) {
 add_shortcode('blockquote', 'blockquotes'); 
  
 
+function rows($atts, $content = null) {
+    extract( shortcode_atts( array(
+        'id'    => ''
+    ), $atts));
+    return "<div id='" . $id . "' class='row'>" . do_shortcode($content) . "</div>";
+}
+add_shortcode('row', 'rows');
 
+function cols($atts, $content = null) {
+    extract( shortcode_atts( array(
+        'id'    => '',
+        'size' => 'md', /* xs, sm, md, lg */
+        'span' => '6' /* 1-12 */
+    ), $atts ));
+
+    if($span > 12 || $span < 1) {
+        $span = 6;
+    }
+    if(!preg_match('/xs|sm|md|lg/', $size)) {
+        $size = "md";
+    }
+
+    $output = "<div id='" . $id . "' class='col-" . $size . "-" . $span . "'>";
+    $output .= $content;
+    $output .= "</div>";
+    return $output;
+}
+add_shortcode('col', 'cols');
 
 ?>

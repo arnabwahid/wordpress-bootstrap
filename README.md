@@ -47,6 +47,17 @@ __________
 
 We’ve built in some shortcodes so you can easily add UI elements found in Bootstrap.
 
+| Shortcode                           |  Arguments                        | Bootstrap Component |
+| -------------                       | -------------                     | ------------- |
+| [button]                            |  type, size, url, text            | http://getbootstrap.com/css/#buttons |
+| [alert]...[/alert]                  |  type, close, text                | http://getbootstrap.com/components/#alerts-dismissible |
+| [block-message]...[/block-message]  | type, close, text                 | http://getbootstrap.com/components/#alerts |
+| [blockquote]...[/blockquote]        | float, cite                       | http://getbootstrap.com/css/#type-blockquotes |
+| [row]...[/row]                      | id                                | http://getbootstrap.com/css/#grid-example-basic
+| [col]...[/col]                      | id, size, span                    | http://getbootstrap.com/css/#grid-example-basic
+
+
+
 Sidebars
 ________
 
