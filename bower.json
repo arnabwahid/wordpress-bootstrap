@@ -1,9 +1,9 @@
 {
   "name": "wordpress-bootstrap",
   "version": "3.3.1",
-  "homepage": "https://github.com/320press/wordpress-bootstrap",
+  "homepage": "https://github.com/arnabwahid/wordpress-bootstrap",
   "authors": [
-    "chrisbarnes <barnes.chris@gmail.com>"
+    "arnabwahid <arnab.wahid@gmail.com>"
   ],
   "description": "A simple WordPress theme based on Bootstrap.",
   "moduleType": [
