@@ -21,7 +21,7 @@ msgstr "Epic 404 - Entrada No Encontrada"
 
 #: 404.php:14
 msgid "This is embarassing. We can't find what you were looking for."
-msgstr "No hemos podido encontrar lo que estas buscando."
+msgstr "No hemos podido encontrar lo que estás buscando."
 
 #: 404.php:22
 msgid ""
@@ -188,11 +188,11 @@ msgstr "Tu Nombre"
 
 #: comments.php:114
 msgid "Mail"
-msgstr "E-mail"
+msgstr "Correo electrónico"
 
 #: comments.php:116
 msgid "Your Email"
-msgstr "Tu E-mail"
+msgstr "Tu correo electrónico"
 
 #: comments.php:117
 msgid "will not be published"
@@ -327,7 +327,7 @@ msgstr "Options Framework Internal Container"
 
 #: admin/options-medialibrary-uploader.php:128
 msgid "Upload"
-msgstr "Upload"
+msgstr "Subir"
 
 #: admin/options-medialibrary-uploader.php:151
 msgid "View File"
@@ -335,7 +335,7 @@ msgstr "Ver Archivo"
 
 #: admin/options-medialibrary-uploader.php:288
 msgid "Gallery"
-msgstr "Galeria"
+msgstr "Galería"
 
 #: admin/options-medialibrary-uploader.php:288
 msgid "Previously Uploaded"
