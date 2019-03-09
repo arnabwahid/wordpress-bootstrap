@@ -1,14 +1,14 @@
 {
   "name": "wp_bootstrap",
   "version": "3.2.0",
-  "author": "Chris Barnes <barnes.chris@gmail.com>",
-  "homepage": "http://cbarn.es",
+  "author": "Arnab Wahid <arnab.wahid@gmail.com>",
+  "homepage": "https://github.com/arnabwahid",
   "repository": {
     "type": "git",
-    "url": "https://github.com/320press/wordpress-bootstrap.git"
+    "url": "https://github.com/arnabwahid/wordpress-bootstrap.git"
   },
   "bugs": {
-    "url": "https://github.com/320press/wordpress-bootstrap/issues"
+    "url": "https://github.com/arnabwahid/wordpress-bootstrap/issues"
   },
   "licenses": [
     {
