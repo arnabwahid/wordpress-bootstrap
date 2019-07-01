@@ -3,4 +3,4 @@
 //
 // by @alrra
 
-Modernizr.addTest( 'stylescoped', 'scoped' in document.createElement('style') );
+Modernizr.addTest('stylescoped', 'scoped' in document.createElement('style'));

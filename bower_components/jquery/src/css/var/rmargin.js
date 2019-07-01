@@ -1,3 +1,5 @@
-define(function() {
-	return (/^margin/);
-});
+define(
+    function () {
+        return (/^margin/);
+    }
+);

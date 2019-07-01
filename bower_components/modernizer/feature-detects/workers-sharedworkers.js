@@ -1,3 +1,5 @@
-Modernizr.addTest('sharedworkers', function(){
-  return !!window.SharedWorker;
-});
+Modernizr.addTest(
+    'sharedworkers', function () {
+        return !!window.SharedWorker;
+    }
+);

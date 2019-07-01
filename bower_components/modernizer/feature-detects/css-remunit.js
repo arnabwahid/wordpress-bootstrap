@@ -8,12 +8,14 @@
 
 // http://snook.ca/archives/html_and_css/font-size-with-rem
 
-Modernizr.addTest('cssremunit', function(){
+Modernizr.addTest(
+    'cssremunit', function () {
 
-  var div = document.createElement('div');
-  try {
-    div.style.fontSize = '3rem';
-  } catch(er){}
-  return (/rem/).test(div.style.fontSize);
+        var div = document.createElement('div');
+        try {
+            div.style.fontSize = '3rem';
+        } catch(er){}
+        return (/rem/).test(div.style.fontSize);
 
-});
+    }
+);

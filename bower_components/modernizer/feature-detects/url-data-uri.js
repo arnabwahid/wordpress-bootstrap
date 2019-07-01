@@ -9,18 +9,24 @@
 // To avoid that you can create a new iframe and inject this.. perhaps..
 
 
-(function(){
+(function () {
 
-  var datauri = new Image();
+    var datauri = new Image();
 
 
-  datauri.onerror = function() {
-      Modernizr.addTest('datauri', function () { return false; });
-  };  
-  datauri.onload = function() {
-      Modernizr.addTest('datauri', function () { return (datauri.width == 1 && datauri.height == 1); });
-  };
+    datauri.onerror = function () {
+        Modernizr.addTest(
+            'datauri', function () {
+                return false; }
+        );
+    };  
+    datauri.onload = function () {
+        Modernizr.addTest(
+            'datauri', function () {
+                return (datauri.width == 1 && datauri.height == 1); }
+        );
+    };
 
-  datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
 })();
