@@ -1,4 +1,4 @@
-WP BOOTSTRAP
+#WORDPRESS BOOTSTRAP
 ===================
 
 Bootstrap (https://github.com/arnabwahid/wordpress-bootstrap/) in WordPress theme form.
@@ -18,7 +18,7 @@ We’ve built the WP Bootstrap theme so that it could be used as-is as a very ba
 
 WP-Bootstrap uses grunt as a task manager to help aid development. Check out the gruntfile.js file for more detail on the default tasks. WP-Bootstrap comes with the livereload, less, grunticon and more tasks out of the box. 
 
-Watch or star this project to keep up with its progress.
+Watch or star this project to keep up with its progress.Thank you!🙂
 
 # Multi-Lingual
 
