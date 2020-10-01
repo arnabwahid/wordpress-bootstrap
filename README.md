@@ -3,7 +3,7 @@ WP BOOTSTRAP
 
 Bootstrap (https://github.com/arnabwahid/wordpress-bootstrap/) in WordPress theme form.
 
-# GETTING STARTED
+➡️# GETTING STARTED
 
 To get started, open Terminal or a command prompt and run:
 
@@ -12,7 +12,7 @@ To get started, open Terminal or a command prompt and run:
 	npm install
 	grunt dev
 
-# FEATURES
+➡️# FEATURES
 
 We’ve built the WP Bootstrap theme so that it could be used as-is as a very basic theme or as a starting point for theme developers. It uses v3.3.1 of Bootstrap.
 
@@ -20,11 +20,11 @@ WP-Bootstrap uses grunt as a task manager to help aid development. Check out the
 
 Watch or star this project to keep up with its progress.
 
-# Multi-Lingual
+➡️# Multi-Lingual
 
 WP-Bootstrap is translated in 7 languages - Spanish, French, Portuguese, Italian, Dutch, Swedish and German. 
 
-# Page Templates
+➡️# Page Templates
 ______________
 
 We’ve packaged four different page templates into this theme.
@@ -34,19 +34,19 @@ We’ve packaged four different page templates into this theme.
     - Page with left sidebar
     - Full width page
 
-# Theme Options Panel
+➡️# Theme Options Panel
 
 We've removed the custom theme options panel in version 3.0. Currently working on moving all of the options that used to appear there over to the theme customizer. 
 
-# Shortcodes
+➡️# Shortcodes
 
 We’ve built in some shortcodes so you can easily add UI elements found in Bootstrap.
 
-# Sidebars
+➡️# Sidebars
 
 There are two different sidebars. One for the homepage and one for the other pages. Add widgets to them.
 
-# CONTRIBUTE!
+➡️# CONTRIBUTE!
 
 This project would not exist in its current state today were it not for lots of generous folks who have contributed to it. Thank you! 
 
