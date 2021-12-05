@@ -6,13 +6,15 @@
 
 
 
-Modernizr.testStyles(' #modernizr { display: run-in; } ', function(elem, rule){ 
+Modernizr.testStyles(
+    ' #modernizr { display: run-in; } ', function (elem, rule) { 
 
-  var ret = (window.getComputedStyle ?
+        var ret = (window.getComputedStyle ?
          getComputedStyle(elem, null).getPropertyValue('display') :
          elem.currentStyle['display']);
 
-  Modernizr.addTest('display-runin', ret == 'run-in');
+        Modernizr.addTest('display-runin', ret == 'run-in');
 
-});
+    }
+);
 

@@ -6,9 +6,10 @@
 // code.google.com/p/graphics-detect/source/browse/js/detect.js
 
 
-(function(){
+(function () {
 
-    if (!Modernizr.webgl) return;
+    if (!Modernizr.webgl) { return;
+    }
 
     var canvas, ctx, exts;
 
@@ -34,7 +35,7 @@
     }
 
     // hack for addressing modernizr testsuite failures. sorry.
-    if (window.TEST && TEST.audvid){
+    if (window.TEST && TEST.audvid) {
         TEST.audvid.push('webgl');
     }
 

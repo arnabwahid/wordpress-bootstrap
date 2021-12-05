@@ -9,4 +9,4 @@
 // http://miketaylr.com/test/datalist.html
 // http://miketaylr.com/code/datalist.html
 
-Modernizr.addTest('datalistelem', Modernizr.input.list );
+Modernizr.addTest('datalistelem', Modernizr.input.list);

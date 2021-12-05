@@ -3,18 +3,20 @@
 // plus.google.com/115535723976198353696/posts/ERN6zYozENV
 // github.com/Modernizr/Modernizr/issues/370
 
-Modernizr.addTest('websocketsbinary', function() {
-  var protocol = 'https:'==location.protocol?'wss':'ws',
-  protoBin;
+Modernizr.addTest(
+    'websocketsbinary', function () {
+        var protocol = 'https:'==location.protocol?'wss':'ws',
+        protoBin;
 
-  if('WebSocket' in window) {
-    if( protoBin = 'binaryType' in WebSocket.prototype ) {
-      return protoBin;
+        if('WebSocket' in window) {
+            if(protoBin = 'binaryType' in WebSocket.prototype ) {
+                return protoBin;
+            }
+            try {
+                return !!(new WebSocket(protocol+'://.').binaryType);
+            } catch (e){}
+        }
+
+        return false;
     }
-    try {
-      return !!(new WebSocket(protocol+'://.').binaryType);
-    } catch (e){}
-  }
-
-  return false;
-});
+);

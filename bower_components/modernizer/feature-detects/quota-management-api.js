@@ -5,7 +5,9 @@
 // https://developers.google.com/chrome/whitepapers/storage
 // By Addy Osmani
 
-Modernizr.addTest('quotamanagement', function(){
-  var storage = Modernizr.prefixed('StorageInfo', window);
-  return !!(storage && 'TEMPORARY' in storage && 'PERSISTENT' in storage);
-});
+Modernizr.addTest(
+    'quotamanagement', function () {
+        var storage = Modernizr.prefixed('StorageInfo', window);
+        return !!(storage && 'TEMPORARY' in storage && 'PERSISTENT' in storage);
+    }
+);
