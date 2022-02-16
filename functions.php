@@ -582,7 +582,7 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
       get_template_directory_uri() . '/bower_components/modernizer/modernizr.js', 
       array('jquery'), 
       '1.2' );
-  
+      
     wp_enqueue_script( 'bootstrap' );
     wp_enqueue_script( 'wpbs-js' );
     wp_enqueue_script( 'modernizr' );
@@ -706,5 +706,25 @@ function wp_bootstrap_filter_ptags_on_images( $content ){
   return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
 }
 add_filter( 'the_content', 'wp_bootstrap_filter_ptags_on_images' );
+
+
+//------------------------------------------------------------------------
+// the following code adds suppport for woocomerce integeration
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'wp_bootstrap_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'wp_bootstrap_wrapper_end', 10);
+
+function wp_bootstrap_wrapper_start() {
+  echo '<div id="content" class="clearfix row">';
+}
+
+function wp_bootstrap_wrapper_end() {
+  echo '</div>';
+}
+
+add_theme_support( 'woocommerce' );
+// ----------------------------------------------------------------------
 
 ?>
