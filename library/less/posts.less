@@ -1,68 +1,67 @@
 /*
+ * WP-Bootstrap - Post Styles
+ */
 
-WP-Bootstrap - Post Styles
+.site-main {
+    margin-bottom: 18px;
+    padding: 0 0 9px;
 
-*/
+    article {
+        img {
+            height: auto;
+            max-width: 100%;
+        }
+    }
 
+    footer {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+        position: relative;
+        min-height: 20px;
+    }
 
-
-
-#main p.meta{
-	font-style: italic;
-	color: #808080;
+    .meta {
+        font-style: italic;
+        color: @gray-light;
+    }
 }
 
-#main article{
-	margin-bottom: 18px;
-	padding: 0 0 9px;
+p.tags {
+    line-height: 20px;
 }
 
-#main article footer{
-	border-top: none;
-	margin-top: 0;
-	padding-top: 0;
-	position: relative;
-	min-height: 20px;
+div[id*='attachment_'] {
+    height: 100%;
+    max-width: 100%;
 }
 
-p.tags{
-	line-height: 20px;
+.archive .post h3 {
+    line-height: 24px;
+    margin-bottom: 10px;
 }
 
-div[id*='attachment_']{
-	max-width: 100%;
-	height: 100%;
+.hero-unit img {
+  margin-bottom: 1em;
 }
 
-#main .hero-unit img{
-	margin-bottom: 1em;
-}
-
-#main article img{
-	height: auto;
-	max-width: 100%;
-}
-
-img.alignleft{
+/* Image align */
+img.alignleft {
 	margin-right: 10px;
 	float: left;
 }
 
-img.alignright{
+img.alignright {
 	margin-left: 10px;
 	float: right;
 }
 
-img.aligncenter{
+img.aligncenter {
 	display: block;
 	margin: 0 auto;
 }
 
-.archive #main .post h3{
-	line-height: 24px;
-	margin-bottom: 10px;
-}
-
+/* Videos */
 video {
 	max-width: 100%;
 	height: auto;
@@ -76,8 +75,8 @@ video {
 	overflow: hidden;
 }
 
-.video-container iframe,  
-.video-container object,  
+.video-container iframe,
+.video-container object,
 .video-container embed {
 	position: absolute;
 	top: 0;

@@ -8,7 +8,7 @@ Template Name: Homepage
 			
 			<div id="content" class="clearfix row">
 			
-				<div id="main" class="col-sm-12 clearfix" role="main">
+				<div id="main" class="site-main col-sm-12 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

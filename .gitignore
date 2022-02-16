@@ -19,5 +19,9 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
+# PhpStorm
+.idea
+
 # Ignore these so they're not stored in source control
 node_modules
+bower_components
