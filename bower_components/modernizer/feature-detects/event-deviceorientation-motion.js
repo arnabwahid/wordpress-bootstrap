@@ -5,7 +5,7 @@
 
 
 //test for Device Motion Event support, returns boolean value true/false
-Modernizr.addTest('devicemotion', ('DeviceMotionEvent' in window) );
+Modernizr.addTest('devicemotion', ('DeviceMotionEvent' in window));
 
 //test for Device Orientation Event support, returns boolean value true/false
-Modernizr.addTest('deviceorientation', ('DeviceOrientationEvent' in window) );
+Modernizr.addTest('deviceorientation', ('DeviceOrientationEvent' in window));

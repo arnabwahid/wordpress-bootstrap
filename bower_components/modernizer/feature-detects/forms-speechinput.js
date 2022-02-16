@@ -13,7 +13,9 @@
 
 // FIXME: add support for detecting the new spec'd behavior
 
-Modernizr.addTest('speechinput', function(){
-    var elem = document.createElement('input'); 
-    return 'speech' in elem || 'onwebkitspeechchange' in elem; 
-});
+Modernizr.addTest(
+    'speechinput', function () {
+        var elem = document.createElement('input'); 
+        return 'speech' in elem || 'onwebkitspeechchange' in elem; 
+    }
+);

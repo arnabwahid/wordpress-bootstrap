@@ -2,20 +2,21 @@
 /*
  * This is the JSONSelect reference implementation, in javascript.
  */
-(function(exports) {
+(function (exports) {
 
     var // localize references
     toString = Object.prototype.toString;
 
-    function jsonParse(str) {
-      try {
-          if(JSON && JSON.parse){
-              return JSON.parse(str);
-          }
-          return (new Function("return " + str))();
-      } catch(e) {
-        te("ijs");
-      }
+    function jsonParse(str) 
+    {
+        try {
+            if(JSON && JSON.parse) {
+                return JSON.parse(str);
+            }
+            return (new Function("return " + str))();
+        } catch(e) {
+            te("ijs");
+        }
     }
 
     // emitted error codes.
@@ -32,7 +33,8 @@
     };
 
     // throw an error message
-    function te(ec) {
+    function te(ec) 
+    {
         throw new Error(errorCodes[ec]);
     }
 
@@ -47,20 +49,23 @@
     var pat = /^(?:([\r\n\t\ ]+)|([*.,>])|(string|boolean|null|array|object|number)|(:(?:root|first-child|last-child|only-child))|(:(?:nth-child|nth-last-child))|(:\w+)|(\"(?:[^\\]|\\[^\"])*\")|(\")|((?:[_a-zA-Z]|[^\0-\0177]|\\[^\r\n\f0-9a-fA-F])(?:[_a-zA-Z0-9\-]|[^\u0000-\u0177]|(?:\\[^\r\n\f0-9a-fA-F]))*))/;
     var exprPat = /^\s*\(\s*(?:([+\-]?)([0-9]*)n\s*(?:([+\-])\s*([0-9]))?|(odd|even)|([+\-]?[0-9]+))\s*\)/;
     var lex = function (str, off) {
-        if (!off) off = 0;
+        if (!off) { off = 0;
+        }
         var m = pat.exec(str.substr(off));
-        if (!m) return undefined;
+        if (!m) { return undefined;
+        }
         off+=m[0].length;
         var a;
-        if (m[1]) a = [off, " "];
-        else if (m[2]) a = [off, m[0]];
-        else if (m[3]) a = [off, toks.typ, m[0]];
-        else if (m[4]) a = [off, toks.psc, m[0]];
-        else if (m[5]) a = [off, toks.psf, m[0]];
-        else if (m[6]) te("upc");
-        else if (m[7]) a = [off, toks.str, jsonParse(m[0])];
-        else if (m[8]) te("ujs");
-        else if (m[9]) a = [off, toks.str, m[0].replace(/\\([^\r\n\f0-9a-fA-F])/g,"$1")];
+        if (m[1]) { a = [off, " "];
+        } else if (m[2]) { a = [off, m[0]];
+        } else if (m[3]) { a = [off, toks.typ, m[0]];
+        } else if (m[4]) { a = [off, toks.psc, m[0]];
+        } else if (m[5]) { a = [off, toks.psf, m[0]];
+        } else if (m[6]) { te("upc");
+        } else if (m[7]) { a = [off, toks.str, jsonParse(m[0])];
+        } else if (m[8]) { te("ujs");
+        } else if (m[9]) { a = [off, toks.str, m[0].replace(/\\([^\r\n\f0-9a-fA-F])/g,"$1")];
+        }
         return a;
     };
 
@@ -73,24 +78,28 @@
             var s = parse_selector(str, off);
             a.push(s[1]);
             s = lex(str, off = s[0]);
-            if (s && s[1] === " ") s = lex(str, off = s[0]);
-            if (!s) break;
+            if (s && s[1] === " ") { s = lex(str, off = s[0]);
+            }
+            if (!s) { break;
+            }
             // now we've parsed a selector, and have something else...
             if (s[1] === ">") {
                 a.push(">");
                 off = s[0];
             } else if (s[1] === ",") {
-                if (am === undefined) am = [ ",", a ];
-                else am.push(a);
+                if (am === undefined) { am = [ ",", a ];
+                } else { am.push(a);
+                }
                 a = [];
                 off = s[0];
             }
         }
-        if (am) am.push(a);
+        if (am) { am.push(a);
+        }
         return am ? am : a;
     };
 
-    var parse_selector = function(str, off) {
+    var parse_selector = function (str, off) {
         var soff = off;
         var s = { };
         var l = lex(str, off);
@@ -111,11 +120,14 @@
                 break;
             } else if (l[1] === ".") {
                 l = lex(str, (off = l[0]));
-                if (!l || l[1] !== toks.str) te("sra");
-                if (s.id) te("nmi");
+                if (!l || l[1] !== toks.str) { te("sra");
+                }
+                if (s.id) { te("nmi");
+                }
                 s.id = l[2];
             } else if (l[1] === toks.psc) {
-                if (s.pc || s.pf) te("mpc");
+                if (s.pc || s.pf) { te("mpc");
+                }
                 // collapse first-child and last-child into nth-child expressions
                 if (l[2] === ":first-child") {
                     s.pf = ":nth-child";
@@ -129,10 +141,12 @@
                     s.pc = l[2];
                 }
             } else if (l[1] === toks.psf) {
-                if (s.pc || s.pf ) te("mpc");
+                if (s.pc || s.pf ) { te("mpc");
+                }
                 s.pf = l[2];
                 var m = exprPat.exec(str.substr(l[0]));
-                if (!m) te("mepf");
+                if (!m) { te("mepf");
+                }
                 if (m[5]) {
                     s.a = 2;
                     s.b = (m[5] === "odd") ? 1 : 0;
@@ -151,34 +165,43 @@
         }
 
         // now if we didn't actually parse anything it's an error
-        if (soff === off) te("se");
+        if (soff === off) { te("se");
+        }
 
         return [off, s];
     };
 
     // THE EVALUATOR
 
-    function isArray(o) {
+    function isArray(o) 
+    {
         return Array.isArray ? Array.isArray(o) : 
           toString.call(o) === "[object Array]";
     }
 
-    function mytypeof(o) {
-        if (o === null) return "null";
+    function mytypeof(o) 
+    {
+        if (o === null) { return "null";
+        }
         var to = typeof o;
-        if (to === "object" && isArray(o)) to = "array";
+        if (to === "object" && isArray(o)) { to = "array";
+        }
         return to;
     }
 
-    function mn(node, sel, id, num, tot) {
+    function mn(node, sel, id, num, tot) 
+    {
         var sels = [];
         var cs = (sel[0] === ">") ? sel[1] : sel[0];
         var m = true, mod;
-        if (cs.type) m = m && (cs.type === mytypeof(node));
-        if (cs.id)   m = m && (cs.id === id);
+        if (cs.type) { m = m && (cs.type === mytypeof(node));
+        }
+        if (cs.id) {   m = m && (cs.id === id);
+        }
         if (m && cs.pf) {
-            if (cs.pf === ":nth-last-child") num = tot - num;
-            else num++;
+            if (cs.pf === ":nth-last-child") { num = tot - num;
+            } else { num++;
+            }
             if (cs.a === 0) {
                 m = cs.b === num;
             } else {
@@ -189,7 +212,8 @@
         }
 
         // should we repeat this selector for descendants?
-        if (sel[0] !== ">" && sel[0].pc !== ":root") sels.push(sel);
+        if (sel[0] !== ">" && sel[0].pc !== ":root") { sels.push(sel);
+        }
 
         if (m) {
             // is there a fragment that we should pass down?
@@ -200,7 +224,8 @@
         return [m, sels];
     }
 
-    function forEach(sel, obj, fun, id, num, tot) {
+    function forEach(sel, obj, fun, id, num, tot) 
+    {
         var a = (sel[0] === ",") ? sel.slice(1) : [sel],
         a0 = [],
         call = false,
@@ -246,21 +271,25 @@
         }
     }
 
-    function match(sel, obj) {
+    function match(sel, obj) 
+    {
         var a = [];
-        forEach(sel, obj, function(x) {
-            a.push(x);
-        });
+        forEach(
+            sel, obj, function (x) {
+                a.push(x);
+            }
+        );
         return a;
     }
 
-    function compile(sel) {
+    function compile(sel) 
+    {
         return {
             sel: parse(sel),
-            match: function(obj){
+            match: function (obj) {
                 return match(this.sel, obj);
             },
-            forEach: function(obj, fun) {
+            forEach: function (obj, fun) {
                 return forEach(this.sel, obj, fun);
             }
         };
@@ -271,7 +300,7 @@
     exports.match = function (sel, obj) {
         return compile(sel).match(obj);
     };
-    exports.forEach = function(sel, obj, fun) {
+    exports.forEach = function (sel, obj, fun) {
         return compile(sel).forEach(obj, fun);
     };
     exports.compile = compile;
